@@ -650,7 +650,8 @@ int main(int argc, char **argv)
 	
 	auto t2 = std::chrono::high_resolution_clock::now();
 	auto duration = std::chrono::duration_cast<std::chrono::microseconds>( t2 - t1 ).count();
-	cerr << "Initial Static Computation time : " << duration << " mu.s." << endl;
+	//cerr << "Initial Static Computation time : " << duration << " mu.s." << endl;
+	cerr<<duration<<",";
 
 	duration = 0;
 	auto duration_dynamic = duration;
@@ -744,7 +745,8 @@ int main(int argc, char **argv)
 			perc[i] = x[i];
 		perc[0] = perc[V+1] = 1.0;
 	}
-	cerr << "Total time for updates : " << duration_dynamic << " mu.s." << endl;
+	//cerr << "Total time for updates : " << duration_dynamic << " mu.s." << endl;
+	cerr<<duration_dynamic<<",";
 
 	cudaMemcpy(Centrality, dCentrality, sizeof(double)*(V+1), cudaMemcpyDeviceToHost);
 
@@ -777,7 +779,8 @@ int main(int argc, char **argv)
 	double max_diff = 0;
 	for(int i=1;i<=n;++i)
 		max_diff = max(max_diff,abs(global_pc[i]-pc[i]));
-	cerr << "Max difference in PC point-wise : " << max_diff << "\n";
+	//cerr << "Max difference in PC point-wise : " << max_diff << "\n";
+	cerr<<max_diff<<"\n";
 
 	return 0;
 }

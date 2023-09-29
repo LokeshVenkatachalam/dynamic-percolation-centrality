@@ -4,7 +4,7 @@
 using namespace std;
 
 // compile : g++ -O3 -fopenmp -static-libstdc++ <file_name>.cpp -o computePC-dynamic-edgeUpdate
-int numthreads = 48;
+int numthreads = 96;
 const int INF = 1e9;
 
 void brandes(int src,vector<double> x, vector<vector<int> > &adj,double *ptr)
@@ -386,6 +386,9 @@ int main(int argc, char **argv)
 	string input = argv[1];
 	string queries = argv[2];
 	string output = argv[3];
+	string numthread_string = argv[4];
+	numthreads = atoi(argv[4]);
+
 	omp_set_num_threads(numthreads);
 	ifstream fin(input);
 	ofstream fout(output);
@@ -471,9 +474,9 @@ int main(int argc, char **argv)
 		max_diff = max(max_diff,abs(ac[i]-pc[i]));
 	
 	auto duration = std::chrono::duration_cast<std::chrono::microseconds>( t2 - t1 ).count();
-	cerr << "Initial Static Computation time : " << duration << " mu.s." << endl;
+	// cerr << "Initial Static Computation time : " << duration << " mu.s." << endl;
 	// cerr << "Max difference in PC point-wise : " << max_diff << "\n";
-
+	cerr << duration << ",";
 	duration = 0;
 	auto duration_dynamic = duration;
 
@@ -550,8 +553,8 @@ int main(int argc, char **argv)
 		}
 		fout << "\n";
 	}
-	cerr << "Total time for updates : " << duration_dynamic << " mu.s." <<endl;
-
+	// cerr << "Total time for updates : " << duration_dynamic << " mu.s." <<endl;
+	cerr <<  duration_dynamic << ",";
 	fill(ac.begin(),ac.end(),0);
 	for(int i=1;i<=V;++i)
 		ac[rep[i]] += pCentrality[i];
@@ -568,7 +571,7 @@ int main(int argc, char **argv)
 	max_diff = 0;
 	for(int i=1;i<=n;++i)
 		max_diff = max(max_diff,abs(ac[i]-pc[i]));
-	cerr << "Max difference in PC point-wise : " << max_diff << "\n";
-
+	// cerr << "Max difference in PC point-wise : " << max_diff << "\n";
+	cerr << max_diff << "\n";
 	return 0;
 }

@@ -21,6 +21,9 @@ parser.add_argument('-b', '--batch', dest='batch',
                     default=['1'], nargs=1,
                     help='Batch size of the update')
 
+parser.add_argument('-n', '--numthread', dest='numthread',default=['32'],
+					help='Number of threads to be used')
+
 parser.add_argument('-o', '--outfile', dest='outfile',
                     default=['out.txt'], nargs=1,
                     help='Output file name')
@@ -31,6 +34,7 @@ parser.add_argument('-g', '--gpu', dest='gpuflag', action='store_true',
 parser.add_argument('-r', '--recompile', dest='compileflag', action='store_true',
                     help='Recompile executables')
 
+
 args = parser.parse_args()
 algo = args.algo[0]
 dataset = args.dataset[0]
@@ -38,12 +42,13 @@ batch = args.batch[0]
 outfile = args.outfile[0]	
 gpuflag = args.gpuflag
 compileflag = args.compileflag
+numthread = args.numthread
 
 if algo not in ['dynperc', 'statperc', 'dynedge', 'statedge']:
 	exit('Error: Invalid algorithm.')
 
-if batch not in ['1', '10', '40', '100']:
-	exit('Error: Please try among following batch size - 1, 10, 40 or 100.')
+if batch not in ['1', '10', '20', '40', '50', '100']:
+	exit('Error: Please try among following batch size - 1, 10, 20, 40, 50 or 100.')
 
 if not isfile("./datasets/"+dataset+".in"):
 	exit('Error: Dataset not found.')
@@ -83,16 +88,16 @@ if not exists('./output'):
 	mkdir('./output')
 
 if not isfile(exec_map[(algo,gpuflag)]) or compileflag:
-	print("Didn't find executable or recompile flag set.")
-	print("Compiling ...")
+	# print("Didn't find executable or recompile flag set.")
+	# print("Compiling ...")
 	run(command_map[(algo,gpuflag)], shell=True, check=True)
-	print("Finished Compiling")
-else:
-	print("Found existing executables. Skipping compilation.")
+	# print("Finished Compiling")
+# else:
+# 	print("Found existing executables. Skipping compilation.")
 
-print("Running Algorithm {} on dataset {} on {}".format(algo, dataset, ['CPU','GPU'][int(gpuflag)]))
+# print("Running Algorithm {} on dataset {} on {}".format(algo, dataset, ['CPU','GPU'][int(gpuflag)]))
 if algo == "dynperc" or algo == "statperc":
-	run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/percolation-update-queries/queries_{}/{}_queries ./output/{}".format(dataset, batch, dataset, outfile), shell=True, check=True)
+	run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/percolation-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
 if algo == "dynedge" or algo == "statedge":
-	run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/edge-update-queries/queries_{}/{}_queries ./output/{}".format(dataset, batch, dataset, outfile), shell=True, check=True)
-print("Successfully completed execution. Output can be found at ./output/{}".format(outfile))
+	run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/edge-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
+# print("Successfully completed execution. Output can be found at ./output/{}".format(outfile))

@@ -1,0 +1,12 @@
+.././a.out ../../../../testset/PGPgiantcompo.mtx $1 $2 > PGPgiantcompo_queries
+.././a.out ../../../../testset/wikiVote.mtx $1 $2 > wikiVote_queries
+.././a.out ../../../../testset/slashdot.mtx $1 $2 > slashdot_queries
+.././a.out ../../../../testset/web-indochina-2004.mtx $1 $2 > web-indochina-2004_queries
+.././a.out ../../../../testset/web-standford.mtx $1 $2 > web-standford_queries
+.././a.out ../../../../testset/web-webbase-2001.mtx $1 $2 > web-webbase-2001_queries
+.././a.out ../../../../testset/p2p-Gnutella24.mtx $1 $2 > p2p-Gnutella24_queries
+.././a.out ../../../../testset/p2p-Gnutella25.mtx $1 $2 > p2p-Gnutella25_queries
+.././a.out ../../../../testset/p2p-Gnutella30.mtx $1 $2 > p2p-Gnutella30_queries
+.././a.out ../../../../testset/hi2010.mtx $1 $2 > hi2010_queries
+.././a.out ../../../../testset/email-enron.mtx $1 $2 > email-enron_queries
+.././a.out ../../../../testset/facebook_clean.mtx $1 $2 > facebook_clean_queries

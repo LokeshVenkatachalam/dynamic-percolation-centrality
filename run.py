@@ -54,10 +54,10 @@ if not isfile("./datasets/"+dataset+".in"):
 	exit('Error: Dataset not found.')
 
 command_map = {
-	('dynperc',False) : 'g++ -O3 -fopenmp -static-libstdc++ ./src/CPU/dynamic-percolation-update.cpp -o ./exec/CPU/dpu',
-	('statperc',False) : 'g++ -O3 -fopenmp -static-libstdc++ ./src/CPU/static-percolation-update.cpp -o ./exec/CPU/spu',
-	('dynedge',False) : 'g++ -O3 -fopenmp -static-libstdc++ ./src/CPU/dynamic-edge-update.cpp -o ./exec/CPU/deu',
-	('statedge',False) : 'g++ -O3 -fopenmp -static-libstdc++ ./src/CPU/static-edge-update.cpp -o ./exec/CPU/seu',
+	('dynperc',False) : 'g++ -O3 -fopenmp -lstdc++ ./src/CPU/dynamic-percolation-update.cpp -o ./exec/CPU/dpu',
+	('statperc',False) : 'g++ -O3 -fopenmp -lstdc++ ./src/CPU/static-percolation-update.cpp -o ./exec/CPU/spu',
+	('dynedge',False) : 'g++ -O3 -fopenmp -lstdc++ ./src/CPU/dynamic-edge-update.cpp -o ./exec/CPU/deu',
+	('statedge',False) : 'g++ -O3 -fopenmp -lstdc++ ./src/CPU/static-edge-update.cpp -o ./exec/CPU/seu',
 	('dynperc',True) : 'nvcc ./src/GPU/dynamic-percolation-update.cu -arch=sm_70 -std=c++11 -Xcompiler -fopenmp -O3 -o ./exec/GPU/dpu',
 	('statperc',True) : 'nvcc ./src/GPU/static-percolation-update.cu -arch=sm_70 -std=c++11 -Xcompiler -fopenmp -O3 -o ./exec/GPU/spu',
 	('dynedge',True) : 'nvcc ./src/GPU/dynamic-edge-update.cu -arch=sm_70 -std=c++11 -Xcompiler -fopenmp -O3 -o ./exec/GPU/deu',

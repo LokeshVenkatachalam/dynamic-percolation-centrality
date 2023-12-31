@@ -47,8 +47,8 @@ numthread = args.numthread
 if algo not in ['dynperc', 'statperc', 'dynedge', 'statedge']:
 	exit('Error: Invalid algorithm.')
 
-if batch not in ['1', '10', '20', '40', '50', '100']:
-	exit('Error: Please try among following batch size - 1, 10, 20, 40, 50 or 100.')
+if batch not in ['1', '10', '25', '40', '50', '100']:
+	exit('Error: Please try among following batch size - 1, 10, 25, 40, 50 or 100.')
 
 if not isfile("./datasets/"+dataset+".in"):
 	exit('Error: Dataset not found.')

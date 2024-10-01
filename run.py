@@ -47,8 +47,8 @@ numthread = args.numthread
 if algo not in ['dynperc', 'statperc', 'dynedge', 'statedge']:
 	exit('Error: Invalid algorithm.')
 
-if batch not in ['1', '10', '25', '40', '50', '100']:
-	exit('Error: Please try among following batch size - 1, 10, 25, 40, 50 or 100.')
+if batch not in ['1', '10', '25', '40', '50', '100','1000','5000','10000','100000']:
+	exit('Error: Please try among following batch size - 1, 10, 25, 40, 50 , 100. 1000,5000, 10000 or 100000')
 
 if not isfile("./datasets/"+dataset+".in"):
 	exit('Error: Dataset not found.')
@@ -100,4 +100,6 @@ if algo == "dynperc" or algo == "statperc":
 	run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/percolation-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
 if algo == "dynedge" or algo == "statedge":
 	run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/edge-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
+
+	# run("compute-sanitizer --tool memcheck " + exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/edge-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
 # print("Successfully completed execution. Output can be found at ./output/{}".format(outfile))

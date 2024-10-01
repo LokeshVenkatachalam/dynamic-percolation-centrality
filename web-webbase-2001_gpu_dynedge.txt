@@ -1,0 +1,17 @@
+9656066,141070
+9632036,155970
+9640094,160633
+9651385,GPUassert: an illegal memory access was encountered ./src/GPU/dynamic-edge-update.cu 810
+Traceback (most recent call last):
+  File "run.py", line 102, in <module>
+    run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/edge-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
+  File "/usr/lib64/python3.6/subprocess.py", line 438, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command './exec/GPU/deu ./datasets/web-webbase-2001.in ./queries/edge-update-queries/queries_5000/web-webbase-2001_queries ./output/p64_q5000_gpu_dynedge_web-webbase-2001.txt ['32']' returned non-zero exit status 188.
+9630125,GPUassert: an illegal memory access was encountered ./src/GPU/dynamic-edge-update.cu 810
+Traceback (most recent call last):
+  File "run.py", line 102, in <module>
+    run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/edge-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
+  File "/usr/lib64/python3.6/subprocess.py", line 438, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command './exec/GPU/deu ./datasets/web-webbase-2001.in ./queries/edge-update-queries/queries_100000/web-webbase-2001_queries ./output/p64_q100000_gpu_dynedge_web-webbase-2001.txt ['32']' returned non-zero exit status 188.

@@ -20,8 +20,8 @@ using namespace std;
 // compile : nvcc <file_name>.cu -arch=sm_70 -std=c++11 -Xcompiler -fopenmp -O3 -o computePC-dynamic-edgeUpdate
 
 #define NUM_THREADS 32
-#define NUM_BLOCKS 1024  // 4096 65535
-#define NUM_BATCH_MAX 16384
+#define NUM_BLOCKS 16384 // 1024  // 4096 65535
+// #define NUM_BATCH_MAX 16384
 
 const int BUFFER_SIZE = 5;
 
@@ -722,7 +722,7 @@ int main(int argc, char **argv)
 	cudaMalloc((void **)&dColumn, sizeof(int) * (CAP));
 	cudaMalloc((void **)&crr, sizeof(int) * (V + 2) * NUM_BLOCKS);
 	cudaMalloc((void **)&Queue, sizeof(int) * (V + 1) * NUM_BLOCKS);
-	cudaMalloc((void **)&Distance, sizeof(int) * (V + 1) * NUM_BATCH_MAX);
+	cudaMalloc((void **)&Distance, sizeof(int) * (V + 1) * NUM_BLOCKS); // NUM_BATCH_MAX);
 	cudaMalloc((void **)&Paths, sizeof(double) * (V + 1) * NUM_BLOCKS);
 	cudaMalloc((void **)&delta, sizeof(double) * (V + 1) * NUM_BLOCKS);
 	cudaMalloc((void **)&Parents, sizeof(node) * (E + 1 + V * BUFFER_SIZE) * NUM_BLOCKS);

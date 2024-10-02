@@ -1,8 +1,8 @@
-sh ./scripts/cpu\ scripts/PGPgiantcompo.sh
-sh ./scripts/cpu\ scripts/web-webbase-2001.sh
-sh ./scripts/cpu\ scripts/web-indochina-2004.sh
-sh ./scripts/cpu\ scripts/p2p-Gnutella25.sh
-sh ./scripts/cpu\ scripts/p2p-Gnutella30.sh
-sh ./scripts/cpu\ scripts/slashdot.sh
-sh ./scripts/cpu\ scripts/email-enron.sh
-sh ./scripts/cpu\ scripts/brightkite.sh
+bash ./scripts/cpu_scripts/PGPgiantcompo.sh
+bash ./scripts/cpu_scripts/web-webbase-2001.sh
+bash ./scripts/cpu_scripts/web-indochina-2004.sh
+bash ./scripts/cpu_scripts/p2p-Gnutella25.sh
+bash ./scripts/cpu_scripts/p2p-Gnutella30.sh
+bash ./scripts/cpu_scripts/slashdot.sh
+bash ./scripts/cpu_scripts/email-enron.sh
+bash ./scripts/cpu_scripts/brightkite.sh

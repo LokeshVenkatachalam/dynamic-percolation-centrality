@@ -1,17 +1,11 @@
-4088367,170903
-4056433,171537
-4043478,183824
-4047994,GPUassert: an illegal memory access was encountered ./src/GPU/dynamic-edge-update.cu 810
+4921857,108165
+4913897,117563
+4927578,116520
+4901212,132121
+4917828,GPUassert: an illegal memory access was encountered ./src/GPU/dynamic-edge-update.cu 810
 Traceback (most recent call last):
   File "run.py", line 102, in <module>
     run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/edge-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
-  File "/usr/lib64/python3.6/subprocess.py", line 438, in run
-    output=stdout, stderr=stderr)
-subprocess.CalledProcessError: Command './exec/GPU/deu ./datasets/PGPgiantcompo.in ./queries/edge-update-queries/queries_5000/PGPgiantcompo_queries ./output/p64_q5000_gpu_dynedge_PGPgiantcompo.txt ['32']' returned non-zero exit status 188.
-4048370,GPUassert: an illegal memory access was encountered ./src/GPU/dynamic-edge-update.cu 810
-Traceback (most recent call last):
-  File "run.py", line 102, in <module>
-    run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/edge-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
-  File "/usr/lib64/python3.6/subprocess.py", line 438, in run
-    output=stdout, stderr=stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 516, in run
+    raise CalledProcessError(retcode, process.args,
 subprocess.CalledProcessError: Command './exec/GPU/deu ./datasets/PGPgiantcompo.in ./queries/edge-update-queries/queries_100000/PGPgiantcompo_queries ./output/p64_q100000_gpu_dynedge_PGPgiantcompo.txt ['32']' returned non-zero exit status 188.

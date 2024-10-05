@@ -173,6 +173,9 @@ int main(int argc, char **argv)
 	ifstream fin(input);
 	ofstream fout(output);
 
+	cerr<<input<<",";
+
+
 	int V, E;
 
 	fin >> V >> E;
@@ -276,6 +279,8 @@ int main(int argc, char **argv)
 	int batch_size;
 	while (qin >> batch_size)
 	{
+		cerr<<batch_size<<",";
+		
 		int queries[2 * batch_size];
 		for (int i = 1; i <= batch_size; ++i)
 		{

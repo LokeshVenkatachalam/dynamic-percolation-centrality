@@ -28,12 +28,15 @@ parser.add_argument('-o', '--outfile', dest='outfile',
                     default=['out.txt'], nargs=1,
                     help='Output file name')
 
-parser.add_argument('-g', '--gpu', dest='gpuflag', action='store_true',
+parser.add_argument('-g', '--gpu', dest='gpuflag', action='store_true', default=False,
                     help='Run experiment of GPU (default: multicore CPU)')
 
 parser.add_argument('-r', '--recompile', dest='compileflag', action='store_true',
                     help='Recompile executables')
 
+#add an argument to take GPU device id
+parser.add_argument('--gpuNo', dest='gpuNo', default=['0'], nargs=1,
+					help='GPU device id')
 
 args = parser.parse_args()
 algo = args.algo[0]
@@ -43,6 +46,15 @@ outfile = args.outfile[0]
 gpuflag = args.gpuflag
 compileflag = args.compileflag
 numthread = args.numthread
+gpu_device = ""
+
+if gpuflag:
+	gpuNo = args.gpuNo[0]
+	if int(gpuNo) == 0:
+		gpu_device = ""
+	else:
+		gpu_device = "CUDA_VISIBLE_DEVICES="+gpuNo+" "
+	# run("export CUDA_VISIBLE_DEVICES="+gpuNo, shell=True, check=True)
 
 if algo not in ['dynperc', 'statperc', 'dynedge', 'statedge']:
 	exit('Error: Invalid algorithm.')
@@ -65,14 +77,14 @@ command_map = {
 }
 
 exec_map = {
-	('dynperc',False) : './exec/CPU/dpu',
-	('statperc',False) : './exec/CPU/spu',
-	('dynedge',False) : './exec/CPU/deu',
-	('statedge',False) : './exec/CPU/seu',
-	('dynperc',True) : './exec/GPU/dpu',
-	('statperc',True) : './exec/GPU/spu',
-	('dynedge',True) : './exec/GPU/deu',
-	('statedge',True) : './exec/GPU/seu'
+	('dynperc',False) 	: './exec/CPU/dpu',
+	('statperc',False) 	: './exec/CPU/spu',
+	('dynedge',False) 	: './exec/CPU/deu',
+	('statedge',False) 	: './exec/CPU/seu',
+	('dynperc',True) 	: 	gpu_device + 	'./exec/GPU/dpu',
+	('statperc',True) 	:	gpu_device +  	'./exec/GPU/spu',
+	('dynedge',True) 	: 	gpu_device + 	'./exec/GPU/deu',
+	('statedge',True) 	:	gpu_device +  	'./exec/GPU/seu'
 }
 
 if not exists('./exec'):

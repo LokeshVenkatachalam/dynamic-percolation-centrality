@@ -586,6 +586,9 @@ int main(int argc, char **argv)
 	ifstream fin(input);
 	ofstream fout(output);
 
+	cerr<<input<<",";
+	
+
 	fin >> n >> m;
 	vertices = n;
 	for (int i = 0; i <= n; ++i)
@@ -767,6 +770,8 @@ int main(int argc, char **argv)
 	int batch_size;
 	while (qin >> batch_size)
 	{
+		cerr<<batch_size<<",";
+
 		int queries[2 * batch_size];
 		for (int i = 1; i <= batch_size; ++i)
 		{
@@ -804,62 +809,105 @@ int main(int argc, char **argv)
 
 		gpuErrchk(cudaPeekAtLastError());
 
-		check_affected<<<batch_size, NUM_THREADS, 32>>>(V, E, dColumn, dRow, Distance, Queue, dQueries, dAffected);
+		auto t11 = std::chrono::high_resolution_clock::now();
 
+			check_affected<<<batch_size, NUM_THREADS, 32>>>(V, E, dColumn, dRow, Distance, Queue, dQueries, dAffected);
+			cudaDeviceSynchronize();
+			gpuErrchk(cudaPeekAtLastError());
+		
+		auto t12 = std::chrono::high_resolution_clock::now();
+		auto time_1 = std::chrono::duration_cast<std::chrono::microseconds>(t12 - t11).count();
+
+		
 		cudaDeviceSynchronize();
-		gpuErrchk(cudaPeekAtLastError());
-		cudaDeviceSynchronize();
 
-		int *affected = new int[V + 1];
-		cudaMemcpy(affected, dAffected, sizeof(int) * (V + 1), cudaMemcpyDeviceToHost);
+		auto t13 = std::chrono::high_resolution_clock::now();
 
-		int affected_nodes = 0;
-		for (int i = 1; i <= V; ++i)
-			if (affected[i])
-				affected_nodes++;
+			int *affected = new int[V + 1];
+			cudaMemcpy(affected, dAffected, sizeof(int) * (V + 1), cudaMemcpyDeviceToHost);
 
-		int k = 0;
-		int batch[affected_nodes];
-		for (int i = 1; i <= V; ++i)
-			if (affected[i])
-				batch[k++] = i;
+		auto t14 = std::chrono::high_resolution_clock::now();
+		auto time_2 = std::chrono::duration_cast<std::chrono::microseconds>(t14 - t13).count();
 
-		cudaMalloc((void **)&dQueries, sizeof(int) * (affected_nodes));
+		
+		auto t15 = std::chrono::high_resolution_clock::now();
 
-		cudaMemcpy(dQueries, batch, sizeof(int) * (affected_nodes), cudaMemcpyHostToDevice);
-		gpuErrchk(cudaPeekAtLastError());
+			int affected_nodes = 0;
+			for (int i = 1; i <= V; ++i)
+				if (affected[i])
+					affected_nodes++;
 
-		update_brandes<<<NUM_BLOCKS, NUM_THREADS, 32>>>(V, E, dColumn, dRow, Distance, Queue, Paths, delta,
+			int k = 0;
+			int batch[affected_nodes];
+			for (int i = 1; i <= V; ++i)
+				if (affected[i])
+					batch[k++] = i;
+		
+		auto t16 = std::chrono::high_resolution_clock::now();
+		auto time_3 = std::chrono::duration_cast<std::chrono::microseconds>(t16 - t15).count();
+
+		auto t17 = std::chrono::high_resolution_clock::now();
+
+			cudaMalloc((void **)&dQueries, sizeof(int) * (affected_nodes));
+			cudaMemcpy(dQueries, batch, sizeof(int) * (affected_nodes), cudaMemcpyHostToDevice);
+			gpuErrchk(cudaPeekAtLastError());
+
+		auto t18 = std::chrono::high_resolution_clock::now();
+		auto time_4 = std::chrono::duration_cast<std::chrono::microseconds>(t18 - t17).count();
+
+		
+		auto t21 = std::chrono::high_resolution_clock::now();
+
+			update_brandes<<<NUM_BLOCKS, NUM_THREADS, 32>>>(V, E, dColumn, dRow, Distance, Queue, Paths, delta,
 														Parents, dCentrality, crr, perc_state, reach_suf, starters, affected_nodes, dQueries, -1.0);
 
-		cudaDeviceSynchronize();
-		gpuErrchk(cudaPeekAtLastError());
-		cudaDeviceSynchronize();
+			cudaDeviceSynchronize();
+			gpuErrchk(cudaPeekAtLastError());
+			cudaDeviceSynchronize();
 
-		for (int i = 1; i <= batch_size; ++i)
-		{
-			int u, v;
-			u = queries[2 * i - 2];
-			v = queries[2 * i - 1];
-			int sz_u = tmp_g[u].size();
-			int sz_v = tmp_g[v].size();
-			hColumn[hRow[u] + sz_u] = v;
-			hColumn[hRow[v] + sz_v] = u;
-			tmp_g[u].push_back(v);
-			tmp_g[v].push_back(u);
-		}
+		auto t22 = std::chrono::high_resolution_clock::now();
+		auto time_5 = std::chrono::duration_cast<std::chrono::microseconds>(t22 - t21).count();
 
-		E += batch_size;
-		cudaMemcpy(dColumn, hColumn, sizeof(int) * (CAP), cudaMemcpyHostToDevice);
+		
+		auto t23 = std::chrono::high_resolution_clock::now();
 
-		gpuErrchk(cudaPeekAtLastError());
+			for (int i = 1; i <= batch_size; ++i)
+			{
+				int u, v;
+				u = queries[2 * i - 2];
+				v = queries[2 * i - 1];
+				int sz_u = tmp_g[u].size();
+				int sz_v = tmp_g[v].size();
+				hColumn[hRow[u] + sz_u] = v;
+				hColumn[hRow[v] + sz_v] = u;
+				tmp_g[u].push_back(v);
+				tmp_g[v].push_back(u);
+			}
 
-		update_brandes<<<NUM_BLOCKS, NUM_THREADS, 32>>>(V, E, dColumn, dRow, Distance, Queue, Paths, delta,
-														Parents, dCentrality, crr, perc_state, reach_suf, starters, affected_nodes, dQueries, 1.0);
+			E += batch_size;
 
-		cudaDeviceSynchronize();
-		gpuErrchk(cudaPeekAtLastError());
-		cudaDeviceSynchronize();
+		auto t24 = std::chrono::high_resolution_clock::now();
+		auto time_6 = std::chrono::duration_cast<std::chrono::microseconds>(t24 - t23).count();
+
+		auto t25 = std::chrono::high_resolution_clock::now();
+
+			cudaMemcpy(dColumn, hColumn, sizeof(int) * (CAP), cudaMemcpyHostToDevice);
+			gpuErrchk(cudaPeekAtLastError());
+
+		auto t26 = std::chrono::high_resolution_clock::now();
+		auto time_7 = std::chrono::duration_cast<std::chrono::microseconds>(t26 - t25).count();
+
+		auto t27 = std::chrono::high_resolution_clock::now();
+
+			update_brandes<<<NUM_BLOCKS, NUM_THREADS, 32>>>(V, E, dColumn, dRow, Distance, Queue, Paths, delta,
+															Parents, dCentrality, crr, perc_state, reach_suf, starters, affected_nodes, dQueries, 1.0);
+
+			cudaDeviceSynchronize();
+			gpuErrchk(cudaPeekAtLastError());
+			cudaDeviceSynchronize();
+
+		auto t28 = std::chrono::high_resolution_clock::now();
+		auto time_8 = std::chrono::duration_cast<std::chrono::microseconds>(t28 - t27).count();
 
 		auto t4 = std::chrono::high_resolution_clock::now();
 		duration_dynamic += std::chrono::duration_cast<std::chrono::microseconds>(t4 - t3).count();
@@ -874,7 +922,11 @@ int main(int argc, char **argv)
 			fout << global_pc[i] << " ";
 		}
 		fout << "\n";
+		cerr << time_1 << "," << time_2 << "," << time_3 << "," << time_4 << ",";
+		cerr << time_5 << "," << time_6 << "," << time_7 << "," << time_8 << ",";
 	}
+
+	
 	cerr << duration_dynamic << endl;
 
 	// cerr << "Total time for updates : " << duration_dynamic << " mu.s." << endl;

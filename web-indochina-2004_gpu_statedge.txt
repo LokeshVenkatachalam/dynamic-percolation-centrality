@@ -1,0 +1,4 @@
+./datasets/web-indochina-2004.in,390800,10,148720
+./datasets/web-indochina-2004.in,364309,100,147491
+./datasets/web-indochina-2004.in,400513,1000,179381
+./datasets/web-indochina-2004.in,362569,5000,174254

@@ -134,6 +134,9 @@ int main(int argc, char **argv)
 	ifstream fin(input);
 	ofstream fout(output);
 
+	cerr<<input<<",";
+	cerr<<numthreads<<",";
+
 	fin >> N >> M;
 	int u, v;
 	adj.resize(N + 1);
@@ -193,7 +196,9 @@ int main(int argc, char **argv)
 	ifstream qin(queries);
 	int batch_size;
 	while (qin >> batch_size)
-	{
+	{	
+		cerr<<batch_size<<",";
+
 		query_node.resize(1);
 		int u, v;
 		vector<pair<int, int>> query_edge;

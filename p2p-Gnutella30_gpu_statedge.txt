@@ -1,0 +1,4 @@
+./datasets/p2p-Gnutella30.in,3336889,10,3083893
+./datasets/p2p-Gnutella30.in,3301370,100,3085278
+./datasets/p2p-Gnutella30.in,3313588,1000,3099127
+./datasets/p2p-Gnutella30.in,3309091,5000,3175714

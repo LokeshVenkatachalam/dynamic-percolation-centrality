@@ -404,6 +404,10 @@ int main(int argc, char **argv)
 	numthreads = atoi(argv[4]);
 
 	omp_set_num_threads(numthreads);
+
+	cerr<<input<<",";
+	cerr<<numthreads<<",";
+
 	ifstream fin(input);
 	ofstream fout(output);
 
@@ -507,6 +511,8 @@ int main(int argc, char **argv)
 	int batch_size;
 	while (qin >> batch_size)
 	{
+		cerr<<batch_size<<",";
+
 		query_node.resize(1);
 		int u, v;
 		vector<pair<int, int>> query_edge;
@@ -540,35 +546,66 @@ int main(int argc, char **argv)
 
 		auto t3 = std::chrono::high_resolution_clock::now();
 
-		vector<int> affected(V + 1);
-		get_affected_vertices(tmp_g, query_edge, affected);
-		for (int i = 1; i <= V; i++)
-		{
-			if (affected[i])
-			{
-				query_node.push_back(i);
-				// cerr<<i << " is affected"<<endl;
-			}
-		}
-		batch_size = (int)query_node.size() - 1;
-		// cerr<<"# affected nodes = "<<batch_size<<endl;
+		auto t11 = std::chrono::high_resolution_clock::now();
 
-		ptr = &pCentrality[0];
+			vector<int> affected(V + 1);
+			get_affected_vertices(tmp_g, query_edge, affected);
+
+		auto t12 = std::chrono::high_resolution_clock::now();
+		auto time_1 = std::chrono::duration_cast<std::chrono::microseconds>(t12 - t11).count();
+
+
+		auto t13 = std::chrono::high_resolution_clock::now();
+
+			for (int i = 1; i <= V; i++)
+			{
+				if (affected[i])
+				{
+					query_node.push_back(i);
+					// cerr<<i << " is affected"<<endl;
+				}
+			}
+			batch_size = (int)query_node.size() - 1;
+			// cerr<<"# affected nodes = "<<batch_size<<endl;
+
+		auto t14 = std::chrono::high_resolution_clock::now();
+		auto time_2 = std::chrono::duration_cast<std::chrono::microseconds>(t14 - t13).count();
+
+
+		auto t15 = std::chrono::high_resolution_clock::now();
+
+			ptr = &pCentrality[0];
 #pragma omp parallel for reduction(+ : ptr[ : V + 1])
-		for (int i = 1; i <= batch_size; ++i)
-		{
-			bcc_brandes(query_node[i], x, tmp_g, reach, ptr, -1.0);
-		}
-		for (auto &e : query_edge)
-		{
-			tmp_g[e.first].push_back(e.second);
-			tmp_g[e.second].push_back(e.first);
-		}
+			for (int i = 1; i <= batch_size; ++i)
+			{
+				bcc_brandes(query_node[i], x, tmp_g, reach, ptr, -1.0);
+			}
+
+		auto t16 = std::chrono::high_resolution_clock::now();
+		auto time_3 = std::chrono::duration_cast<std::chrono::microseconds>(t16 - t15).count();
+
+		auto t17 = std::chrono::high_resolution_clock::now();
+
+			for (auto &e : query_edge)
+			{
+				tmp_g[e.first].push_back(e.second);
+				tmp_g[e.second].push_back(e.first);
+			}
+
+		auto t18 = std::chrono::high_resolution_clock::now();
+		auto time_4 = std::chrono::duration_cast<std::chrono::microseconds>(t18 - t17).count();
+
+		auto t21 = std::chrono::high_resolution_clock::now();
+
 #pragma omp parallel for reduction(+ : ptr[ : V + 1])
-		for (int i = 1; i <= batch_size; ++i)
-		{
-			bcc_brandes(query_node[i], x, tmp_g, reach, ptr, 1.0);
-		}
+			for (int i = 1; i <= batch_size; ++i)
+			{
+				bcc_brandes(query_node[i], x, tmp_g, reach, ptr, 1.0);
+			}
+
+		auto t22 = std::chrono::high_resolution_clock::now();
+		auto time_5 = std::chrono::duration_cast<std::chrono::microseconds>(t22 - t21).count();
+		
 		auto t4 = std::chrono::high_resolution_clock::now();
 		duration_dynamic += std::chrono::duration_cast<std::chrono::microseconds>(t4 - t3).count();
 		fill(ac.begin(), ac.end(), 0);
@@ -580,6 +617,8 @@ int main(int argc, char **argv)
 			fout << ac[i] << " ";
 		}
 		fout << "\n";
+		cerr << time_1 << "," << time_2 << "," << time_3 << "," << time_4 << ",";
+		cerr << time_5 << ",";
 	}
 	cerr << duration_dynamic << endl;
 

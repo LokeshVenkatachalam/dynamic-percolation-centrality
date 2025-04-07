@@ -62,8 +62,11 @@ void brandes(int src, vector<double> x, vector<vector<int>> &adj, double *ptr)
 	}
 }
 
-void bcc_brandes(int src, vector<double> x, vector<vector<int>> &adj, vector<vector<double>> &reach, double *ptr, double factor)
+void bcc_brandes(int src, vector<double>& x, vector<vector<int>> &adj, vector<vector<double>> &reach, double *ptr, double factor)
 {
+	// // using Clock = std::chrono::high_resolution_clock;
+    // // auto start_total = Clock::now();
+
 	int N = (int)x.size() - 1;
 	queue<int> q;
 	stack<int> st;
@@ -76,6 +79,7 @@ void bcc_brandes(int src, vector<double> x, vector<vector<int>> &adj, vector<vec
 	dist[u] = 0;
 	sig[u] = 1.0;
 
+	// auto start_bfs = Clock::now();
 	while (!q.empty())
 	{
 		u = q.front();
@@ -84,6 +88,7 @@ void bcc_brandes(int src, vector<double> x, vector<vector<int>> &adj, vector<vec
 
 		if (src != u)
 		{
+			// auto start_bs1 = Clock::now();
 			for (int i = 0; i < (int)(reach[u].size()) - 1; ++i)
 			{
 				double xi = reach[u][i] - reach[u][i + 1];
@@ -101,11 +106,22 @@ void bcc_brandes(int src, vector<double> x, vector<vector<int>> &adj, vector<vec
 						l = mid + 1;
 					else
 						r = mid - 1;
-				}
+				}	
 				delta[u] += reach[src][mid] - xi * (h - mid);
 			}
+			// auto end_bs1 = Clock::now();
+			
+			// BFS loop - binary search 1: 
+            // cerr << std::chrono::duration_cast<std::chrono::microseconds>(end_bs1 - start_bs1).count() << ", ";
+
+			// auto start_bs2 = Clock::now();
 			for (int i = (int)(reach[src].size()) - 2; i >= 0 && reach[src][i] - reach[src][i + 1] >= x[u]; i--)
 				delta[u] += x[u] - reach[src][i] + reach[src][i + 1];
+			// auto end_bs2 = Clock::now();
+
+			// BFS loop - binary search 2: 
+			// cerr << std::chrono::duration_cast<std::chrono::microseconds>(end_bs2 - start_bs2).count() << ", ";
+
 		}
 
 		for (auto v : adj[u])
@@ -122,7 +138,12 @@ void bcc_brandes(int src, vector<double> x, vector<vector<int>> &adj, vector<vec
 			}
 		}
 	}
+	// auto end_bfs = Clock::now();
+	
+	// BFS loop time: 
+    // cerr << std::chrono::duration_cast<std::chrono::microseconds>(end_bfs - start_bfs).count() << ", ";
 
+    // auto start_stack = Clock::now();
 	while (!(st.empty()))
 	{
 		u = st.top();
@@ -131,6 +152,8 @@ void bcc_brandes(int src, vector<double> x, vector<vector<int>> &adj, vector<vec
 		{
 			double g;
 			g = sig[p] / sig[u];
+
+			// auto start_bs3 = Clock::now();
 			double xi = x[u];
 			int l = 0;
 			int s = l;
@@ -147,6 +170,11 @@ void bcc_brandes(int src, vector<double> x, vector<vector<int>> &adj, vector<vec
 				else
 					r = mid - 1;
 			}
+			// auto end_bs3 = Clock::now();
+			
+			// Stack loop - binary search: 
+            // cerr << std::chrono::duration_cast<std::chrono::microseconds>(end_bs3 - start_bs3).count() << ", ";
+
 			g = g * (reach[src][mid] - xi * (h - mid) + delta[u]);
 			delta[p] = delta[p] + g;
 		}
@@ -157,6 +185,127 @@ void bcc_brandes(int src, vector<double> x, vector<vector<int>> &adj, vector<vec
 		sig[u] = 0;
 		dist[u] = -1;
 	}
+
+	// Stack loop time:
+	// auto end_stack = Clock::now();
+    // cerr << std::chrono::duration_cast<std::chrono::microseconds>(end_stack - start_stack).count() << ", ";
+
+	// Total bcc_brandes time: 
+	// auto end_total = Clock::now();
+	// cerr << std::chrono::duration_cast<std::chrono::microseconds>(end_total - start_total).count() << ", ";
+
+
+	// int N = static_cast<int>(x.size()) - 1;
+    // queue<int> q;
+    // stack<int> st;
+    // vector<int> dist(N + 1, -1);
+    // vector<double> sig(N + 1, 0.0), delta(N + 1, 0.0);
+    // vector<std::vector<int>> pr(N + 1);
+
+    // // Precompute values from reach[src] (which remains constant)
+    // const vector<double>& rsrc = reach[src];
+    // int rs = static_cast<int>(rsrc.size());
+    // int h = rs - 1;
+    // // Build an array of successive differences: diff_src[i] = rsrc[i] - rsrc[i+1]
+    // vector<double> diff_src(rs - 1);
+    // for (int i = 0; i < rs - 1; ++i)
+    //     diff_src[i] = rsrc[i] - rsrc[i + 1];
+
+    // // Precompute a prefix sum for diff_src so that we can quickly sum x[u]-diff
+    // vector<double> psum(diff_src.size() + 1, 0.0);
+    // for (size_t i = 0; i < diff_src.size(); i++)
+    //     psum[i + 1] = psum[i] + diff_src[i];
+
+    // // Helper lambda: find the first index j in diff_src where diff_src[j] >= val.
+    // // If none qualify, we return diff_src.size()-1 (mimicking the original code’s behavior).
+    // auto find_first_ge = [&](double val) -> int {
+    //     int l = 0, r = static_cast<int>(diff_src.size()) - 1;
+    //     int ans = r; // default if condition never holds
+    //     while(l <= r) {
+    //         int mid = l + (r - l) / 2;
+    //         if(diff_src[mid] >= val) {
+    //             ans = mid;
+    //             r = mid - 1;
+    //         } else {
+    //             l = mid + 1;
+    //         }
+    //     }
+    //     return ans;
+    // };
+
+    // // Helper lambda: count how many indices in diff_src satisfy diff_src[j] >= val.
+    // auto count_ge = [&](double val) -> int {
+    //     int lo = 0, hi = static_cast<int>(diff_src.size());
+    //     while(lo < hi) {
+    //         int mid = lo + (hi - lo) / 2;
+    //         if(diff_src[mid] >= val)
+    //             lo = mid + 1;
+    //         else
+    //             hi = mid;
+    //     }
+    //     return lo;
+    // };
+
+    // // --- BFS Phase ---
+    // int u = src;
+    // q.push(u);
+    // dist[u] = 0;
+    // sig[u] = 1.0;
+    // while (!q.empty())
+    // {
+    //     u = q.front();
+    //     q.pop();
+    //     st.push(u);
+
+    //     if (u != src) {
+    //         const vector<double>& ru = reach[u];
+    //         int ru_size = static_cast<int>(ru.size());
+    //         // For each adjacent pair in reach[u], do a binary search on diff_src:
+    //         for (int i = 0; i < ru_size - 1; ++i) {
+    //             double xi = ru[i] - ru[i + 1];
+    //             int j = find_first_ge(xi);
+    //             // Add the computed contribution.
+    //             delta[u] += rsrc[j] - xi * (h - j);
+    //         }
+    //         // Instead of iterating over rsrc in reverse, count indices where the difference exceeds x[u]
+    //         int cnt = count_ge(x[u]);
+    //         delta[u] += x[u] * cnt - psum[cnt];
+    //     }
+
+    //     // Standard BFS update of distances and shortest-path counts.
+    //     for (int v : adj[u]) {
+    //         if (dist[v] < 0) {
+    //             dist[v] = dist[u] + 1;
+    //             q.push(v);
+    //         }
+    //         if (dist[v] == dist[u] + 1) {
+    //             pr[v].push_back(u);
+    //             sig[v] += sig[u];
+    //         }
+    //     }
+    // }
+
+    // // --- Dependency Accumulation Phase (Stack Loop) ---
+    // while (!st.empty()) {
+    //     u = st.top();
+    //     st.pop();
+    //     for (int p : pr[u]) {
+    //         double g = sig[p] / sig[u];
+    //         int j = find_first_ge(x[u]);
+    //         // Use the same contribution expression as above, adding in delta[u].
+    //         g *= (rsrc[j] - x[u] * (h - j) + delta[u]);
+    //         delta[p] += g;
+    //     }
+    //     if (u != src)
+    //         ptr[u] += delta[u] * factor;
+    //     // Reset temporary storage.
+    //     pr[u].clear();
+    //     delta[u] = 0;
+    //     sig[u] = 0;
+    //     dist[u] = -1;
+    // }
+
+	
 }
 
 int n, m;
@@ -472,11 +621,35 @@ int main(int argc, char **argv)
 	tmp_g.resize(vertices + 1);
 	int V = vertices;
 
+	// Adding new vector for minimising synchronization
+	// vector<double> global_pc(V + 1, 0.0);
+
 	vector<double> pCentrality(V + 1, 0.0), ac(V + 1, 0.0);
 	double *ptr = &pCentrality[0];
-#pragma omp parallel for reduction(+ : ptr[ : V + 1])
+
+// #pragma omp parallel for reduction(+ : ptr[ : V + 1])
+#pragma omp parallel
+{
+	// Vector to allocate local accumulator to each thread
+    vector<double> local_pc(V + 1, 0.0);
+	
+	#pragma omp for
 	for (int i = 1; i <= V; ++i)
-		bcc_brandes(i, x, tmp_g, reach, ptr, 1.0);
+		bcc_brandes(i, x, tmp_g, reach, &local_pc[0], 1.0);
+
+	#pragma omp critical
+	{
+		for (int i = 1; i <= V; ++i)
+        pCentrality[i] += local_pc[i];
+	}
+	
+}
+
+// #pragma omp parallel for schedule(dynamic)
+// 	for(int i = 1; i <= V; i++){
+// 		brandes(i, x, tmp_g, ptr);
+// 	}
+
 	for (int i = 1; i <= V; ++i)
 		ac[rep[i]] += pCentrality[i];
 	for (int i = 1; i <= n; ++i)
@@ -574,12 +747,27 @@ int main(int argc, char **argv)
 
 		auto t15 = std::chrono::high_resolution_clock::now();
 
-			ptr = &pCentrality[0];
-#pragma omp parallel for reduction(+ : ptr[ : V + 1])
-			for (int i = 1; i <= batch_size; ++i)
-			{
-				bcc_brandes(query_node[i], x, tmp_g, reach, ptr, -1.0);
-			}
+		ptr = &pCentrality[0];
+
+// #pragma omp parallel for reduction(+ : ptr[ : V + 1])
+#pragma omp parallel
+{
+		// Vector to allocate local accumulator to each thread
+		vector<double> local_pc(V + 1, 0.0);
+		
+		#pragma omp for
+		for (int i = 1; i <= batch_size; ++i)
+		{
+			bcc_brandes(query_node[i], x, tmp_g, reach, &local_pc[0], -1.0);
+		}
+		
+		#pragma omp critical
+		{
+			for (int i = 1; i <= V; ++i)
+			pCentrality[i] += local_pc[i];
+		}
+	
+}
 
 		auto t16 = std::chrono::high_resolution_clock::now();
 		auto time_3 = std::chrono::duration_cast<std::chrono::microseconds>(t16 - t15).count();
@@ -597,11 +785,26 @@ int main(int argc, char **argv)
 
 		auto t21 = std::chrono::high_resolution_clock::now();
 
-#pragma omp parallel for reduction(+ : ptr[ : V + 1])
-			for (int i = 1; i <= batch_size; ++i)
-			{
-				bcc_brandes(query_node[i], x, tmp_g, reach, ptr, 1.0);
-			}
+// #pragma omp parallel for reduction(+ : ptr[ : V + 1])
+
+#pragma omp parallel
+{
+		// Vector to allocate local accumulator to each thread
+		vector<double> local_pc(V + 1, 0.0);
+		
+		#pragma omp for
+		for (int i = 1; i <= batch_size; ++i)
+		{
+			bcc_brandes(query_node[i], x, tmp_g, reach, &local_pc[0], 1.0);
+		}
+	
+		#pragma omp critical
+		{
+			for (int i = 1; i <= V; ++i)
+			pCentrality[i] += local_pc[i];
+		}
+	
+}
 
 		auto t22 = std::chrono::high_resolution_clock::now();
 		auto time_5 = std::chrono::duration_cast<std::chrono::microseconds>(t22 - t21).count();

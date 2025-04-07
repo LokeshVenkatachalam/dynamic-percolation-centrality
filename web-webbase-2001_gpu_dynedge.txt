@@ -2,3 +2,31 @@
 ./datasets/web-webbase-2001.in,11368014,100,2106,53,38,16,60121,25,55,60077,122524
 ./datasets/web-webbase-2001.in,11363792,1000,4797,61,38,13,92333,150,56,67388,164875
 ./datasets/web-webbase-2001.in,11405721,5000,8344,60,42,13,62427,424,53,67282,138688
+./datasets/web-webbase-2001.in,GPUassert: no CUDA-capable device is detected ./src/GPU/dynamic-edge-update.cu 742
+Traceback (most recent call last):
+  File "/DATA/prajjwal/dynamic-percolation-centrality/run.py", line 114, in <module>
+    run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/edge-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'CUDA_VISIBLE_DEVICES=2 ./exec/GPU/deu ./datasets/web-webbase-2001.in ./queries/edge-update-queries/queries_10/web-webbase-2001_queries ./output/p64_q10_gpu_dynedge_web-webbase-2001.txt ['32']' returned non-zero exit status 100.
+./datasets/web-webbase-2001.in,GPUassert: no CUDA-capable device is detected ./src/GPU/dynamic-edge-update.cu 742
+Traceback (most recent call last):
+  File "/DATA/prajjwal/dynamic-percolation-centrality/run.py", line 114, in <module>
+    run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/edge-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'CUDA_VISIBLE_DEVICES=2 ./exec/GPU/deu ./datasets/web-webbase-2001.in ./queries/edge-update-queries/queries_100/web-webbase-2001_queries ./output/p64_q100_gpu_dynedge_web-webbase-2001.txt ['32']' returned non-zero exit status 100.
+./datasets/web-webbase-2001.in,GPUassert: no CUDA-capable device is detected ./src/GPU/dynamic-edge-update.cu 742
+Traceback (most recent call last):
+  File "/DATA/prajjwal/dynamic-percolation-centrality/run.py", line 114, in <module>
+    run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/edge-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'CUDA_VISIBLE_DEVICES=2 ./exec/GPU/deu ./datasets/web-webbase-2001.in ./queries/edge-update-queries/queries_1000/web-webbase-2001_queries ./output/p64_q1000_gpu_dynedge_web-webbase-2001.txt ['32']' returned non-zero exit status 100.
+./datasets/web-webbase-2001.in,GPUassert: no CUDA-capable device is detected ./src/GPU/dynamic-edge-update.cu 742
+Traceback (most recent call last):
+  File "/DATA/prajjwal/dynamic-percolation-centrality/run.py", line 114, in <module>
+    run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/edge-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'CUDA_VISIBLE_DEVICES=2 ./exec/GPU/deu ./datasets/web-webbase-2001.in ./queries/edge-update-queries/queries_5000/web-webbase-2001_queries ./output/p64_q5000_gpu_dynedge_web-webbase-2001.txt ['32']' returned non-zero exit status 100.

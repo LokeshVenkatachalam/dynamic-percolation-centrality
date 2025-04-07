@@ -44,7 +44,7 @@ void brandes(int src, vector<double> &x, vector<vector<int>> &adj, double *ptr, 
 			if (dist[v] == dist[u] + 1)
 			{
 				pr[v].push_back(u);
-				sig[v] = sig[u] + sig[v];
+				sig[v] += sig[u];
 			}
 		}
 	}
@@ -56,7 +56,8 @@ void brandes(int src, vector<double> &x, vector<vector<int>> &adj, double *ptr, 
 		for (auto p : pr[u])
 		{
 			double g = sig[p] / sig[u];
-			g = g * (max(x[src] - x[u], (double)(0.0)) + delta[u]);
+			// changed from max(x[src]-x[u], 0.0) to this
+			g = g * (x[src] - x[u] + delta[u]);
 			delta[p] = delta[p] + g;
 		}
 		if (u != src)
@@ -96,27 +97,27 @@ void get_dist_array(int src, vector<vector<int>> &adj, vector<int> &dist)
 	}
 }
 
-void get_affected_vertices(vector<vector<int>> &adj, vector<pair<int, int>> &edge_batch, vector<int> &affected)
-{
-	int *mtr = &affected[0];
-#pragma omp parallel for reduction(+ : mtr[ : N + 1])
-	for (int j = 0; j < (int)edge_batch.size(); ++j)
-	{
-		vector<int> epDistance1(N + 1, -1), epDistance2(N + 1, -1);
-		auto e = edge_batch[j];
-		int u = e.first;
-		int v = e.second;
-		get_dist_array(u, adj, epDistance1);
-		get_dist_array(v, adj, epDistance2);
-		for (int i = 1; i <= N; i++)
-		{
-			if (epDistance1[i] != epDistance2[i])
-			{
-				mtr[i]++;
-			}
-		}
-	}
-}
+// void get_affected_vertices(vector<vector<int>> &adj, vector<pair<int, int>> &edge_batch, vector<int> &affected)
+// {
+// 	int *mtr = &affected[0];
+// #pragma omp parallel for reduction(+ : mtr[ : N + 1])
+// 	for (int j = 0; j < (int)edge_batch.size(); ++j)
+// 	{
+// 		vector<int> epDistance1(N + 1, -1), epDistance2(N + 1, -1);
+// 		auto e = edge_batch[j];
+// 		int u = e.first;
+// 		int v = e.second;
+// 		get_dist_array(u, adj, epDistance1);
+// 		get_dist_array(v, adj, epDistance2);
+// 		for (int i = 1; i <= N; i++)
+// 		{
+// 			if (epDistance1[i] != epDistance2[i])
+// 			{
+// 				mtr[i]++;
+// 			}
+// 		}
+// 	}
+// }
 
 int main(int argc, char **argv)
 {
@@ -163,7 +164,9 @@ int main(int argc, char **argv)
 
 	for (int i = 1; i <= N; ++i)
 		perc[i] = {x[i], i};
-	sort(perc.begin(), perc.end());
+
+	// Changed here to sort the array from 1, as it also uses the zeroeth element in between sorting
+	sort(perc.begin() + 1, perc.end());
 	double carry = 0, sum_x = 0;
 	for (int i = 1; i <= N; ++i)
 	{

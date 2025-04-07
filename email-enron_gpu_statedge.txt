@@ -2,3 +2,31 @@
 ./datasets/email-enron.in,2549041,100,2327446
 ./datasets/email-enron.in,2535345,1000,2359348
 ./datasets/email-enron.in,2564237,5000,2503195
+./datasets/email-enron.in,GPUassert: no CUDA-capable device is detected ./src/GPU/static-edge-update.cu 259
+Traceback (most recent call last):
+  File "/DATA/prajjwal/dynamic-percolation-centrality/run.py", line 114, in <module>
+    run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/edge-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'CUDA_VISIBLE_DEVICES=2 ./exec/GPU/seu ./datasets/email-enron.in ./queries/edge-update-queries/queries_10/email-enron_queries ./output/p64_q10_gpu_statedge_email-enron.txt ['32']' returned non-zero exit status 100.
+./datasets/email-enron.in,GPUassert: no CUDA-capable device is detected ./src/GPU/static-edge-update.cu 259
+Traceback (most recent call last):
+  File "/DATA/prajjwal/dynamic-percolation-centrality/run.py", line 114, in <module>
+    run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/edge-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'CUDA_VISIBLE_DEVICES=2 ./exec/GPU/seu ./datasets/email-enron.in ./queries/edge-update-queries/queries_100/email-enron_queries ./output/p64_q100_gpu_statedge_email-enron.txt ['32']' returned non-zero exit status 100.
+./datasets/email-enron.in,GPUassert: no CUDA-capable device is detected ./src/GPU/static-edge-update.cu 259
+Traceback (most recent call last):
+  File "/DATA/prajjwal/dynamic-percolation-centrality/run.py", line 114, in <module>
+    run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/edge-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'CUDA_VISIBLE_DEVICES=2 ./exec/GPU/seu ./datasets/email-enron.in ./queries/edge-update-queries/queries_1000/email-enron_queries ./output/p64_q1000_gpu_statedge_email-enron.txt ['32']' returned non-zero exit status 100.
+./datasets/email-enron.in,GPUassert: no CUDA-capable device is detected ./src/GPU/static-edge-update.cu 259
+Traceback (most recent call last):
+  File "/DATA/prajjwal/dynamic-percolation-centrality/run.py", line 114, in <module>
+    run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/edge-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'CUDA_VISIBLE_DEVICES=2 ./exec/GPU/seu ./datasets/email-enron.in ./queries/edge-update-queries/queries_5000/email-enron_queries ./output/p64_q5000_gpu_statedge_email-enron.txt ['32']' returned non-zero exit status 100.

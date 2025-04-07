@@ -14,20 +14,133 @@ vector<double> percolation, x, updated_x, contrib, global_pc;
 vector<pair<double, int>> perc;
 vector<double> test_percolation;
 
-void brandes(int src, vector<double> &x, vector<vector<int>> &adj, double *ptr, bool sub = false)
+void printProfileStats(const vector<vector<long long>> &profile1)
 {
+	// Assuming profile1 is indexed from 1 to N.
+	int N = profile1.size() - 1;
+	if (N < 1)
+		return;
+	int numCols = profile1[1].size();
+
+	vector<double> sum(numCols, 0.0);
+	vector<double> sumSq(numCols, 0.0);
+	vector<double> minVal(numCols, numeric_limits<double>::max());
+	vector<double> maxVal(numCols, numeric_limits<double>::lowest());
+
+	// For trend: we need the sums of row indices.
+	double sumI = 0;
+	double sumISq = 0;
+	for (int i = 1; i <= N; ++i)
+	{
+		sumI += i;
+		sumISq += i * i;
+		for (int j = 0; j < numCols; ++j)
+		{
+			double val = profile1[i][j];
+			sum[j] += val;
+			sumSq[j] += val * val;
+			if (val < minVal[j])
+				minVal[j] = val;
+			if (val > maxVal[j])
+				maxVal[j] = val;
+		}
+	}
+	// Set fixed format with four decimal places.
+	cout << fixed << setprecision(4);
+
+	// Process each column
+	for (int j = 0; j < numCols; ++j)
+	{
+		double avg = sum[j] / N;
+		double variance = (sumSq[j] / N) - (avg * avg);
+		// Calculate trend (slope) using least squares.
+		double sumXY = 0;
+		for (int i = 1; i <= N; ++i)
+		{
+			sumXY += i * profile1[i][j];
+		}
+		double slope = (N * sumXY - sumI * sum[j]) / (N * sumISq - sumI * sumI);
+
+		cout << "Column " << j << " stats:" << endl;
+		cout << "  Average : " << avg << endl;
+		cout << "  Variance: " << variance << endl;
+		cout << "  Sum : " << sum[j] << endl;
+		cout << "  Minimum : " << minVal[j] << endl;
+		cout << "  Maximum : " << maxVal[j] << endl;
+		cout << "  Trend (slope): " << slope << endl;
+		cout << "------------------------" << endl;
+	}
+}
+
+void printHistogramForColumn(const vector<vector<long long>> &profile, int colIndex, int numBins = 10)
+{
+	// Collect values from profile (assumes row 0 is unused).
+	vector<double> values;
+	for (size_t i = 1; i < profile.size(); ++i)
+	{
+		if (colIndex < profile[i].size())
+		{
+			values.push_back(profile[i][colIndex]);
+		}
+	}
+	if (values.empty())
+	{
+		cout << "No data in column " << colIndex << endl;
+		return;
+	}
+
+	// Determine min and max
+	double minVal = *min_element(values.begin(), values.end());
+	double maxVal = *max_element(values.begin(), values.end());
+
+	// Avoid zero range
+	if (minVal == maxVal)
+	{
+		cout << "All values are equal (" << minVal << ")." << endl;
+		return;
+	}
+
+	double range = maxVal - minVal;
+	double binSize = range / numBins;
+	vector<int> bins(numBins, 0);
+
+	// Count frequency into bins.
+	for (double v : values)
+	{
+		// Special case for the max value.
+		int bin = (v == maxVal) ? numBins - 1 : static_cast<int>((v - minVal) / binSize);
+		if (bin < 0)
+			bin = 0;
+		else if (bin >= numBins)
+			bin = numBins - 1;
+		bins[bin]++;
+	}
+
+	// Print histogram results.
+	cout << "Histogram for column " << colIndex << ":\n";
+	for (int i = 0; i < numBins; ++i)
+	{
+		double lower = minVal + i * binSize;
+		double upper = lower + binSize;
+		cout << "[" << fixed << setprecision(2) << lower << ", " << upper << "): " << bins[i] << endl;
+	}
+}
+void brandes(int src, vector<double> &x, vector<vector<int>> &adj, double *ptr, vector<vector<long long>> &profile, bool sub = false)
+{
+	auto p1 = std::chrono::high_resolution_clock::now();
 	int N = (int)x.size() - 1;
 	queue<int> q;
 	stack<int> st;
 	vector<int> dist(N + 1, -1);
 	vector<double> sig(N + 1, 0.0), delta(N + 1, 0.0);
 	vector<vector<int>> pr(N + 1);
+	auto p2 = std::chrono::high_resolution_clock::now();
 
 	int u = src;
 	q.push(u);
 	dist[u] = 0;
 	sig[u] = 1.0;
-
+	auto p3 = std::chrono::high_resolution_clock::now();
 	while (!q.empty())
 	{
 		u = q.front();
@@ -48,7 +161,7 @@ void brandes(int src, vector<double> &x, vector<vector<int>> &adj, double *ptr, 
 			}
 		}
 	}
-
+	auto p4 = std::chrono::high_resolution_clock::now();
 	while (!(st.empty()))
 	{
 		u = st.top();
@@ -76,6 +189,11 @@ void brandes(int src, vector<double> &x, vector<vector<int>> &adj, double *ptr, 
 		sig[u] = 0;
 		dist[u] = -1;
 	}
+	auto p5 = std::chrono::high_resolution_clock::now();
+	profile[src][0] = std::chrono::duration_cast<std::chrono::microseconds>(p2 - p1).count();
+	profile[src][1] = std::chrono::duration_cast<std::chrono::microseconds>(p3 - p2).count();
+	profile[src][2] = std::chrono::duration_cast<std::chrono::microseconds>(p4 - p3).count();
+	profile[src][3] = std::chrono::duration_cast<std::chrono::microseconds>(p5 - p4).count();
 }
 
 void get_dist_array(int src, vector<vector<int>> &adj, vector<int> &dist)
@@ -135,12 +253,15 @@ int main(int argc, char **argv)
 	ifstream fin(input);
 	ofstream fout(output);
 
-	cerr<<input<<",";
-	cerr<<numthreads<<",";
+	cerr << input << ",";
+	cerr << numthreads << ",";
 
 	fin >> N >> M;
 	int u, v;
 	adj.resize(N + 1);
+	vector<vector<long long>> profile1(N + 1, vector<long long>(5, 0));
+	vector<vector<long long>> profile2(N + 1, vector<long long>(5, 0));
+
 	x.push_back(0);
 	for (int i = 0; i < N; ++i)
 	{
@@ -184,7 +305,7 @@ int main(int argc, char **argv)
 	double *ptr = &percolation[0];
 #pragma omp parallel for reduction(+ : ptr[ : N + 1])
 	for (int i = 1; i <= N; ++i)
-		brandes(i, x, adj, ptr);
+		brandes(i, x, adj, ptr, profile1);
 	for (int i = 1; i <= N; ++i)
 		global_pc[i] = percolation[i] / (sum_x - contrib[i]);
 
@@ -199,8 +320,8 @@ int main(int argc, char **argv)
 	ifstream qin(queries);
 	int batch_size;
 	while (qin >> batch_size)
-	{	
-		cerr<<batch_size<<",";
+	{
+		cerr << batch_size << ",";
 
 		query_node.resize(1);
 		int u, v;
@@ -220,7 +341,7 @@ int main(int argc, char **argv)
 		ptr = &percolation[0];
 #pragma omp parallel for reduction(+ : ptr[ : N + 1])
 		for (int i = 1; i <= N; ++i)
-			brandes(i, x, adj, ptr);
+			brandes(i, x, adj, ptr, profile2);
 		auto t4 = std::chrono::high_resolution_clock::now();
 		duration_actual += std::chrono::duration_cast<std::chrono::microseconds>(t4 - t3).count();
 		for (int i = 1; i <= N; ++i)
@@ -231,6 +352,31 @@ int main(int argc, char **argv)
 
 	cerr << duration_actual << endl;
 
+	for (int i = 1; i <= N; ++i)
+		cerr << i << ","
+			 << profile1[i][0] << ","
+			 << profile1[i][1] << ","
+			 << profile1[i][2] << ","
+			 << profile1[i][3] << endl;
+
+	for (int i = 1; i <= N; ++i)
+		cerr << i << ","
+			 << profile2[i][0] << ","
+			 << profile2[i][1] << ","
+			 << profile2[i][2] << ","
+			 << profile2[i][3] << endl;
+
+	printProfileStats(profile1);
+	printHistogramForColumn(profile1, 0, 5);
+	printHistogramForColumn(profile1, 1, 5);
+	printHistogramForColumn(profile1, 2, 5);
+	printHistogramForColumn(profile1, 3, 5);
+
+	printProfileStats(profile2);
+	printHistogramForColumn(profile2, 0, 5);
+	printHistogramForColumn(profile2, 1, 5);
+	printHistogramForColumn(profile2, 2, 5);
+	printHistogramForColumn(profile2, 3, 5);
 	// 	fill(test_percolation.begin(), test_percolation.end(), 0);
 	// 	ptr = &test_percolation[0];
 	// #pragma omp parallel for reduction(+ : ptr[ : N + 1])

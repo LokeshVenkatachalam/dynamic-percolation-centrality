@@ -2,25 +2,39 @@
     "files.associations": {
         "iostream": "cpp",
         "charconv": "cpp",
+<<<<<<< Updated upstream
         "any": "cpp",
         "array": "cpp",
         "atomic": "cpp",
         "barrier": "cpp",
         "bit": "cpp",
+=======
+        "chrono": "cpp",
+        "array": "cpp",
+        "atomic": "cpp",
+>>>>>>> Stashed changes
         "*.tcc": "cpp",
         "bitset": "cpp",
         "cctype": "cpp",
         "cfenv": "cpp",
+<<<<<<< Updated upstream
         "chrono": "cpp",
+=======
+>>>>>>> Stashed changes
         "cinttypes": "cpp",
         "clocale": "cpp",
         "cmath": "cpp",
         "codecvt": "cpp",
+<<<<<<< Updated upstream
         "compare": "cpp",
         "complex": "cpp",
         "concepts": "cpp",
         "condition_variable": "cpp",
         "coroutine": "cpp",
+=======
+        "complex": "cpp",
+        "condition_variable": "cpp",
+>>>>>>> Stashed changes
         "csetjmp": "cpp",
         "csignal": "cpp",
         "cstdarg": "cpp",
@@ -36,17 +50,27 @@
         "deque": "cpp",
         "forward_list": "cpp",
         "list": "cpp",
+<<<<<<< Updated upstream
         "map": "cpp",
         "set": "cpp",
         "string": "cpp",
+=======
+>>>>>>> Stashed changes
         "unordered_map": "cpp",
         "unordered_set": "cpp",
         "vector": "cpp",
         "exception": "cpp",
+<<<<<<< Updated upstream
         "expected": "cpp",
         "algorithm": "cpp",
         "functional": "cpp",
         "iterator": "cpp",
+=======
+        "algorithm": "cpp",
+        "functional": "cpp",
+        "iterator": "cpp",
+        "map": "cpp",
+>>>>>>> Stashed changes
         "memory": "cpp",
         "memory_resource": "cpp",
         "numeric": "cpp",
@@ -54,19 +78,28 @@
         "random": "cpp",
         "ratio": "cpp",
         "regex": "cpp",
+<<<<<<< Updated upstream
         "source_location": "cpp",
+=======
+        "set": "cpp",
+        "string": "cpp",
+>>>>>>> Stashed changes
         "string_view": "cpp",
         "system_error": "cpp",
         "tuple": "cpp",
         "type_traits": "cpp",
         "utility": "cpp",
+<<<<<<< Updated upstream
         "format": "cpp",
+=======
+>>>>>>> Stashed changes
         "fstream": "cpp",
         "future": "cpp",
         "initializer_list": "cpp",
         "iomanip": "cpp",
         "iosfwd": "cpp",
         "istream": "cpp",
+<<<<<<< Updated upstream
         "latch": "cpp",
         "limits": "cpp",
         "mutex": "cpp",
@@ -98,4 +131,22 @@
         "queue": "cpp",
         "stack": "cpp"
     }
+=======
+        "limits": "cpp",
+        "mutex": "cpp",
+        "new": "cpp",
+        "ostream": "cpp",
+        "scoped_allocator": "cpp",
+        "shared_mutex": "cpp",
+        "sstream": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "thread": "cpp",
+        "typeindex": "cpp",
+        "typeinfo": "cpp",
+        "valarray": "cpp"
+    },
+    "C_Cpp.intelliSenseMemoryLimit": 16384,
+    "typescript.tsserver.maxTsServerMemory": 4096
+>>>>>>> Stashed changes
 }

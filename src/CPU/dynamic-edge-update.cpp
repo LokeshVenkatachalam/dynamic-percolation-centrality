@@ -181,7 +181,7 @@ void brandes(int src, vector<double> x, vector<vector<int>> &adj, double *ptr)
 	auto p4 = std::chrono::high_resolution_clock::now();
 }
 
-void bcc_brandes(int src, vector<double>& x, vector<vector<int>> &adj, vector<vector<double>> &reach, double *ptr, double factor, vector<vector<long long>> &profile)
+void bcc_brandes1(int src, vector<double>& x, vector<vector<int>> &adj, vector<vector<double>> &reach, double *ptr, double factor, vector<vector<long long>> &profile)
 {
 	// // using Clock = std::chrono::high_resolution_clock;
     // // auto start_total = Clock::now();
@@ -441,6 +441,141 @@ void bcc_brandes(int src, vector<double>& x, vector<vector<int>> &adj, vector<ve
 	
 }
 
+void bcc_brandes(int src, const vector<double>& x, const vector<vector<int>>& adj, const vector<vector<double>>& reach, double *ptr, double factor, vector<vector<long long>> &profile)
+{
+
+	auto p1 = std::chrono::high_resolution_clock::now();
+
+    int N = (int)x.size() - 1;
+    queue<int> q;
+    stack<int> st;
+    vector<int> dist(N + 1, -1);
+    vector<double> sig(N + 1, 0.0), delta(N + 1, 0.0);
+    vector<vector<int>> pr(N + 1);
+
+	auto p2 = std::chrono::high_resolution_clock::now();
+    
+	int u = src;
+    q.push(u);
+    dist[u] = 0;
+    sig[u] = 1.0;
+
+	auto p3 = std::chrono::high_resolution_clock::now();
+
+    // Breadth-First Search (BFS) Phase (sequential)
+    while (!q.empty())
+    {
+        u = q.front();
+        q.pop();
+        st.push(u);
+
+        if (src != u)
+        {
+            // First inner loop: compute contributions from reach[u] in parallel
+            double delta_u_temp = 0.0;
+            int reach_u_size = (int)reach[u].size();
+            int reach_src_size = (int)reach[src].size();
+            #pragma omp parallel for num_threads(4) reduction(+:delta_u_temp) schedule(static)
+            for (int i = 0; i < reach_u_size - 1; ++i)
+            {
+                double xi = reach[u][i] - reach[u][i + 1];
+                int l = 0, s = 0;
+                int r = reach_src_size - 1;
+                int h = r;
+                int mid = l;
+                while (l <= r)
+                {
+                    mid = l + (r - l) / 2;
+                    if (reach[src][mid] - reach[src][mid + 1] >= xi &&
+                        (mid == s || reach[src][mid - 1] - reach[src][mid] < xi))
+                        break;
+                    else if (reach[src][mid] - reach[src][mid + 1] < xi)
+                        l = mid + 1;
+                    else
+                        r = mid - 1;
+                }
+                delta_u_temp += reach[src][mid] - xi * (h - mid);
+            }
+            delta[u] += delta_u_temp;
+
+            // Second inner loop: additional adjustments
+            double delta_adjust = 0.0;
+            // #pragma omp parallel for reduction(+:delta_adjust) schedule(static)
+            for (int i = (int)(reach[src].size() - 2); ((i >= 0) && ((reach[src][i] - reach[src][i + 1]) >= x[u])); i--)
+            {
+                delta_adjust += x[u] - reach[src][i] + reach[src][i + 1];
+            }
+            delta[u] += delta_adjust;
+        }
+
+        // Process neighbors for BFS expansion
+        for (auto v : adj[u])
+        {
+            if (dist[v] < 0)
+            {
+                dist[v] = dist[u] + 1;
+                q.push(v);
+            }
+            if (dist[v] == dist[u] + 1)
+            {
+                pr[v].push_back(u);
+                sig[v] += sig[u];
+            }
+        }
+    }
+
+	auto p4 = std::chrono::high_resolution_clock::now();
+    // Dependency Accumulation Phase (back-propagation)
+    while (!st.empty())
+    {
+        u = st.top();
+        st.pop();
+        int pr_size = (int)pr[u].size();
+        #pragma omp parallel for num_threads(4) schedule(static)
+        for (int i = 0; i < pr_size; i++)
+        {
+            int p = pr[u][i];
+            double g = sig[p] / sig[u];
+            double xi = x[u];
+            int l = 0, s = 0;
+            int r = (int)reach[src].size() - 1;
+            int h = r;
+            int mid = l;
+            while (l <= r)
+            {
+                mid = l + (r - l) / 2;
+                if (reach[src][mid] - reach[src][mid + 1] >= xi &&
+                    (mid == s || reach[src][mid - 1] - reach[src][mid] < xi))
+                    break;
+                else if (reach[src][mid] - reach[src][mid + 1] < xi)
+                    l = mid + 1;
+                else
+                    r = mid - 1;
+            }
+            g = g * (reach[src][mid] - xi * (h - mid) + delta[u]);
+            #pragma omp atomic
+            delta[p] += g;
+        }
+        if (u != src)
+        {
+            #pragma omp atomic
+            ptr[u] += delta[u] * factor;
+        }
+        pr[u].clear();
+        delta[u] = 0;
+        sig[u] = 0;
+        dist[u] = -1;
+    }
+
+	auto p5 = std::chrono::high_resolution_clock::now();
+
+	profile[src][0] = std::chrono::duration_cast<std::chrono::microseconds>(p2 - p1).count();
+	profile[src][1] = std::chrono::duration_cast<std::chrono::microseconds>(p3 - p2).count();
+	profile[src][2] = std::chrono::duration_cast<std::chrono::microseconds>(p4 - p3).count();
+	profile[src][3] = std::chrono::duration_cast<std::chrono::microseconds>(p5 - p4).count();
+}
+
+
 int n, m;
 int vertices;
 int timer;
@@ -552,6 +687,8 @@ void dfs(int u, int par)
 	reach[u].push_back(0);
 
 	vis[u] = 3;
+
+	
 }
 
 void prelim_dfs(int u)

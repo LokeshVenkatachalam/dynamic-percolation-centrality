@@ -5,7 +5,9 @@ set -e
 
 # Define parameter lists
 DATASETS=("brightkite" "email-enron" "p2p-Gnutella25" "p2p-Gnutella30" "PGPgiantcompo" "slashdot" "web-indochina-2004" "web-webbase-2001")
-THREADS=(1 2 4 8 16 32 48 64 128 ) #256)
+# THREADS=(1 2 4 8 16 32 48 64 128 ) #256)
+# Reverse Thread count
+THREADS=(128 64 48 32 16 8 4 2 1) #256)
 BATCH_SIZES=(1 10 40 100 1000 5000 10000)
 ALGORITHMS=("dynperc" "statperc")
 
@@ -54,7 +56,7 @@ for ALGO in "${ALGORITHMS[@]}"; do
             # Loop through batch sizes
             for B in "${BATCH_SIZES[@]}"; do
                 echo "      Batch Size: $B"
-                OUTPUT_FILE="$OUTPUT_DIR/p${T}_q${B}_cpu_${ALGO}_${DATASET}.txt"
+                OUTPUT_FILE="p${T}_q${B}_cpu_${ALGO}_${DATASET}.txt"
                 
                 # Construct and run the command
                 CMD="python3 run.py --algorithm $ALGO --dataset $DATASET --numthread $T --batch $B -o $OUTPUT_FILE"

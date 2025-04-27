@@ -370,7 +370,14 @@ int main(int argc, char **argv)
 	ifstream fin(input);
 	ofstream fout(output);
 
+	cerr << input << ",";
+	cerr << queries << ",";
+	cerr << numthreads << ",";
+
+	auto t0 = std::chrono::high_resolution_clock::now();
+
 	fin >> n >> m;
+	cerr << n << "," << m << ",";
 	vertices = n;
 	for (int i = 0; i <= n; ++i)
 		rep.push_back(i);
@@ -451,8 +458,13 @@ int main(int argc, char **argv)
 	// for(int i=1;i<=n;++i)
 	// 	pc[i] /= (sum_x - contrib[i]);
 
-	auto t1 = std::chrono::high_resolution_clock::now();
+	auto t01 = std::chrono::high_resolution_clock::now();
 
+	auto duration1 = std::chrono::duration_cast<std::chrono::microseconds>(t01 - t0).count();
+	// cerr << "Initial Static Computation time : " << duration << " mu.s." << endl;
+	cerr << duration1 << ",";
+	
+	auto t1 = std::chrono::high_resolution_clock::now();
 	vector<double> pCentrality(V + 1, 0.0), ac(V + 1, 0.0);
 	double *ptr = &pCentrality[0];
 #pragma omp parallel for reduction(+ : ptr[ : V + 1])

@@ -85,7 +85,39 @@ int main(int argc, char **argv)
 	ifstream fin(input);
 	ofstream fout(output);
 
+	size_t last_slash_pos = input.find_last_of('/');
+    size_t last_dot_pos = input.find_last_of('.');
+    string dataset_name = "unknown_dataset";
+    if (last_slash_pos != string::npos && last_dot_pos != string::npos && last_dot_pos > last_slash_pos) {
+        dataset_name = input.substr(last_slash_pos + 1, last_dot_pos - last_slash_pos - 1);
+    } else if (last_dot_pos != string::npos) { // Handle cases where there's no slash
+        dataset_name = input.substr(0, last_dot_pos);
+    } else { // Handle cases where there's no dot or slash
+        dataset_name = input;
+    }
+
+
+    // Extract query size from queries path
+    string query_size_str = "unknown_query_size";
+    size_t queries_pos = queries.find("queries_");
+    if (queries_pos != string::npos) {
+        size_t next_slash_pos = queries.find('/', queries_pos);
+        if (next_slash_pos != string::npos) {
+            query_size_str = queries.substr(queries_pos + 8, next_slash_pos - (queries_pos + 8));
+        } else { // Handle if queries_ is at the end or followed by something else without '/'
+            query_size_str = queries.substr(queries_pos + 8);
+        }
+    }
+
+
+    cerr << dataset_name << ","; // Print extracted dataset name
+    cerr << query_size_str << ","; // Print extracted query size
+    cerr << numthreads << ",";
+	cerr << "Static Percolation Update,";
+
 	fin >> N >> M;
+
+	cerr << N << "," << M << ",";
 	int u, v;
 	adj.resize(N + 1);
 	x.push_back(0);
@@ -163,9 +195,9 @@ int main(int argc, char **argv)
 			brandes(i, x, adj, ptr);
 		auto t4 = std::chrono::high_resolution_clock::now();
 		duration_actual += std::chrono::duration_cast<std::chrono::microseconds>(t4 - t3).count();
-		for (int i = 1; i <= N; ++i)
-			fout << percolation[i] / (sum_x - contrib[i]) << " ";
-		fout << "\n";
+		// for (int i = 1; i <= N; ++i)
+		// 	fout << percolation[i] / (sum_x - contrib[i]) << " ";
+		// fout << "\n";
 	}
 	// cerr << "Total time for updates : " << duration_actual << " mu.s." << endl;
 	cerr << duration_actual << endl;

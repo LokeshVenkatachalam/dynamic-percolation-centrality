@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #include <omp.h>
 #include <chrono>
+#include <string> 
 using namespace std;
 
 // compile : g++ -O3 -fopenmp -static-libstdc++ <file_name>.cpp -o computePC-dynamic-percUpdate
@@ -370,9 +371,36 @@ int main(int argc, char **argv)
 	ifstream fin(input);
 	ofstream fout(output);
 
-	cerr << input << ",";
-	cerr << queries << ",";
-	cerr << numthreads << ",";
+	size_t last_slash_pos = input.find_last_of('/');
+    size_t last_dot_pos = input.find_last_of('.');
+    string dataset_name = "unknown_dataset";
+    if (last_slash_pos != string::npos && last_dot_pos != string::npos && last_dot_pos > last_slash_pos) {
+        dataset_name = input.substr(last_slash_pos + 1, last_dot_pos - last_slash_pos - 1);
+    } else if (last_dot_pos != string::npos) { // Handle cases where there's no slash
+        dataset_name = input.substr(0, last_dot_pos);
+    } else { // Handle cases where there's no dot or slash
+        dataset_name = input;
+    }
+
+
+    // Extract query size from queries path
+    string query_size_str = "unknown_query_size";
+    size_t queries_pos = queries.find("queries_");
+    if (queries_pos != string::npos) {
+        size_t next_slash_pos = queries.find('/', queries_pos);
+        if (next_slash_pos != string::npos) {
+            query_size_str = queries.substr(queries_pos + 8, next_slash_pos - (queries_pos + 8));
+        } else { // Handle if queries_ is at the end or followed by something else without '/'
+            query_size_str = queries.substr(queries_pos + 8);
+        }
+    }
+
+
+    cerr << dataset_name << ","; // Print extracted dataset name
+    cerr << query_size_str << ","; // Print extracted query size
+    cerr << numthreads << ",";
+	cerr << "Dynamic Percolation Update,";
+
 
 	auto t0 = std::chrono::high_resolution_clock::now();
 
@@ -488,6 +516,7 @@ int main(int argc, char **argv)
 
 	duration = 0;
 	auto duration_dynamic = duration;
+	auto duration2 = duration;
 
 	int query_nodes[V];
 
@@ -544,14 +573,19 @@ int main(int argc, char **argv)
 		for (int i = 1; i <= n; ++i)
 		{
 			ac[i] /= (sum_x - contrib[i]);
-			fout << ac[i] << " ";
+			// fout << ac[i] << " ";
 		}
-		fout << "\n";
+		// fout << "\n";
+		auto t5 = std::chrono::high_resolution_clock::now();
+		duration2 = std::chrono::duration_cast<std::chrono::microseconds>(t5 - t4).count();
+		// cerr << "Dynamic Computation time : " << duration2 << " mu.s." << endl;
 
 		x = updated_x;
 	}
 	// cerr << "Total time for updates : " << duration_dynamic << " mu.s." <<endl;
-	cerr << duration_dynamic << endl;
+	cerr << duration_dynamic << ",";
+	// cerr << "Total time for updates : " << duration_dynamic << " mu.s." << endl;
+	cerr << duration2 << "\n";
 
 	// 	fill(pc.begin(), pc.end(), 0);
 	// 	ptr = &pc[0];

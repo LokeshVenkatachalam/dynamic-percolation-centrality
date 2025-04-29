@@ -1,0 +1,22 @@
+./datasets/brightkite.in,./queries/percolation-update-queries/queries_1/brightkite_queries,128,58228,214078,94905185,14133335,34963
+./datasets/brightkite.in,./queries/percolation-update-queries/queries_10/brightkite_queries,128,58228,214078,96238549,14694677,35159
+./datasets/brightkite.in,./queries/percolation-update-queries/queries_40/brightkite_queries,128,58228,214078,94702313,13048610,31835
+./datasets/brightkite.in,./queries/percolation-update-queries/queries_100/brightkite_queries,128,58228,214078,96880587,17246139,76390
+./datasets/brightkite.in,./queries/percolation-update-queries/queries_1000/brightkite_queries,128,58228,214078,94093005,13068480,0
+./datasets/brightkite.in,./queries/percolation-update-queries/queries_5000/brightkite_queries,128,58228,214078,95923496,14757091,0
+./datasets/brightkite.in,./queries/percolation-update-queries/queries_10000/brightkite_queries,128,58228,214078,94078026,13641049,0
+./datasets/brightkite.in,./queries/percolation-update-queries/queries_1/brightkite_queries,64,58228,214078,95152733,17715233,25123
+./datasets/brightkite.in,./queries/percolation-update-queries/queries_10/brightkite_queries,64,58228,214078,Traceback (most recent call last):
+  File "run.py", line 112, in <module>
+    run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/percolation-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1020, in communicate
+    self.wait()
+  File "/usr/lib/python3.8/subprocess.py", line 1083, in wait
+    return self._wait(timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1806, in _wait
+    (pid, sts) = self._try_wait(0)
+  File "/usr/lib/python3.8/subprocess.py", line 1764, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+KeyboardInterrupt

@@ -1,0 +1,32 @@
+Dataset: brightkite
+  Threads: 128
+    python3 run.py --algorithm statperc --dataset brightkite --numthread 128 --batch 1 -o p128_q1_cpu_statperc_brightkite.txt
+brightkite,1,128,Static Percolation Update,58228,214078,16729261,16063123
+    python3 run.py --algorithm statperc --dataset brightkite --numthread 128 --batch 10 -o p128_q10_cpu_statperc_brightkite.txt
+brightkite,10,128,Static Percolation Update,58228,214078,16442759,15812165
+    python3 run.py --algorithm statperc --dataset brightkite --numthread 128 --batch 40 -o p128_q40_cpu_statperc_brightkite.txt
+brightkite,40,128,Static Percolation Update,58228,214078,16552275,16276954
+    python3 run.py --algorithm statperc --dataset brightkite --numthread 128 --batch 100 -o p128_q100_cpu_statperc_brightkite.txt
+brightkite,100,128,Static Percolation Update,58228,214078,16514540,16312902
+    python3 run.py --algorithm statperc --dataset brightkite --numthread 128 --batch 1000 -o p128_q1000_cpu_statperc_brightkite.txt
+brightkite,1000,128,Static Percolation Update,58228,214078,16500849,17031108
+    python3 run.py --algorithm statperc --dataset brightkite --numthread 128 --batch 5000 -o p128_q5000_cpu_statperc_brightkite.txt
+brightkite,5000,128,Static Percolation Update,58228,214078,16310576,16170338
+    python3 run.py --algorithm statperc --dataset brightkite --numthread 128 --batch 10000 -o p128_q10000_cpu_statperc_brightkite.txt
+brightkite,10000,128,Static Percolation Update,58228,214078,16768340,16165111
+  Threads: 64
+    python3 run.py --algorithm statperc --dataset brightkite --numthread 64 --batch 1 -o p64_q1_cpu_statperc_brightkite.txt
+brightkite,1,64,Static Percolation Update,58228,214078,Traceback (most recent call last):
+  File "run.py", line 112, in <module>
+    run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/percolation-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1020, in communicate
+    self.wait()
+  File "/usr/lib/python3.8/subprocess.py", line 1083, in wait
+    return self._wait(timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1806, in _wait
+    (pid, sts) = self._try_wait(0)
+  File "/usr/lib/python3.8/subprocess.py", line 1764, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+KeyboardInterrupt

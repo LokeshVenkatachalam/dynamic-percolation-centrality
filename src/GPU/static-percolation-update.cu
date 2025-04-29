@@ -207,7 +207,7 @@ int main(int argc, char **argv)
 
     cerr << dataset_name << ","; // Print extracted dataset name
     cerr << query_size_str << ","; // Print extracted query size
-    cerr << numthreads << ",";
+    // cerr << numthreads << ",";
 	cerr << "SPU-CPU,";
 
 	int V, E;

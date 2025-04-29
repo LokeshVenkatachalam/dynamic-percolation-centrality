@@ -75,7 +75,7 @@ void bcc_brandes(int src, vector<double> x, vector<vector<int>> &adj, vector<vec
 	dist[u] = 0;
 	sig[u] = 1.0;
 
-	while (!q.empty())cerr << duration_dynamic << "," << duration2 << "\n";
+	while (!q.empty())
 	{
 		u = q.front();
 		q.pop();
@@ -87,7 +87,15 @@ void bcc_brandes(int src, vector<double> x, vector<vector<int>> &adj, vector<vec
 			{
 				for (auto r : reach[u])
 				{
-					if (r == org[u])cerr << duration_dynamic << "," << duration2 << "\n";
+					if (r == org[u])
+						continue;
+					if (r > s)
+						delta[u] += abs(x[s] - x[r]);
+				}
+			}
+		}
+
+		for (auto v : adj[u])
 		{
 			if (dist[v] < 0)
 			{
@@ -359,33 +367,40 @@ int main(int argc, char **argv)
 	numthreads = atoi(argv[4]);
 
 	// Extract dataset name from input path
-    size_t last_slash_pos = input.find_last_of('/');
-    size_t last_dot_pos = input.find_last_of('.');
-    string dataset_name = "unknown_dataset";
-    if (last_slash_pos != string::npos && last_dot_pos != string::npos && last_dot_pos > last_slash_pos) {
-        dataset_name = input.substr(last_slash_pos + 1, last_dot_pos - last_slash_pos - 1);
-    } else if (last_dot_pos != string::npos) { // Handle cases where there's no slash
-        dataset_name = input.substr(0, last_dot_pos);
-    } else { // Handle cases where there's no dot or slash
-        dataset_name = input;
-    }
+	size_t last_slash_pos = input.find_last_of('/');
+	size_t last_dot_pos = input.find_last_of('.');
+	string dataset_name = "unknown_dataset";
+	if (last_slash_pos != string::npos && last_dot_pos != string::npos && last_dot_pos > last_slash_pos)
+	{
+		dataset_name = input.substr(last_slash_pos + 1, last_dot_pos - last_slash_pos - 1);
+	}
+	else if (last_dot_pos != string::npos)
+	{ // Handle cases where there's no slash
+		dataset_name = input.substr(0, last_dot_pos);
+	}
+	else
+	{ // Handle cases where there's no dot or slash
+		dataset_name = input;
+	}
 
-
-    // Extract query size from queries path
-    string query_size_str = "unknown_query_size";
-    size_t queries_pos = queries.find("queries_");
-    if (queries_pos != string::npos) {
-        size_t next_slash_pos = queries.find('/', queries_pos);
-        if (next_slash_pos != string::npos) {
-            query_size_str = queries.substr(queries_pos + 8, next_slash_pos - (queries_pos + 8));
-        } else { // Handle if queries_ is at the end or followed by something else without '/'
-            query_size_str = queries.substr(queries_pos + 8);
-        }
-    }
-
+	// Extract query size from queries path
+	string query_size_str = "unknown_query_size";
+	size_t queries_pos = queries.find("queries_");
+	if (queries_pos != string::npos)
+	{
+		size_t next_slash_pos = queries.find('/', queries_pos);
+		if (next_slash_pos != string::npos)
+		{
+			query_size_str = queries.substr(queries_pos + 8, next_slash_pos - (queries_pos + 8));
+		}
+		else
+		{ // Handle if queries_ is at the end or followed by something else without '/'
+			query_size_str = queries.substr(queries_pos + 8);
+		}
+	}
 
 	omp_set_num_threads(numthreads);
-	cerr << dataset_name << ","; // Print extracted dataset name
+	cerr << dataset_name << ",";   // Print extracted dataset name
 	cerr << query_size_str << ","; // Print extracted query size
 	cerr << numthreads << ",";
 	cerr << "DPC-CPU,";
@@ -395,6 +410,10 @@ int main(int argc, char **argv)
 
 	fin >> n >> m;
 	cerr << n << "," << m << ",";
+
+
+	auto t0 = std::chrono::high_resolution_clock::now();
+
 	vertices = n;
 	for (int i = 0; i <= n; ++i)
 		rep.push_back(i);
@@ -469,8 +488,8 @@ int main(int argc, char **argv)
 	E = E / 2;
 
 	auto t01 = std::chrono::high_resolution_clock::now();
-		// preprocess time
-		cerr << std::chrono::duration_cast<std::chrono::microseconds>(t01 - t0).count() << ",";
+	// preprocess time
+	cerr << std::chrono::duration_cast<std::chrono::microseconds>(t01 - t0).count() << ",";
 	// double *ptr = &pc[0];
 	// #pragma omp parallel for reduction (+:ptr[:n+1])
 	// for(int i=1;i<=n;++i)
@@ -503,6 +522,7 @@ int main(int argc, char **argv)
 
 	duration = 0;
 	auto duration_dynamic = duration;
+	auto duration2 = duration;
 
 	int query_nodes[V];
 
@@ -565,7 +585,6 @@ int main(int argc, char **argv)
 		auto t5 = std::chrono::high_resolution_clock::now();
 		duration2 = std::chrono::duration_cast<std::chrono::microseconds>(t5 - t4).count();
 
-
 		x = updated_x;
 	}
 	// cerr << "Total time for updates : " << duration_dynamic << " mu.s." <<endl;
@@ -592,5 +611,3 @@ int main(int argc, char **argv)
 	// 	cerr << "," << max_diff << "\n";
 	return 0;
 }
-
-

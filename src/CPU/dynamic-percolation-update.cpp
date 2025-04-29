@@ -5,7 +5,7 @@
 using namespace std;
 
 // compile : g++ -O3 -fopenmp -static-libstdc++ <file_name>.cpp -o computePC-dynamic-percUpdate
-int numthreads = 96;
+int numthreads = 128;
 
 void brandes(int src, vector<double> x, vector<vector<int>> &adj, double *ptr)
 {
@@ -227,7 +227,7 @@ vector<vector<int>> g, tmp_g;
 vector<bool> in_otherbccs;
 vector<pair<double, int>> perc;
 vector<int> rep;
-vector<int> query_node;
+vector<int> query_nodes;
 
 void dfs(int u, int par)
 {
@@ -357,21 +357,26 @@ pair<int, vector<double>> compute_constants()
 
 int main(int argc, char **argv)
 {
-	ios::sync_with_stdio(false);
-	cin.tie(0);
-	cout.tie(0);
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
 
-	string input = argv[1];
-	string queries = argv[2];
-	string output = argv[3];
-	string numthread_string = argv[4];
-	numthreads = atoi(argv[4]);
+    string input = argv[1];
+    string queries = argv[2];
+    string output = argv[3];
 
-	omp_set_num_threads(numthreads);
-	ifstream fin(input);
-	ofstream fout(output);
+    // parse comma-separated thread counts, e.g. "1,2,4,8"
+    vector<int> thread_list;
+    {
+        string threads_str = argv[4];
+        string tok;
+        stringstream ss(threads_str);
+        while (getline(ss, tok, ',')) {
+            thread_list.push_back(stoi(tok));
+        }
+    }
 
-	size_t last_slash_pos = input.find_last_of('/');
+    size_t last_slash_pos = input.find_last_of('/');
     size_t last_dot_pos = input.find_last_of('.');
     string dataset_name = "unknown_dataset";
     if (last_slash_pos != string::npos && last_dot_pos != string::npos && last_dot_pos > last_slash_pos) {
@@ -396,215 +401,182 @@ int main(int argc, char **argv)
     }
 
 
-    cerr << dataset_name << ","; // Print extracted dataset name
-    cerr << query_size_str << ","; // Print extracted query size
-    cerr << numthreads << ",";
-	cerr << "Dynamic Percolation Update,";
+    // --- static + dynamic run for each thread count ---
+    for (int nt : thread_list) {
+        numthreads = nt;
+        omp_set_num_threads(numthreads);
+        // prefix each line with dataset, query-size, thread-count
+        cerr << dataset_name << "," << query_size_str << "," << numthreads << ",";
 
+        auto t0 = std::chrono::high_resolution_clock::now();
 
-	auto t0 = std::chrono::high_resolution_clock::now();
+        fin >> n >> m;
+        // graph size
+        cerr << n << "," << m << ",";
 
-	fin >> n >> m;
-	cerr << n << "," << m << ",";
-	vertices = n;
-	for (int i = 0; i <= n; ++i)
-		rep.push_back(i);
-	g.resize(n + 1);
-	copies.resize(n + 1);
-	for (int i = 1; i <= n; ++i)
-		copies[i].push_back(i);
-	tmp_g.resize(2 * m + 1);
-	x.resize(n + 1);
-	reach.resize(2 * m + 1);
-	reachv.resize(n + 1);
-	corr.resize(n + 1);
-	vis.resize(n + 1);
-	low.resize(n + 1);
-	entry.resize(n + 1);
-	in_otherbccs.resize(n + 1, 0);
-	perc.resize(n + 1);
-	pc.resize(n + 1, 0);
+        vertices = n;
+        for (int i = 0; i <= n; ++i)
+			rep.push_back(i);
+		g.resize(n + 1);
+		copies.resize(n + 1);
+		for (int i = 1; i <= n; ++i)
+			copies[i].push_back(i);
+		tmp_g.resize(2 * m + 1);
+		x.resize(n + 1);
+		reach.resize(2 * m + 1);
+		reachv.resize(n + 1);
+		corr.resize(n + 1);
+		vis.resize(n + 1);
+		low.resize(n + 1);
+		entry.resize(n + 1);
+		in_otherbccs.resize(n + 1, 0);
+		perc.resize(n + 1);
+		pc.resize(n + 1, 0);
 
-	timer = 0;
-	x[0] = 0;
-	for (int i = 1; i <= n; i++)
-	{
-		x[i] = (1.0 / (double)(n)) * (rand() % n);
-	}
-	for (int i = 0; i < m; i++)
-	{
-		int u, v;
-		fin >> u >> v;
-		if (u != v)
+		timer = 0;
+		x[0] = 0;
+		for (int i = 1; i <= n; i++)
 		{
-			g[u].push_back(v);
-			g[v].push_back(u);
+			x[i] = (1.0 / (double)(n)) * (rand() % n);
 		}
-	}
-
-	auto res = compute_constants();
-	double sum_x = res.first;
-	vector<double> contrib = res.second;
-	x.resize(2 * m + 1);
-
-	for (int i = 1; i <= n; i++)
-	{
-		if (!vis[i])
+		for (int i = 0; i < m; i++)
 		{
-			cur_comp.clear();
-			prelim_dfs(i);
-			for (auto v : cur_comp)
+			int u, v;
+			fin >> u >> v;
+			if (u != v)
 			{
-				if ((int)g[v].size() != 1)
+				g[u].push_back(v);
+				g[v].push_back(u);
+			}
+		}
+
+		auto res = compute_constants();
+		double sum_x = res.first;
+		vector<double> contrib = res.second;
+		x.resize(2 * m + 1);
+
+		for (int i = 1; i <= n; i++)
+		{
+			if (!vis[i])
+			{
+				cur_comp.clear();
+				prelim_dfs(i);
+				for (auto v : cur_comp)
 				{
-					dfs(v, 0);
-					break;
+					if ((int)g[v].size() != 1)
+					{
+						dfs(v, 0);
+						break;
+					}
 				}
 			}
 		}
-	}
 
-	tmp_g.resize(vertices + 1);
-	reach.resize(vertices + 1);
-	reachv.resize(vertices + 1);
-	x.resize(vertices + 1);
+		tmp_g.resize(vertices + 1);
+		reach.resize(vertices + 1);
+		reachv.resize(vertices + 1);
+		x.resize(vertices + 1);
 
-	int V, E = 0;
-	V = vertices;
-	int cnt_reach_vec = 0;
-	for (int i = 1; i <= V; ++i)
-	{
-		cnt_reach_vec += (int)(reach[i].size());
-		E += (int)(tmp_g[i].size());
-	}
-	E = E / 2;
-
-	// double *ptr = &pc[0];
-	// #pragma omp parallel for reduction (+:ptr[:n+1])
-	// for(int i=1;i<=n;++i)
-	// 	brandes(i,x,g,ptr);
-	// for(int i=1;i<=n;++i)
-	// 	pc[i] /= (sum_x - contrib[i]);
-
-	auto t01 = std::chrono::high_resolution_clock::now();
-
-	auto duration1 = std::chrono::duration_cast<std::chrono::microseconds>(t01 - t0).count();
-	// cerr << "Initial Static Computation time : " << duration << " mu.s." << endl;
-	cerr << duration1 << ",";
-	
-	auto t1 = std::chrono::high_resolution_clock::now();
-	vector<double> pCentrality(V + 1, 0.0), ac(V + 1, 0.0);
-	double *ptr = &pCentrality[0];
-#pragma omp parallel for reduction(+ : ptr[ : V + 1])
-	for (int i = 1; i <= V; ++i)
-		bcc_brandes(i, x, tmp_g, reach, ptr, rep);
-	for (int i = 1; i <= V; ++i)
-		ac[rep[i]] += pCentrality[i];
-	for (int i = 1; i <= n; ++i)
-		ac[i] /= (sum_x - contrib[i]);
-
-	auto t2 = std::chrono::high_resolution_clock::now();
-
-	// double max_diff = 0;
-	// for(int i=1;i<=n;++i)
-	// 	max_diff = max(max_diff,abs(ac[i]-pc[i]));
-
-	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
-	// cerr << "Initial Static Computation time : " << duration << " mu.s." << endl;
-	cerr << duration << ",";
-	// cerr << "Max difference in PC point-wise : " << max_diff << "\n";
-
-	duration = 0;
-	auto duration_dynamic = duration;
-	auto duration2 = duration;
-
-	int query_nodes[V];
-
-	ifstream qin(queries);
-	int batch_size;
-	while (qin >> batch_size)
-	{
-		updated_x = x;
-		int node;
-		double val;
-		int query_size = 0;
-		for (int i = 1; i <= batch_size; ++i)
+		int V, E = 0;
+		V = vertices;
+		int cnt_reach_vec = 0;
+		for (int i = 1; i <= V; ++i)
 		{
-			qin >> node >> val;
-			if (x[node] != val)
-			{
-				for (auto repr : copies[node])
-				{
-					updated_x[repr] = val;
-				}
-				query_nodes[query_size++] = node;
-			}
+			cnt_reach_vec += (int)(reach[i].size());
+			E += (int)(tmp_g[i].size());
 		}
-		batch_size = query_size;
+		E = E / 2;
 
-		auto t3 = std::chrono::high_resolution_clock::now();
+		// double *ptr = &pc[0];
+		// #pragma omp parallel for reduction (+:ptr[:n+1])
+		// for(int i=1;i<=n;++i)
+		// 	brandes(i,x,g,ptr);
+		// for(int i=1;i<=n;++i)
+		// 	pc[i] /= (sum_x - contrib[i]);
 
-		batch_size = 0;
-		for (auto v : corr[node])
-			query_nodes[batch_size++] = v;
+		auto t01 = std::chrono::high_resolution_clock::now();
+		// preprocess time
+		cerr << std::chrono::duration_cast<std::chrono::microseconds>(t01 - t0).count() << ",";
 
-		ptr = &pCentrality[0];
-#pragma omp parallel for reduction(+ : ptr[ : V + 1])
-		for (int th = 0; th < numthreads; ++th)
-		{
-			int N = (int)x.size() - 1;
-			queue<int> q;
-			stack<int> st;
-			vector<int> dist(N + 1, -1);
-			vector<double> sig(N + 1, 0.0);
-			vector<double> new_delta(N + 1, 0.0);
-			vector<double> old_delta(N + 1, 0.0);
-			vector<vector<int>> pr(N + 1);
-			for (int i = th; i <= batch_size; i += numthreads)
-				update_brandes(query_nodes[i - 1], node, x, updated_x, tmp_g, reach, ptr, rep, q, st, dist, sig, new_delta, old_delta, pr);
-		}
-
-		auto t4 = std::chrono::high_resolution_clock::now();
-		duration_dynamic += std::chrono::duration_cast<std::chrono::microseconds>(t4 - t3).count();
-
-		fill(ac.begin(), ac.end(), 0);
+		// --- static BCC-based Brandes ---
+		auto t1 = std::chrono::high_resolution_clock::now();
+		vector<double> pCentrality(V + 1, 0.0), ac(V + 1, 0.0);
+		double *ptr = &pCentrality[0];
+#pragma omp parallel for reduction(+ : ptr[:V+1])
+		for (int i = 1; i <= V; ++i)
+			bcc_brandes(i, x, tmp_g, reach, ptr, rep);
 		for (int i = 1; i <= V; ++i)
 			ac[rep[i]] += pCentrality[i];
 		for (int i = 1; i <= n; ++i)
-		{
 			ac[i] /= (sum_x - contrib[i]);
-			// fout << ac[i] << " ";
+		auto t2 = std::chrono::high_resolution_clock::now();
+		// static computation time
+		cerr << std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count() << ",";
+
+		// --- dynamic updates over the same queries ---
+		long long duration_dynamic = 0, duration2 = 0;
+		ifstream qin(queries);
+		int batch_size;
+		vector<double> updated_x;
+		while (qin >> batch_size) {
+			updated_x = x;
+			int node;
+			double val;
+			int query_size = 0;
+			for (int i = 1; i <= batch_size; ++i)
+			{
+				qin >> node >> val;
+				if (x[node] != val)
+				{
+					for (auto repr : copies[node])
+					{
+						updated_x[repr] = val;
+					}
+					query_nodes[query_size++] = node;
+				}
+			}
+			batch_size = query_size;
+
+			auto t3 = std::chrono::high_resolution_clock::now();
+
+			batch_size = 0;
+			for (auto v : corr[node])
+				query_nodes[batch_size++] = v;
+
+			ptr = &pCentrality[0];
+#pragma omp parallel for reduction(+ : ptr[:V+1])
+			for (int th_i = 0; th_i < numthreads; ++th_i) {
+				int N = (int)x.size() - 1;
+				queue<int> q;
+				stack<int> st;
+				vector<int> dist(N + 1, -1);
+				vector<double> sig(N + 1, 0.0);
+				vector<double> new_delta(N + 1, 0.0);
+				vector<double> old_delta(N + 1, 0.0);
+				vector<vector<int>> pr(N + 1);
+				for (int i = th_i; i <= batch_size; i += numthreads)
+					update_brandes(query_nodes[i-1], node, x, updated_x, tmp_g, reach, ptr, rep, q, st, dist, sig, new_delta, old_delta, pr);
+			}
+			auto t4 = std::chrono::high_resolution_clock::now();
+			duration_dynamic += std::chrono::duration_cast<std::chrono::microseconds>(t4 - t3).count();
+
+			fill(ac.begin(), ac.end(), 0);
+			for (int i = 1; i <= V; ++i)
+				ac[rep[i]] += pCentrality[i];
+			for (int i = 1; i <= n; ++i)
+			{
+				ac[i] /= (sum_x - contrib[i]);
+				// fout << ac[i] << " ";
+			}
+			// fout << "\n";
+			auto t5 = std::chrono::high_resolution_clock::now();
+			duration2 = std::chrono::duration_cast<std::chrono::microseconds>(t5 - t4).count();
+
+			x = updated_x;
 		}
-		// fout << "\n";
-		auto t5 = std::chrono::high_resolution_clock::now();
-		duration2 = std::chrono::duration_cast<std::chrono::microseconds>(t5 - t4).count();
-		// cerr << "Dynamic Computation time : " << duration2 << " mu.s." << endl;
-
-		x = updated_x;
+		// dynamic total time, last-batch time
+		cerr << duration_dynamic << "," << duration2 << "\n";
 	}
-	// cerr << "Total time for updates : " << duration_dynamic << " mu.s." <<endl;
-	cerr << duration_dynamic << ",";
-	// cerr << "Total time for updates : " << duration_dynamic << " mu.s." << endl;
-	cerr << duration2 << "\n";
 
-	// 	fill(pc.begin(), pc.end(), 0);
-	// 	ptr = &pc[0];
-	// #pragma omp parallel for reduction(+ : ptr[ : n + 1])
-	// 	for (int i = 1; i <= n; ++i)
-	// 		brandes(i, x, g, ptr);
-	// 	for (int i = 1; i <= n; ++i)
-	// 		pc[i] /= (sum_x - contrib[i]);
-
-	// 	fill(ac.begin(), ac.end(), 0);
-	// 	for (int i = 1; i <= V; ++i)
-	// 		ac[rep[i]] += pCentrality[i];
-	// 	for (int i = 1; i <= n; ++i)
-	// 		ac[i] /= (sum_x - contrib[i]);
-
-	// 	max_diff = 0;
-	// 	for (int i = 1; i <= n; ++i)
-	// 		max_diff = max(max_diff, abs(ac[i] - pc[i]));
-	// 	// cerr << "Max difference in PC point-wise : " << max_diff << "\n";
-	// 	cerr << "," << max_diff << "\n";
-	return 0;
+    return 0;
 }

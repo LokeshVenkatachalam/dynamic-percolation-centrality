@@ -1,0 +1,7 @@
+web-indochina-2004,1,128,Dynamic Percolation Update,11358,47606,1171058,154599,Segmentation fault (core dumped)
+Traceback (most recent call last):
+  File "run.py", line 112, in <module>
+    run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/percolation-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
+  File "/usr/lib/python3.8/subprocess.py", line 516, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command './exec/CPU/dpu ./datasets/web-indochina-2004.in ./queries/percolation-update-queries/queries_1/web-indochina-2004_queries ./output/p128_q1_cpu_dynperc_web-indochina-2004.txt 128' returned non-zero exit status 139.

@@ -1,0 +1,1241 @@
+Compiling CPU executables...
+Compilation finished.
+Running algorithm: dynperc
+  Dataset: brightkite
+  Logging to: ./output/brightkite_cpu_dynperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 1 -o p128_q1_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 10 -o p128_q10_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 40 -o p128_q40_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 100 -o p128_q100_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 1000 -o p128_q1000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 5000 -o p128_q5000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 10000 -o p128_q10000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 64 --batch 1 -o p64_q1_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 64 --batch 10 -o p64_q10_cpu_dynperc_brightkite.txt
+Compiling CPU executables...
+Compilation finished.
+Running algorithm: dynperc
+  Dataset: brightkite
+  Logging to: ./output/brightkite_cpu_dynperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 1 -o p128_q1_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 10 -o p128_q10_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 40 -o p128_q40_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 100 -o p128_q100_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 1000 -o p128_q1000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 5000 -o p128_q5000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 10000 -o p128_q10000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 64 --batch 1 -o p64_q1_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 64 --batch 10 -o p64_q10_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 64 --batch 40 -o p64_q40_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 64 --batch 100 -o p64_q100_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 64 --batch 1000 -o p64_q1000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 64 --batch 5000 -o p64_q5000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 64 --batch 10000 -o p64_q10000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+    Threads: 48
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 48 --batch 1 -o p48_q1_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 48 --batch 10 -o p48_q10_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 48 --batch 40 -o p48_q40_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 48 --batch 100 -o p48_q100_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 48 --batch 1000 -o p48_q1000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 48 --batch 5000 -o p48_q5000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 48 --batch 10000 -o p48_q10000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+    Threads: 32
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 32 --batch 1 -o p32_q1_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 32 --batch 10 -o p32_q10_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 32 --batch 40 -o p32_q40_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 32 --batch 100 -o p32_q100_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 32 --batch 1000 -o p32_q1000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 32 --batch 5000 -o p32_q5000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 32 --batch 10000 -o p32_q10000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 16 --batch 1 -o p16_q1_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 16 --batch 10 -o p16_q10_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 16 --batch 40 -o p16_q40_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 16 --batch 100 -o p16_q100_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 16 --batch 1000 -o p16_q1000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 16 --batch 5000 -o p16_q5000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 16 --batch 10000 -o p16_q10000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 8 --batch 1 -o p8_q1_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 8 --batch 10 -o p8_q10_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 8 --batch 40 -o p8_q40_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 8 --batch 100 -o p8_q100_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 8 --batch 1000 -o p8_q1000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 8 --batch 5000 -o p8_q5000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 8 --batch 10000 -o p8_q10000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+    Threads: 4
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 4 --batch 1 -o p4_q1_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 4 --batch 10 -o p4_q10_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 4 --batch 40 -o p4_q40_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 4 --batch 100 -o p4_q100_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 4 --batch 1000 -o p4_q1000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 4 --batch 5000 -o p4_q5000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 4 --batch 10000 -o p4_q10000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+    Threads: 2
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 2 --batch 1 -o p2_q1_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 2 --batch 10 -o p2_q10_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 2 --batch 40 -o p2_q40_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 2 --batch 100 -o p2_q100_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 2 --batch 1000 -o p2_q1000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 2 --batch 5000 -o p2_q5000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 2 --batch 10000 -o p2_q10000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 1 --batch 1 -o p1_q1_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 1 --batch 10 -o p1_q10_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 1 --batch 40 -o p1_q40_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 1 --batch 100 -o p1_q100_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 1 --batch 1000 -o p1_q1000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 1 --batch 5000 -o p1_q5000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 1 --batch 10000 -o p1_q10000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+  Dataset: email-enron
+  Logging to: ./output/email-enron_cpu_dynperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 128 --batch 1 -o p128_q1_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 128 --batch 10 -o p128_q10_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 128 --batch 40 -o p128_q40_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 128 --batch 100 -o p128_q100_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 128 --batch 1000 -o p128_q1000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 128 --batch 5000 -o p128_q5000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 128 --batch 10000 -o p128_q10000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 64 --batch 1 -o p64_q1_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 64 --batch 10 -o p64_q10_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 64 --batch 40 -o p64_q40_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 64 --batch 100 -o p64_q100_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 64 --batch 1000 -o p64_q1000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 64 --batch 5000 -o p64_q5000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 64 --batch 10000 -o p64_q10000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+    Threads: 48
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 48 --batch 1 -o p48_q1_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 48 --batch 10 -o p48_q10_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 48 --batch 40 -o p48_q40_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 48 --batch 100 -o p48_q100_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 48 --batch 1000 -o p48_q1000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 48 --batch 5000 -o p48_q5000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 48 --batch 10000 -o p48_q10000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+    Threads: 32
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 32 --batch 1 -o p32_q1_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 32 --batch 10 -o p32_q10_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 32 --batch 40 -o p32_q40_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 32 --batch 100 -o p32_q100_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 32 --batch 1000 -o p32_q1000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 32 --batch 5000 -o p32_q5000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 32 --batch 10000 -o p32_q10000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 16 --batch 1 -o p16_q1_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 16 --batch 10 -o p16_q10_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 16 --batch 40 -o p16_q40_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 16 --batch 100 -o p16_q100_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 16 --batch 1000 -o p16_q1000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 16 --batch 5000 -o p16_q5000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 16 --batch 10000 -o p16_q10000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 8 --batch 1 -o p8_q1_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 8 --batch 10 -o p8_q10_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 8 --batch 40 -o p8_q40_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 8 --batch 100 -o p8_q100_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 8 --batch 1000 -o p8_q1000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 8 --batch 5000 -o p8_q5000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 8 --batch 10000 -o p8_q10000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+    Threads: 4
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 4 --batch 1 -o p4_q1_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 4 --batch 10 -o p4_q10_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 4 --batch 40 -o p4_q40_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 4 --batch 100 -o p4_q100_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 4 --batch 1000 -o p4_q1000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 4 --batch 5000 -o p4_q5000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 4 --batch 10000 -o p4_q10000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+    Threads: 2
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 2 --batch 1 -o p2_q1_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 2 --batch 10 -o p2_q10_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 2 --batch 40 -o p2_q40_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 2 --batch 100 -o p2_q100_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 2 --batch 1000 -o p2_q1000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 2 --batch 5000 -o p2_q5000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 2 --batch 10000 -o p2_q10000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 1 --batch 1 -o p1_q1_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 1 --batch 10 -o p1_q10_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 1 --batch 40 -o p1_q40_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 1 --batch 100 -o p1_q100_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 1 --batch 1000 -o p1_q1000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 1 --batch 5000 -o p1_q5000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 1 --batch 10000 -o p1_q10000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+  Dataset: p2p-Gnutella25
+  Logging to: ./output/p2p-Gnutella25_cpu_dynperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 128 --batch 1 -o p128_q1_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 128 --batch 10 -o p128_q10_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 128 --batch 40 -o p128_q40_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 128 --batch 100 -o p128_q100_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 128 --batch 1000 -o p128_q1000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 128 --batch 5000 -o p128_q5000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 128 --batch 10000 -o p128_q10000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 64 --batch 1 -o p64_q1_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 64 --batch 10 -o p64_q10_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 64 --batch 40 -o p64_q40_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 64 --batch 100 -o p64_q100_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 64 --batch 1000 -o p64_q1000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 64 --batch 5000 -o p64_q5000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 64 --batch 10000 -o p64_q10000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+    Threads: 48
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 48 --batch 1 -o p48_q1_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 48 --batch 10 -o p48_q10_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 48 --batch 40 -o p48_q40_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 48 --batch 100 -o p48_q100_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 48 --batch 1000 -o p48_q1000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 48 --batch 5000 -o p48_q5000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 48 --batch 10000 -o p48_q10000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+    Threads: 32
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 32 --batch 1 -o p32_q1_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 32 --batch 10 -o p32_q10_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 32 --batch 40 -o p32_q40_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 32 --batch 100 -o p32_q100_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 32 --batch 1000 -o p32_q1000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 32 --batch 5000 -o p32_q5000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 32 --batch 10000 -o p32_q10000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 16 --batch 1 -o p16_q1_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 16 --batch 10 -o p16_q10_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 16 --batch 40 -o p16_q40_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 16 --batch 100 -o p16_q100_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 16 --batch 1000 -o p16_q1000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 16 --batch 5000 -o p16_q5000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 16 --batch 10000 -o p16_q10000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 8 --batch 1 -o p8_q1_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 8 --batch 10 -o p8_q10_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 8 --batch 40 -o p8_q40_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 8 --batch 100 -o p8_q100_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 8 --batch 1000 -o p8_q1000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 8 --batch 5000 -o p8_q5000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 8 --batch 10000 -o p8_q10000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+    Threads: 4
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 4 --batch 1 -o p4_q1_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 4 --batch 10 -o p4_q10_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 4 --batch 40 -o p4_q40_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 4 --batch 100 -o p4_q100_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 4 --batch 1000 -o p4_q1000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 4 --batch 5000 -o p4_q5000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 4 --batch 10000 -o p4_q10000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+    Threads: 2
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 2 --batch 1 -o p2_q1_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 2 --batch 10 -o p2_q10_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 2 --batch 40 -o p2_q40_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 2 --batch 100 -o p2_q100_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 2 --batch 1000 -o p2_q1000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 2 --batch 5000 -o p2_q5000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 2 --batch 10000 -o p2_q10000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 1 --batch 1 -o p1_q1_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 1 --batch 10 -o p1_q10_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 1 --batch 40 -o p1_q40_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 1 --batch 100 -o p1_q100_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 1 --batch 1000 -o p1_q1000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 1 --batch 5000 -o p1_q5000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 1 --batch 10000 -o p1_q10000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+  Dataset: p2p-Gnutella30
+  Logging to: ./output/p2p-Gnutella30_cpu_dynperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 128 --batch 1 -o p128_q1_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 128 --batch 10 -o p128_q10_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 128 --batch 40 -o p128_q40_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 128 --batch 100 -o p128_q100_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 128 --batch 1000 -o p128_q1000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 128 --batch 5000 -o p128_q5000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 128 --batch 10000 -o p128_q10000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 64 --batch 1 -o p64_q1_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 64 --batch 10 -o p64_q10_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 64 --batch 40 -o p64_q40_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 64 --batch 100 -o p64_q100_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 64 --batch 1000 -o p64_q1000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 64 --batch 5000 -o p64_q5000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 64 --batch 10000 -o p64_q10000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+    Threads: 48
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 48 --batch 1 -o p48_q1_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 48 --batch 10 -o p48_q10_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 48 --batch 40 -o p48_q40_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 48 --batch 100 -o p48_q100_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 48 --batch 1000 -o p48_q1000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 48 --batch 5000 -o p48_q5000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 48 --batch 10000 -o p48_q10000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+    Threads: 32
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 32 --batch 1 -o p32_q1_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 32 --batch 10 -o p32_q10_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 32 --batch 40 -o p32_q40_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 32 --batch 100 -o p32_q100_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 32 --batch 1000 -o p32_q1000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 32 --batch 5000 -o p32_q5000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 32 --batch 10000 -o p32_q10000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 16 --batch 1 -o p16_q1_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 16 --batch 10 -o p16_q10_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 16 --batch 40 -o p16_q40_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 16 --batch 100 -o p16_q100_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 16 --batch 1000 -o p16_q1000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 16 --batch 5000 -o p16_q5000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 16 --batch 10000 -o p16_q10000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 8 --batch 1 -o p8_q1_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 8 --batch 10 -o p8_q10_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 8 --batch 40 -o p8_q40_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 8 --batch 100 -o p8_q100_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 8 --batch 1000 -o p8_q1000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 8 --batch 5000 -o p8_q5000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 8 --batch 10000 -o p8_q10000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+    Threads: 4
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 4 --batch 1 -o p4_q1_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 4 --batch 10 -o p4_q10_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 4 --batch 40 -o p4_q40_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 4 --batch 100 -o p4_q100_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 4 --batch 1000 -o p4_q1000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 4 --batch 5000 -o p4_q5000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 4 --batch 10000 -o p4_q10000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+    Threads: 2
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 2 --batch 1 -o p2_q1_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 2 --batch 10 -o p2_q10_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 2 --batch 40 -o p2_q40_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 2 --batch 100 -o p2_q100_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 2 --batch 1000 -o p2_q1000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 2 --batch 5000 -o p2_q5000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 2 --batch 10000 -o p2_q10000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 1 --batch 1 -o p1_q1_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 1 --batch 10 -o p1_q10_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 1 --batch 40 -o p1_q40_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 1 --batch 100 -o p1_q100_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 1 --batch 1000 -o p1_q1000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 1 --batch 5000 -o p1_q5000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 1 --batch 10000 -o p1_q10000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+  Dataset: PGPgiantcompo
+  Logging to: ./output/PGPgiantcompo_cpu_dynperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 128 --batch 1 -o p128_q1_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 128 --batch 10 -o p128_q10_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 128 --batch 40 -o p128_q40_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 128 --batch 100 -o p128_q100_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 128 --batch 1000 -o p128_q1000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 128 --batch 5000 -o p128_q5000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 128 --batch 10000 -o p128_q10000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 64 --batch 1 -o p64_q1_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 64 --batch 10 -o p64_q10_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 64 --batch 40 -o p64_q40_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 64 --batch 100 -o p64_q100_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 64 --batch 1000 -o p64_q1000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 64 --batch 5000 -o p64_q5000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 64 --batch 10000 -o p64_q10000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+    Threads: 48
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 48 --batch 1 -o p48_q1_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 48 --batch 10 -o p48_q10_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 48 --batch 40 -o p48_q40_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 48 --batch 100 -o p48_q100_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 48 --batch 1000 -o p48_q1000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 48 --batch 5000 -o p48_q5000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 48 --batch 10000 -o p48_q10000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+    Threads: 32
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 32 --batch 1 -o p32_q1_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 32 --batch 10 -o p32_q10_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 32 --batch 40 -o p32_q40_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 32 --batch 100 -o p32_q100_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 32 --batch 1000 -o p32_q1000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 32 --batch 5000 -o p32_q5000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 32 --batch 10000 -o p32_q10000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 16 --batch 1 -o p16_q1_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 16 --batch 10 -o p16_q10_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 16 --batch 40 -o p16_q40_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 16 --batch 100 -o p16_q100_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 16 --batch 1000 -o p16_q1000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 16 --batch 5000 -o p16_q5000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 16 --batch 10000 -o p16_q10000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 8 --batch 1 -o p8_q1_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 8 --batch 10 -o p8_q10_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 8 --batch 40 -o p8_q40_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 8 --batch 100 -o p8_q100_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 8 --batch 1000 -o p8_q1000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 8 --batch 5000 -o p8_q5000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 8 --batch 10000 -o p8_q10000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+    Threads: 4
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 4 --batch 1 -o p4_q1_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 4 --batch 10 -o p4_q10_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 4 --batch 40 -o p4_q40_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 4 --batch 100 -o p4_q100_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 4 --batch 1000 -o p4_q1000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 4 --batch 5000 -o p4_q5000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 4 --batch 10000 -o p4_q10000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+    Threads: 2
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 2 --batch 1 -o p2_q1_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 2 --batch 10 -o p2_q10_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 2 --batch 40 -o p2_q40_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 2 --batch 100 -o p2_q100_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 2 --batch 1000 -o p2_q1000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 2 --batch 5000 -o p2_q5000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 2 --batch 10000 -o p2_q10000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 1 --batch 1 -o p1_q1_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 1 --batch 10 -o p1_q10_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 1 --batch 40 -o p1_q40_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 1 --batch 100 -o p1_q100_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 1 --batch 1000 -o p1_q1000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 1 --batch 5000 -o p1_q5000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 1 --batch 10000 -o p1_q10000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+  Dataset: slashdot
+  Logging to: ./output/slashdot_cpu_dynperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 128 --batch 1 -o p128_q1_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 128 --batch 10 -o p128_q10_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 128 --batch 40 -o p128_q40_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 128 --batch 100 -o p128_q100_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 128 --batch 1000 -o p128_q1000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 128 --batch 5000 -o p128_q5000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 128 --batch 10000 -o p128_q10000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 64 --batch 1 -o p64_q1_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 64 --batch 10 -o p64_q10_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 64 --batch 40 -o p64_q40_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 64 --batch 100 -o p64_q100_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 64 --batch 1000 -o p64_q1000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 64 --batch 5000 -o p64_q5000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 64 --batch 10000 -o p64_q10000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+    Threads: 48
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 48 --batch 1 -o p48_q1_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 48 --batch 10 -o p48_q10_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 48 --batch 40 -o p48_q40_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 48 --batch 100 -o p48_q100_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 48 --batch 1000 -o p48_q1000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 48 --batch 5000 -o p48_q5000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 48 --batch 10000 -o p48_q10000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+    Threads: 32
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 32 --batch 1 -o p32_q1_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 32 --batch 10 -o p32_q10_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 32 --batch 40 -o p32_q40_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 32 --batch 100 -o p32_q100_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 32 --batch 1000 -o p32_q1000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 32 --batch 5000 -o p32_q5000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 32 --batch 10000 -o p32_q10000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 16 --batch 1 -o p16_q1_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 16 --batch 10 -o p16_q10_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 16 --batch 40 -o p16_q40_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 16 --batch 100 -o p16_q100_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 16 --batch 1000 -o p16_q1000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 16 --batch 5000 -o p16_q5000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 16 --batch 10000 -o p16_q10000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 8 --batch 1 -o p8_q1_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 8 --batch 10 -o p8_q10_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 8 --batch 40 -o p8_q40_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 8 --batch 100 -o p8_q100_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 8 --batch 1000 -o p8_q1000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 8 --batch 5000 -o p8_q5000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 8 --batch 10000 -o p8_q10000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+    Threads: 4
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 4 --batch 1 -o p4_q1_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 4 --batch 10 -o p4_q10_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 4 --batch 40 -o p4_q40_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 4 --batch 100 -o p4_q100_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 4 --batch 1000 -o p4_q1000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 4 --batch 5000 -o p4_q5000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 4 --batch 10000 -o p4_q10000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+    Threads: 2
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 2 --batch 1 -o p2_q1_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 2 --batch 10 -o p2_q10_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 2 --batch 40 -o p2_q40_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 2 --batch 100 -o p2_q100_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 2 --batch 1000 -o p2_q1000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 2 --batch 5000 -o p2_q5000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 2 --batch 10000 -o p2_q10000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 1 --batch 1 -o p1_q1_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 1 --batch 10 -o p1_q10_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 40
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 1 --batch 40 -o p1_q40_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 1 --batch 100 -o p1_q100_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 1 --batch 1000 -o p1_q1000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 5000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 1 --batch 5000 -o p1_q5000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 1 --batch 10000 -o p1_q10000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+  Dataset: web-indochina-2004
+  Logging to: ./output/web-indochina-2004_cpu_dynperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset web-indochina-2004 --numthread 128 --batch 1 -o p128_q1_cpu_dynperc_web-indochina-2004.txt

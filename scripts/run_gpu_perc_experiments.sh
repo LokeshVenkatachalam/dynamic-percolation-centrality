@@ -5,7 +5,7 @@ set -e
 
 # Define parameter lists
 DATASETS=("brightkite" "email-enron" "p2p-Gnutella25" "p2p-Gnutella30" "PGPgiantcompo" "slashdot" "web-indochina-2004" "web-webbase-2001")
-BATCH_SIZES=(1 10 40 100 1000) # 5000 10000)
+BATCH_SIZES=(1 10 100 1000) #10000)
 ALGORITHMS=("dynperc" "statperc")
 
 # Define source and executable paths

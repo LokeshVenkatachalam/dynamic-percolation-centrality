@@ -249,14 +249,48 @@ int main(int argc, char **argv)
 	string numthread_string = argv[4];
 	numthreads = atoi(argv[4]);
 
+	// Extract dataset name from input path
+    size_t last_slash_pos = input.find_last_of('/');
+    size_t last_dot_pos = input.find_last_of('.');
+    string dataset_name = "unknown_dataset";
+    if (last_slash_pos != string::npos && last_dot_pos != string::npos && last_dot_pos > last_slash_pos) {
+        dataset_name = input.substr(last_slash_pos + 1, last_dot_pos - last_slash_pos - 1);
+    } else if (last_dot_pos != string::npos) { // Handle cases where there's no slash
+        dataset_name = input.substr(0, last_dot_pos);
+    } else { // Handle cases where there's no dot or slash
+        dataset_name = input;
+    }
+
+
+    // Extract query size from queries path
+    string query_size_str = "unknown_query_size";
+    size_t queries_pos = queries.find("queries_");
+    if (queries_pos != string::npos) {
+        size_t next_slash_pos = queries.find('/', queries_pos);
+        if (next_slash_pos != string::npos) {
+            query_size_str = queries.substr(queries_pos + 8, next_slash_pos - (queries_pos + 8));
+        } else { // Handle if queries_ is at the end or followed by something else without '/'
+            query_size_str = queries.substr(queries_pos + 8);
+        }
+    }
+
+
 	omp_set_num_threads(numthreads);
+
+	cerr << dataset_name << ","; // Print extracted dataset name
+	cerr << query_size_str << ","; // Print extracted query size
+	cerr << numthreads << ",";
+	cerr << "SPE-CPU,";
+
 	ifstream fin(input);
 	ofstream fout(output);
 
-	cerr << input << ",";
+	// cerr << input << ",";
 	cerr << numthreads << ",";
 
 	fin >> N >> M;
+	cerr << N << "," << M << ",";
+
 	int u, v;
 	adj.resize(N + 1);
 	vector<vector<long long>> profile1(N + 1, vector<long long>(5, 0));
@@ -344,39 +378,51 @@ int main(int argc, char **argv)
 			brandes(i, x, adj, ptr, profile2);
 		auto t4 = std::chrono::high_resolution_clock::now();
 		duration_actual += std::chrono::duration_cast<std::chrono::microseconds>(t4 - t3).count();
-		for (int i = 1; i <= N; ++i)
-			fout << percolation[i] / (sum_x - contrib[i]) << " ";
-		fout << "\n";
+		// for (int i = 1; i <= N; ++i)
+		// 	fout << percolation[i] / (sum_x - contrib[i]) << " ";
+		// fout << "\n";
 	}
 	// cerr << "Total time for updates : " << duration_actual << " mu.s." << endl;
 
 	cerr << duration_actual << endl;
 
-	for (int i = 1; i <= N; ++i)
-		cerr << i << ","
-			 << profile1[i][0] << ","
-			 << profile1[i][1] << ","
-			 << profile1[i][2] << ","
-			 << profile1[i][3] << endl;
+	// for (int i = 1; i <= N; ++i)
+	// 	cerr << i << ","
+	// 		 << profile1[i][0] << ","
+	// 		 << profile1[i][1] << ","
+	// 		 << profile1[i][2] << ","
+	// 		 << profile1[i][3] << endl;
 
-	for (int i = 1; i <= N; ++i)
-		cerr << i << ","
-			 << profile2[i][0] << ","
-			 << profile2[i][1] << ","
-			 << profile2[i][2] << ","
-			 << profile2[i][3] << endl;
+	// for (int i = 1; i <= N; ++i)
+	// 	cerr << i << ","
+	// 		 << profile2[i][0] << ","
+	// 		 << profile2[i][1] << ","
+	// 		 << profile2[i][2] << ","
+	// 		 << profile2[i][3] << endl;
 
-	printProfileStats(profile1);
-	printHistogramForColumn(profile1, 0, 5);
-	printHistogramForColumn(profile1, 1, 5);
-	printHistogramForColumn(profile1, 2, 5);
-	printHistogramForColumn(profile1, 3, 5);
+	// printProfileStats(profile1);
+	// printHistogramForColumn(profile1, 0, 5);
+	// printHistogramForColumn(profile1, 1, 5);
+	// printHistogramForColumn(profile1, 2, 5);
+	// printHistogramForColumn(profile1, 3, 5);
 
-	printProfileStats(profile2);
-	printHistogramForColumn(profile2, 0, 5);
-	printHistogramForColumn(profile2, 1, 5);
-	printHistogramForColumn(profile2, 2, 5);
-	printHistogramForColumn(profile2, 3, 5);
+	// printProfileStats(profile2);
+	// printHistogramForColumn(profile2, 0, 5);
+	// printHistogramForColumn(profile2, 1, 5);
+	// printHistogramForColumn(profile2, 2, 5);
+	// printHistogramForColumn(profile2,for (int i = 1; i <= N; ++i)
+	// 	cerr << i << ","
+	// 		 << profile1[i][0] << ","
+	// 		 << profile1[i][1] << ","
+	// 		 << profile1[i][2] << ","
+	// 		 << profile1[i][3] << endl;
+
+	// for (int i = 1; i <= N; ++i)
+	// 	cerr << i << ","
+	// 		 << profile2[i][0] << ","
+	// 		 << profile2[i][1] << ","
+	// 		 << profile2[i][2] << ","
+	// 		 << profile2[i][3] << endl; 3, 5);
 	// 	fill(test_percolation.begin(), test_percolation.end(), 0);
 	// 	ptr = &test_percolation[0];
 	// #pragma omp parallel for reduction(+ : ptr[ : N + 1])

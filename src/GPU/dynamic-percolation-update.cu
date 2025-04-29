@@ -504,7 +504,40 @@ int main(int argc, char **argv)
 	ifstream fin(input);
 	ofstream fout(output);
 
+	size_t last_slash_pos = input.find_last_of('/');
+    size_t last_dot_pos = input.find_last_of('.');
+    string dataset_name = "unknown_dataset";
+    if (last_slash_pos != string::npos && last_dot_pos != string::npos && last_dot_pos > last_slash_pos) {
+        dataset_name = input.substr(last_slash_pos + 1, last_dot_pos - last_slash_pos - 1);
+    } else if (last_dot_pos != string::npos) { // Handle cases where there's no slash
+        dataset_name = input.substr(0, last_dot_pos);
+    } else { // Handle cases where there's no dot or slash
+        dataset_name = input;
+    }
+
+
+    // Extract query size from queries path
+    string query_size_str = "unknown_query_size";
+    size_t queries_pos = queries.find("queries_");
+    if (queries_pos != string::npos) {
+        size_t next_slash_pos = queries.find('/', queries_pos);
+        if (next_slash_pos != string::npos) {
+            query_size_str = queries.substr(queries_pos + 8, next_slash_pos - (queries_pos + 8));
+        } else { // Handle if queries_ is at the end or followed by something else without '/'
+            query_size_str = queries.substr(queries_pos + 8);
+        }
+    }
+
+
+    cerr << dataset_name << ","; // Print extracted dataset name
+    cerr << query_size_str << ","; // Print extracted query size
+    cerr << numthreads << ",";
+	cerr << "DPU-GPU,";
+
 	fin >> n >> m;
+	
+	cerr << n << "," << m << ",";
+
 	vertices = n;
 	for (int i = 0; i <= n; ++i)
 		rep.push_back(i);
@@ -748,16 +781,16 @@ int main(int argc, char **argv)
 		auto t4 = std::chrono::high_resolution_clock::now();
 		duration_dynamic += std::chrono::duration_cast<std::chrono::microseconds>(t4 - t3).count();
 
-		cudaMemcpy(Centrality, dCentrality, sizeof(double) * (V + 1), cudaMemcpyDeviceToHost);
-		fill(global_pc.begin(), global_pc.end(), 0.0);
-		for (int i = 1; i <= V; ++i)
-			global_pc[rep[i]] += Centrality[i];
-		for (int i = 1; i <= n; ++i)
-		{
-			global_pc[i] /= (sum_x - contrib[i]);
-			fout << global_pc[i] << " ";
-		}
-		fout << "\n";
+		// cudaMemcpy(Centrality, dCentrality, sizeof(double) * (V + 1), cudaMemcpyDeviceToHost);
+		// fill(global_pc.begin(), global_pc.end(), 0.0);
+		// for (int i = 1; i <= V; ++i)
+		// 	global_pc[rep[i]] += Centrality[i];
+		// for (int i = 1; i <= n; ++i)
+		// {
+		// 	global_pc[i] /= (sum_x - contrib[i]);
+		// 	// fout << global_pc[i] << " ";
+		// }
+		// // fout << "\n";
 
 		x = updated_x;
 		for (int i = 1; i <= V; ++i)

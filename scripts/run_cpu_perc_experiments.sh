@@ -7,9 +7,12 @@ set -e
 DATASETS=("brightkite" "email-enron" "p2p-Gnutella25" "p2p-Gnutella30" "PGPgiantcompo" "slashdot" "web-indochina-2004" "web-webbase-2001")
 # THREADS=(1 2 4 8 16 32 48 64 128 ) #256)
 # Reverse Thread count
-THREADS=(128 64 48 32 16 8 4 2 1) #256)
-BATCH_SIZES=(1 10 40 100 1000 5000 10000)
-ALGORITHMS=("dynperc" "statperc")
+# THREADS=(128 64 48 32 16 8 4 2 1) #256)
+# BATCH_SIZES=(1 10 40 100 1000 5000 10000)
+THREADS=(128 64 16 8 1)
+BATCH_SIZES=(1 10 100 1000 10000)
+
+ALGORITHMS=("statperc" "dynperc")
 
 # Define source and executable paths (relative to the root directory where the script is expected to be run)
 SRC_DIR="./src/CPU"

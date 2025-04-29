@@ -113,7 +113,7 @@ int main(int argc, char **argv)
     cerr << dataset_name << ","; // Print extracted dataset name
     cerr << query_size_str << ","; // Print extracted query size
     cerr << numthreads << ",";
-	cerr << "Static Percolation Update,";
+	cerr << "SPU-CPU,";
 
 	fin >> N >> M;
 

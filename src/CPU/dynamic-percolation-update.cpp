@@ -6,6 +6,9 @@ using namespace std;
 // compile : g++ -O3 -fopenmp -static-libstdc++ <file_name>.cpp -o computePC-dynamic-percUpdate
 int numthreads = 96;
 
+using Clock = std::chrono::high_resolution_clock;
+using Duration = std::chrono::duration<double, std::microseconds>;  // milliseconds
+
 void brandes(int src, vector<double> x, vector<vector<int>> &adj, double *ptr)
 {
 	int N = (int)x.size() - 1;

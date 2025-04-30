@@ -1,0 +1,191 @@
+Compiling GPU percolation executables...
+Compiling GPU percolation executables...
+Compilation finished.
+Running algorithm: dynperc on GPU
+  Dataset: brightkite
+  Logging to: ./output/brightkite_gpu_dynperc.log
+    Batch Size: 1
+    Executing: python3 run.py --algorithm dynperc --dataset brightkite --batch 1 --gpu -o ./output/q1_gpu_dynperc_brightkite.txt
+    Finished. Output appended to ./output/brightkite_gpu_dynperc.log
+    Batch Size: 10
+    Executing: python3 run.py --algorithm dynperc --dataset brightkite --batch 10 --gpu -o ./output/q10_gpu_dynperc_brightkite.txt
+    Finished. Output appended to ./output/brightkite_gpu_dynperc.log
+    Batch Size: 100
+    Executing: python3 run.py --algorithm dynperc --dataset brightkite --batch 100 --gpu -o ./output/q100_gpu_dynperc_brightkite.txt
+    Finished. Output appended to ./output/brightkite_gpu_dynperc.log
+    Batch Size: 1000
+    Executing: python3 run.py --algorithm dynperc --dataset brightkite --batch 1000 --gpu -o ./output/q1000_gpu_dynperc_brightkite.txt
+    Finished. Output appended to ./output/brightkite_gpu_dynperc.log
+  Dataset: email-enron
+  Logging to: ./output/email-enron_gpu_dynperc.log
+    Batch Size: 1
+    Executing: python3 run.py --algorithm dynperc --dataset email-enron --batch 1 --gpu -o ./output/q1_gpu_dynperc_email-enron.txt
+    Finished. Output appended to ./output/email-enron_gpu_dynperc.log
+    Batch Size: 10
+    Executing: python3 run.py --algorithm dynperc --dataset email-enron --batch 10 --gpu -o ./output/q10_gpu_dynperc_email-enron.txt
+    Finished. Output appended to ./output/email-enron_gpu_dynperc.log
+    Batch Size: 100
+    Executing: python3 run.py --algorithm dynperc --dataset email-enron --batch 100 --gpu -o ./output/q100_gpu_dynperc_email-enron.txt
+    Finished. Output appended to ./output/email-enron_gpu_dynperc.log
+    Batch Size: 1000
+    Executing: python3 run.py --algorithm dynperc --dataset email-enron --batch 1000 --gpu -o ./output/q1000_gpu_dynperc_email-enron.txt
+    Finished. Output appended to ./output/email-enron_gpu_dynperc.log
+  Dataset: p2p-Gnutella25
+  Logging to: ./output/p2p-Gnutella25_gpu_dynperc.log
+    Batch Size: 1
+    Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --batch 1 --gpu -o ./output/q1_gpu_dynperc_p2p-Gnutella25.txt
+    Finished. Output appended to ./output/p2p-Gnutella25_gpu_dynperc.log
+    Batch Size: 10
+    Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --batch 10 --gpu -o ./output/q10_gpu_dynperc_p2p-Gnutella25.txt
+    Finished. Output appended to ./output/p2p-Gnutella25_gpu_dynperc.log
+    Batch Size: 100
+    Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --batch 100 --gpu -o ./output/q100_gpu_dynperc_p2p-Gnutella25.txt
+    Finished. Output appended to ./output/p2p-Gnutella25_gpu_dynperc.log
+    Batch Size: 1000
+    Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --batch 1000 --gpu -o ./output/q1000_gpu_dynperc_p2p-Gnutella25.txt
+    Finished. Output appended to ./output/p2p-Gnutella25_gpu_dynperc.log
+  Dataset: p2p-Gnutella30
+  Logging to: ./output/p2p-Gnutella30_gpu_dynperc.log
+    Batch Size: 1
+    Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --batch 1 --gpu -o ./output/q1_gpu_dynperc_p2p-Gnutella30.txt
+    Finished. Output appended to ./output/p2p-Gnutella30_gpu_dynperc.log
+    Batch Size: 10
+    Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --batch 10 --gpu -o ./output/q10_gpu_dynperc_p2p-Gnutella30.txt
+    Finished. Output appended to ./output/p2p-Gnutella30_gpu_dynperc.log
+    Batch Size: 100
+    Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --batch 100 --gpu -o ./output/q100_gpu_dynperc_p2p-Gnutella30.txt
+    Finished. Output appended to ./output/p2p-Gnutella30_gpu_dynperc.log
+    Batch Size: 1000
+    Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --batch 1000 --gpu -o ./output/q1000_gpu_dynperc_p2p-Gnutella30.txt
+    Finished. Output appended to ./output/p2p-Gnutella30_gpu_dynperc.log
+  Dataset: PGPgiantcompo
+  Logging to: ./output/PGPgiantcompo_gpu_dynperc.log
+    Batch Size: 1
+    Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --batch 1 --gpu -o ./output/q1_gpu_dynperc_PGPgiantcompo.txt
+    Finished. Output appended to ./output/PGPgiantcompo_gpu_dynperc.log
+    Batch Size: 10
+    Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --batch 10 --gpu -o ./output/q10_gpu_dynperc_PGPgiantcompo.txt
+    Finished. Output appended to ./output/PGPgiantcompo_gpu_dynperc.log
+    Batch Size: 100
+    Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --batch 100 --gpu -o ./output/q100_gpu_dynperc_PGPgiantcompo.txt
+    Finished. Output appended to ./output/PGPgiantcompo_gpu_dynperc.log
+    Batch Size: 1000
+    Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --batch 1000 --gpu -o ./output/q1000_gpu_dynperc_PGPgiantcompo.txt
+    Finished. Output appended to ./output/PGPgiantcompo_gpu_dynperc.log
+  Dataset: slashdot
+  Logging to: ./output/slashdot_gpu_dynperc.log
+    Batch Size: 1
+    Executing: python3 run.py --algorithm dynperc --dataset slashdot --batch 1 --gpu -o ./output/q1_gpu_dynperc_slashdot.txt
+    Finished. Output appended to ./output/slashdot_gpu_dynperc.log
+    Batch Size: 10
+    Executing: python3 run.py --algorithm dynperc --dataset slashdot --batch 10 --gpu -o ./output/q10_gpu_dynperc_slashdot.txt
+    Finished. Output appended to ./output/slashdot_gpu_dynperc.log
+    Batch Size: 100
+    Executing: python3 run.py --algorithm dynperc --dataset slashdot --batch 100 --gpu -o ./output/q100_gpu_dynperc_slashdot.txt
+    Finished. Output appended to ./output/slashdot_gpu_dynperc.log
+    Batch Size: 1000
+    Executing: python3 run.py --algorithm dynperc --dataset slashdot --batch 1000 --gpu -o ./output/q1000_gpu_dynperc_slashdot.txt
+    Finished. Output appended to ./output/slashdot_gpu_dynperc.log
+  Dataset: web-indochina-2004
+  Logging to: ./output/web-indochina-2004_gpu_dynperc.log
+    Batch Size: 1
+    Executing: python3 run.py --algorithm dynperc --dataset web-indochina-2004 --batch 1 --gpu -o ./output/q1_gpu_dynperc_web-indochina-2004.txt
+    Finished. Output appended to ./output/web-indochina-2004_gpu_dynperc.log
+    Batch Size: 10
+    Executing: python3 run.py --algorithm dynperc --dataset web-indochina-2004 --batch 10 --gpu -o ./output/q10_gpu_dynperc_web-indochina-2004.txt
+    Finished. Output appended to ./output/web-indochina-2004_gpu_dynperc.log
+    Batch Size: 100
+    Executing: python3 run.py --algorithm dynperc --dataset web-indochina-2004 --batch 100 --gpu -o ./output/q100_gpu_dynperc_web-indochina-2004.txt
+    Finished. Output appended to ./output/web-indochina-2004_gpu_dynperc.log
+    Batch Size: 1000
+    Executing: python3 run.py --algorithm dynperc --dataset web-indochina-2004 --batch 1000 --gpu -o ./output/q1000_gpu_dynperc_web-indochina-2004.txt
+    Finished. Output appended to ./output/web-indochina-2004_gpu_dynperc.log
+  Dataset: web-webbase-2001
+  Logging to: ./output/web-webbase-2001_gpu_dynperc.log
+    Batch Size: 1
+    Executing: python3 run.py --algorithm dynperc --dataset web-webbase-2001 --batch 1 --gpu -o ./output/q1_gpu_dynperc_web-webbase-2001.txt
+    Finished. Output appended to ./output/web-webbase-2001_gpu_dynperc.log
+    Batch Size: 10
+    Executing: python3 run.py --algorithm dynperc --dataset web-webbase-2001 --batch 10 --gpu -o ./output/q10_gpu_dynperc_web-webbase-2001.txt
+    Finished. Output appended to ./output/web-webbase-2001_gpu_dynperc.log
+    Batch Size: 100
+    Executing: python3 run.py --algorithm dynperc --dataset web-webbase-2001 --batch 100 --gpu -o ./output/q100_gpu_dynperc_web-webbase-2001.txt
+    Finished. Output appended to ./output/web-webbase-2001_gpu_dynperc.log
+    Batch Size: 1000
+    Executing: python3 run.py --algorithm dynperc --dataset web-webbase-2001 --batch 1000 --gpu -o ./output/q1000_gpu_dynperc_web-webbase-2001.txt
+    Finished. Output appended to ./output/web-webbase-2001_gpu_dynperc.log
+Running algorithm: statperc on GPU
+  Dataset: brightkite
+  Logging to: ./output/brightkite_gpu_statperc.log
+    Batch Size: 1
+    Executing: python3 run.py --algorithm statperc --dataset brightkite --batch 1 --gpu -o ./output/q1_gpu_statperc_brightkite.txt
+    Finished. Output appended to ./output/brightkite_gpu_statperc.log
+    Batch Size: 10
+    Executing: python3 run.py --algorithm statperc --dataset brightkite --batch 10 --gpu -o ./output/q10_gpu_statperc_brightkite.txt
+    Finished. Output appended to ./output/brightkite_gpu_statperc.log
+    Batch Size: 100
+    Executing: python3 run.py --algorithm statperc --dataset brightkite --batch 100 --gpu -o ./output/q100_gpu_statperc_brightkite.txt
+    Finished. Output appended to ./output/brightkite_gpu_statperc.log
+    Batch Size: 1000
+    Executing: python3 run.py --algorithm statperc --dataset brightkite --batch 1000 --gpu -o ./output/q1000_gpu_statperc_brightkite.txt
+    Finished. Output appended to ./output/brightkite_gpu_statperc.log
+  Dataset: email-enron
+  Logging to: ./output/email-enron_gpu_statperc.log
+    Batch Size: 1
+    Executing: python3 run.py --algorithm statperc --dataset email-enron --batch 1 --gpu -o ./output/q1_gpu_statperc_email-enron.txt
+    Finished. Output appended to ./output/email-enron_gpu_statperc.log
+    Batch Size: 10
+    Executing: python3 run.py --algorithm statperc --dataset email-enron --batch 10 --gpu -o ./output/q10_gpu_statperc_email-enron.txt
+    Finished. Output appended to ./output/email-enron_gpu_statperc.log
+    Batch Size: 100
+    Executing: python3 run.py --algorithm statperc --dataset email-enron --batch 100 --gpu -o ./output/q100_gpu_statperc_email-enron.txt
+    Finished. Output appended to ./output/email-enron_gpu_statperc.log
+    Batch Size: 1000
+    Executing: python3 run.py --algorithm statperc --dataset email-enron --batch 1000 --gpu -o ./output/q1000_gpu_statperc_email-enron.txt
+    Finished. Output appended to ./output/email-enron_gpu_statperc.log
+  Dataset: p2p-Gnutella25
+  Logging to: ./output/p2p-Gnutella25_gpu_statperc.log
+    Batch Size: 1
+    Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --batch 1 --gpu -o ./output/q1_gpu_statperc_p2p-Gnutella25.txt
+    Finished. Output appended to ./output/p2p-Gnutella25_gpu_statperc.log
+    Batch Size: 10
+    Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --batch 10 --gpu -o ./output/q10_gpu_statperc_p2p-Gnutella25.txt
+    Finished. Output appended to ./output/p2p-Gnutella25_gpu_statperc.log
+    Batch Size: 100
+    Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --batch 100 --gpu -o ./output/q100_gpu_statperc_p2p-Gnutella25.txt
+    Finished. Output appended to ./output/p2p-Gnutella25_gpu_statperc.log
+    Batch Size: 1000
+    Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --batch 1000 --gpu -o ./output/q1000_gpu_statperc_p2p-Gnutella25.txt
+    Finished. Output appended to ./output/p2p-Gnutella25_gpu_statperc.log
+  Dataset: p2p-Gnutella30
+  Logging to: ./output/p2p-Gnutella30_gpu_statperc.log
+    Batch Size: 1
+    Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --batch 1 --gpu -o ./output/q1_gpu_statperc_p2p-Gnutella30.txt
+    Finished. Output appended to ./output/p2p-Gnutella30_gpu_statperc.log
+    Batch Size: 10
+    Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --batch 10 --gpu -o ./output/q10_gpu_statperc_p2p-Gnutella30.txt
+    Finished. Output appended to ./output/p2p-Gnutella30_gpu_statperc.log
+    Batch Size: 100
+    Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --batch 100 --gpu -o ./output/q100_gpu_statperc_p2p-Gnutella30.txt
+    Finished. Output appended to ./output/p2p-Gnutella30_gpu_statperc.log
+    Batch Size: 1000
+    Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --batch 1000 --gpu -o ./output/q1000_gpu_statperc_p2p-Gnutella30.txt
+    Finished. Output appended to ./output/p2p-Gnutella30_gpu_statperc.log
+  Dataset: PGPgiantcompo
+  Logging to: ./output/PGPgiantcompo_gpu_statperc.log
+    Batch Size: 1
+    Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --batch 1 --gpu -o ./output/q1_gpu_statperc_PGPgiantcompo.txt
+    Finished. Output appended to ./output/PGPgiantcompo_gpu_statperc.log
+    Batch Size: 10
+    Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --batch 10 --gpu -o ./output/q10_gpu_statperc_PGPgiantcompo.txt
+    Finished. Output appended to ./output/PGPgiantcompo_gpu_statperc.log
+    Batch Size: 100
+    Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --batch 100 --gpu -o ./output/q100_gpu_statperc_PGPgiantcompo.txt
+    Finished. Output appended to ./output/PGPgiantcompo_gpu_statperc.log
+    Batch Size: 1000
+    Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --batch 1000 --gpu -o ./output/q1000_gpu_statperc_PGPgiantcompo.txt
+    Finished. Output appended to ./output/PGPgiantcompo_gpu_statperc.log
+  Dataset: slashdot
+  Logging to: ./output/slashdot_gpu_statperc.log
+    Batch Size: 1
+    Executing: python3 run.py --algorithm statperc --dataset slashdot --batch 1 --gpu -o ./output/q1_gpu_statperc_slashdot.txt

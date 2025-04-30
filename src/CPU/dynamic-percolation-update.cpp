@@ -584,7 +584,7 @@ int main(int argc, char **argv)
 			vector<double> old_delta(N + 1);
 			vector<vector<int>> pr(N + 1);
 			
-			#pragma omp for schedule(dynamic, 4)
+			#pragma omp for schedule(dynamic, 16)
 			for (int i = 0; i < batch_size; ++i)
 			{
 				// reset per‐iteration state

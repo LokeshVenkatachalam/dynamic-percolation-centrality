@@ -1,0 +1,14 @@
+Compiling CPU executables...
+Compilation finished.
+Running algorithm: dynperc
+  Dataset: brightkite
+  Logging to: ./output/brightkite_cpu_dynperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 1 -o p128_q1_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 10 -o p128_q10_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 100 -o p128_q100_cpu_dynperc_brightkite.txt

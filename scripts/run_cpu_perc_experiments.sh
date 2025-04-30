@@ -12,7 +12,7 @@ DATASETS=("brightkite" "email-enron" "p2p-Gnutella25" "p2p-Gnutella30" "PGPgiant
 THREADS=(128 64 16 8 1)
 BATCH_SIZES=(1 10 100 1000 10000)
 
-ALGORITHMS=("statperc" "dynperc")
+ALGORITHMS=("dynperc" "statperc") # "dynperc")
 
 # Define source and executable paths (relative to the root directory where the script is expected to be run)
 SRC_DIR="./src/CPU"

@@ -1,0 +1,28 @@
+brightkite,1,128,DPC-CPU,58228,214078,95436363,10498800,142214,232
+brightkite,10,128,DPC-CPU,58228,214078,95914940,9893812,143478,629
+brightkite,100,128,DPC-CPU,58228,214078,96564121,17299739,223963,273
+brightkite,1000,128,DPC-CPU,58228,214078,95456518,17499912,290783,308
+brightkite,10000,128,DPC-CPU,58228,214078,109678061,29015089,524832,320
+brightkite,1,64,DPC-CPU,58228,214078,130815546,29501170,246313,334
+brightkite,10,64,DPC-CPU,58228,214078,126199161,24899838,106904,243
+brightkite,100,64,DPC-CPU,58228,214078,132714668,28091556,252002,458
+brightkite,1000,64,DPC-CPU,58228,214078,127224807,28060010,175297,380
+brightkite,10000,64,DPC-CPU,58228,214078,130690588,32422848,210983,672
+brightkite,1,16,DPC-CPU,58228,214078,125163517,87749822,291827,284
+brightkite,10,16,DPC-CPU,58228,214078,128071979,93128020,303610,501
+brightkite,100,16,DPC-CPU,58228,214078,123744511,90572776,340056,380
+brightkite,1000,16,DPC-CPU,58228,214078,128316932,94284833,334252,524
+brightkite,10000,16,DPC-CPU,58228,214078,129117629,Traceback (most recent call last):
+  File "/home/graphwork/lokesh_IIITH/dynamic-percolation-centrality/run.py", line 112, in <module>
+    run(exec_map[(algo,gpuflag)]+ " ./datasets/{}.in ./queries/percolation-update-queries/queries_{}/{}_queries ./output/{} {}".format(dataset, batch, dataset, outfile, numthread), shell=True, check=True)
+  File "/usr/lib/python3.10/subprocess.py", line 505, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 1146, in communicate
+    self.wait()
+  File "/usr/lib/python3.10/subprocess.py", line 1209, in wait
+    return self._wait(timeout=timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 1959, in _wait
+    (pid, sts) = self._try_wait(0)
+  File "/usr/lib/python3.10/subprocess.py", line 1917, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+KeyboardInterrupt

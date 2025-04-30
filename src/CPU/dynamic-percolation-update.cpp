@@ -629,6 +629,15 @@ int main(int argc, char **argv)
 			vector<double> local_ptr(V+1, 0.0);
 			// per-thread accumulators for brandes time
 			Duration thread_brandes(0);
+
+			// reset per‐iteration state
+				fill(dist.begin(),    dist.end(),    -1);
+				fill(sig.begin(),     sig.end(),     0.0);
+				fill(new_delta.begin(), new_delta.end(), 0.0);
+				fill(old_delta.begin(), old_delta.end(), 0.0);
+				for (auto &plist : pr) plist.clear();
+				while (!q.empty()) q.pop();
+        		while (!st.empty()) st.pop();
 	
 			// 1) time the for-loop itself
 			auto t_loop_start = Clock::now();

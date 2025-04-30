@@ -569,53 +569,109 @@ int main(int argc, char **argv)
 // 			for (int i = th; i < batch_size; i += numthreads)
 // 				update_brandes(query_nodes[i - 1], node, x, updated_x, tmp_g, reach, ptr, rep, q, st, dist, sig, new_delta, old_delta, pr);
 // 		}
+		// #pragma omp parallel
+		// {
+		// 	// Thread‐local accumulator array
+		// 	vector<double> local_ptr(V + 1, 0.0);
+
+		// 	// Thread‐local workspace (allocated once per thread)
+		// 	int N = (int)x.size() - 1;
+		// 	queue<int> q;
+		// 	stack<int> st;
+		// 	vector<int> dist(N + 1);
+		// 	vector<double> sig(N + 1);
+		// 	vector<double> new_delta(N + 1);
+		// 	vector<double> old_delta(N + 1);
+		// 	vector<vector<int>> pr(N + 1);
+			
+		// 	#pragma omp for schedule(dynamic, 16)
+		// 	for (int i = 0; i < batch_size; ++i)
+		// 	{
+		// 		// reset per‐iteration state
+		// 		fill(dist.begin(),    dist.end(),    -1);
+		// 		fill(sig.begin(),     sig.end(),     0.0);
+		// 		fill(new_delta.begin(), new_delta.end(), 0.0);
+		// 		fill(old_delta.begin(), old_delta.end(), 0.0);
+		// 		for (auto &plist : pr) plist.clear();
+		// 		while (!q.empty()) q.pop();
+        // 		while (!st.empty()) st.pop();
+
+		// 		// run the Brandes update, writing into local_ptr
+		// 		update_brandes(
+		// 			query_nodes[i], node, x, updated_x,
+		// 			tmp_g, reach,
+		// 			&local_ptr[0],    // use thread‐local accumulator
+		// 			rep,
+		// 			q, st,
+		// 			dist, sig,
+		// 			new_delta, old_delta,
+		// 			pr
+		// 		);
+		// 	}
+
+		// 	// fold thread locals back into the global ptr[]
+		// 	#pragma omp critical
+		// 	{
+		// 		for (int v = 1; v <= V; ++v)
+		// 			ptr[v] += local_ptr[v];
+		// 	}
+		// }
+
+		double loop_ms = 0.0;
+		double brandes_ms = 0.0;
+		double reduction_ms = 0.0;
+	
 		#pragma omp parallel
 		{
-			// Thread‐local accumulator array
-			vector<double> local_ptr(V + 1, 0.0);
-
-			// Thread‐local workspace (allocated once per thread)
-			int N = (int)x.size() - 1;
-			queue<int> q;
-			stack<int> st;
-			vector<int> dist(N + 1);
-			vector<double> sig(N + 1);
-			vector<double> new_delta(N + 1);
-			vector<double> old_delta(N + 1);
-			vector<vector<int>> pr(N + 1);
-			
-			#pragma omp for schedule(dynamic, 16)
-			for (int i = 0; i < batch_size; ++i)
-			{
-				// reset per‐iteration state
-				fill(dist.begin(),    dist.end(),    -1);
-				fill(sig.begin(),     sig.end(),     0.0);
-				fill(new_delta.begin(), new_delta.end(), 0.0);
-				fill(old_delta.begin(), old_delta.end(), 0.0);
-				for (auto &plist : pr) plist.clear();
-				while (!q.empty()) q.pop();
-        		while (!st.empty()) st.pop();
-
-				// run the Brandes update, writing into local_ptr
+			vector<double> local_ptr(V+1, 0.0);
+			// per-thread accumulators for brandes time
+			Duration thread_brandes(0);
+	
+			// 1) time the for-loop itself
+			auto t_loop_start = Clock::now();
+			#pragma omp for schedule(static)
+			for (int i = 0; i < batch_size; ++i) {
+				// 2) time just the update_brandes call
+				auto t_b_start = Clock::now();
 				update_brandes(
 					query_nodes[i], node, x, updated_x,
 					tmp_g, reach,
-					&local_ptr[0],    // use thread‐local accumulator
-					rep,
-					q, st,
-					dist, sig,
-					new_delta, old_delta,
-					pr
+					&local_ptr[0], rep,
+					/* q, st, dist, sig, ... pr */
 				);
+				auto t_b_end = Clock::now();
+				thread_brandes += (t_b_end - t_b_start);
 			}
-
-			// fold thread locals back into the global ptr[]
+			auto t_loop_end = Clock::now();
+	
+			// each thread adds its own elapsed loop time:
+			Duration thread_loop = (t_loop_end - t_loop_start);
+	
+			// 3) time the reduction
+			auto t_red_start = Clock::now();
 			#pragma omp critical
 			{
 				for (int v = 1; v <= V; ++v)
 					ptr[v] += local_ptr[v];
 			}
+			auto t_red_end = Clock::now();
+			Duration thread_red = (t_red_end - t_red_start);
+	
+			// reduce your timings across threads into the master totals
+			#pragma omp atomic
+			loop_ms      += thread_loop.count();
+			#pragma omp atomic
+			brandes_ms   += thread_brandes.count();
+			#pragma omp atomic
+			reduction_ms += thread_red.count();
 		}
+	
+		// Because each of the above was summed over T threads,
+		// you might want to divide by omp_get_max_threads() to get per-thread averages,
+		// or just report the totals if you’re comparing relative cost.
+		cerr << loop_ms      << ",";
+		cerr << brandes_ms   << ",";
+		cerr << reduction_ms << ",";
 
 
 		auto t4 = std::chrono::high_resolution_clock::now();

@@ -1,0 +1,1157 @@
+Compiling CPU executables...
+Compilation finished.
+Running algorithm: statperc
+  Dataset: brightkite
+  Logging to: ./output/brightkite_cpu_statperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 128 --batch 1 -o p128_q1_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 128 --batch 10 -o p128_q10_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 128 --batch 100 -o p128_q100_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 128 --batch 1000 -o p128_q1000_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 128 --batch 10000 -o p128_q10000_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 64 --batch 1 -o p64_q1_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 64 --batch 10 -o p64_q10_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 64 --batch 100 -o p64_q100_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 64 --batch 1000 -o p64_q1000_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 64 --batch 10000 -o p64_q10000_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 16 --batch 1 -o p16_q1_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 16 --batch 10 -o p16_q10_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 16 --batch 100 -o p16_q100_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 16 --batch 1000 -o p16_q1000_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 16 --batch 10000 -o p16_q10000_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 8 --batch 1 -o p8_q1_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 8 --batch 10 -o p8_q10_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 8 --batch 100 -o p8_q100_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 8 --batch 1000 -o p8_q1000_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 8 --batch 10000 -o p8_q10000_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 1 --batch 1 -o p1_q1_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 1 --batch 10 -o p1_q10_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 1 --batch 100 -o p1_q100_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 1 --batch 1000 -o p1_q1000_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset brightkite --numthread 1 --batch 10000 -o p1_q10000_cpu_statperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_statperc.log
+  Dataset: email-enron
+  Logging to: ./output/email-enron_cpu_statperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 128 --batch 1 -o p128_q1_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 128 --batch 10 -o p128_q10_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 128 --batch 100 -o p128_q100_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 128 --batch 1000 -o p128_q1000_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 128 --batch 10000 -o p128_q10000_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 64 --batch 1 -o p64_q1_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 64 --batch 10 -o p64_q10_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 64 --batch 100 -o p64_q100_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 64 --batch 1000 -o p64_q1000_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 64 --batch 10000 -o p64_q10000_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 16 --batch 1 -o p16_q1_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 16 --batch 10 -o p16_q10_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 16 --batch 100 -o p16_q100_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 16 --batch 1000 -o p16_q1000_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 16 --batch 10000 -o p16_q10000_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 8 --batch 1 -o p8_q1_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 8 --batch 10 -o p8_q10_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 8 --batch 100 -o p8_q100_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 8 --batch 1000 -o p8_q1000_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 8 --batch 10000 -o p8_q10000_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 1 --batch 1 -o p1_q1_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 1 --batch 10 -o p1_q10_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 1 --batch 100 -o p1_q100_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 1 --batch 1000 -o p1_q1000_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset email-enron --numthread 1 --batch 10000 -o p1_q10000_cpu_statperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_statperc.log
+  Dataset: p2p-Gnutella25
+  Logging to: ./output/p2p-Gnutella25_cpu_statperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 128 --batch 1 -o p128_q1_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 128 --batch 10 -o p128_q10_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 128 --batch 100 -o p128_q100_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 128 --batch 1000 -o p128_q1000_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 128 --batch 10000 -o p128_q10000_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 64 --batch 1 -o p64_q1_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 64 --batch 10 -o p64_q10_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 64 --batch 100 -o p64_q100_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 64 --batch 1000 -o p64_q1000_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 64 --batch 10000 -o p64_q10000_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 16 --batch 1 -o p16_q1_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 16 --batch 10 -o p16_q10_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 16 --batch 100 -o p16_q100_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 16 --batch 1000 -o p16_q1000_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 16 --batch 10000 -o p16_q10000_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 8 --batch 1 -o p8_q1_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 8 --batch 10 -o p8_q10_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 8 --batch 100 -o p8_q100_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 8 --batch 1000 -o p8_q1000_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 8 --batch 10000 -o p8_q10000_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 1 --batch 1 -o p1_q1_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 1 --batch 10 -o p1_q10_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 1 --batch 100 -o p1_q100_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 1 --batch 1000 -o p1_q1000_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella25 --numthread 1 --batch 10000 -o p1_q10000_cpu_statperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_statperc.log
+  Dataset: p2p-Gnutella30
+  Logging to: ./output/p2p-Gnutella30_cpu_statperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 128 --batch 1 -o p128_q1_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 128 --batch 10 -o p128_q10_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 128 --batch 100 -o p128_q100_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 128 --batch 1000 -o p128_q1000_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 128 --batch 10000 -o p128_q10000_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 64 --batch 1 -o p64_q1_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 64 --batch 10 -o p64_q10_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 64 --batch 100 -o p64_q100_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 64 --batch 1000 -o p64_q1000_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 64 --batch 10000 -o p64_q10000_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 16 --batch 1 -o p16_q1_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 16 --batch 10 -o p16_q10_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 16 --batch 100 -o p16_q100_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 16 --batch 1000 -o p16_q1000_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 16 --batch 10000 -o p16_q10000_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 8 --batch 1 -o p8_q1_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 8 --batch 10 -o p8_q10_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 8 --batch 100 -o p8_q100_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 8 --batch 1000 -o p8_q1000_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 8 --batch 10000 -o p8_q10000_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 1 --batch 1 -o p1_q1_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 1 --batch 10 -o p1_q10_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 1 --batch 100 -o p1_q100_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 1 --batch 1000 -o p1_q1000_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset p2p-Gnutella30 --numthread 1 --batch 10000 -o p1_q10000_cpu_statperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_statperc.log
+  Dataset: PGPgiantcompo
+  Logging to: ./output/PGPgiantcompo_cpu_statperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 128 --batch 1 -o p128_q1_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 128 --batch 10 -o p128_q10_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 128 --batch 100 -o p128_q100_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 128 --batch 1000 -o p128_q1000_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 128 --batch 10000 -o p128_q10000_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 64 --batch 1 -o p64_q1_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 64 --batch 10 -o p64_q10_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 64 --batch 100 -o p64_q100_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 64 --batch 1000 -o p64_q1000_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 64 --batch 10000 -o p64_q10000_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 16 --batch 1 -o p16_q1_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 16 --batch 10 -o p16_q10_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 16 --batch 100 -o p16_q100_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 16 --batch 1000 -o p16_q1000_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 16 --batch 10000 -o p16_q10000_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 8 --batch 1 -o p8_q1_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 8 --batch 10 -o p8_q10_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 8 --batch 100 -o p8_q100_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 8 --batch 1000 -o p8_q1000_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 8 --batch 10000 -o p8_q10000_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 1 --batch 1 -o p1_q1_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 1 --batch 10 -o p1_q10_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 1 --batch 100 -o p1_q100_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 1 --batch 1000 -o p1_q1000_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset PGPgiantcompo --numthread 1 --batch 10000 -o p1_q10000_cpu_statperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_statperc.log
+  Dataset: slashdot
+  Logging to: ./output/slashdot_cpu_statperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 128 --batch 1 -o p128_q1_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 128 --batch 10 -o p128_q10_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 128 --batch 100 -o p128_q100_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 128 --batch 1000 -o p128_q1000_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 128 --batch 10000 -o p128_q10000_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 64 --batch 1 -o p64_q1_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 64 --batch 10 -o p64_q10_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 64 --batch 100 -o p64_q100_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 64 --batch 1000 -o p64_q1000_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 64 --batch 10000 -o p64_q10000_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 16 --batch 1 -o p16_q1_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 16 --batch 10 -o p16_q10_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 16 --batch 100 -o p16_q100_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 16 --batch 1000 -o p16_q1000_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 16 --batch 10000 -o p16_q10000_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 8 --batch 1 -o p8_q1_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 8 --batch 10 -o p8_q10_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 8 --batch 100 -o p8_q100_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 8 --batch 1000 -o p8_q1000_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 8 --batch 10000 -o p8_q10000_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 1 --batch 1 -o p1_q1_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 1 --batch 10 -o p1_q10_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 1 --batch 100 -o p1_q100_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 1 --batch 1000 -o p1_q1000_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset slashdot --numthread 1 --batch 10000 -o p1_q10000_cpu_statperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_statperc.log
+  Dataset: web-indochina-2004
+  Logging to: ./output/web-indochina-2004_cpu_statperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 128 --batch 1 -o p128_q1_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 128 --batch 10 -o p128_q10_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 128 --batch 100 -o p128_q100_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 128 --batch 1000 -o p128_q1000_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 128 --batch 10000 -o p128_q10000_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 64 --batch 1 -o p64_q1_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 64 --batch 10 -o p64_q10_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 64 --batch 100 -o p64_q100_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 64 --batch 1000 -o p64_q1000_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 64 --batch 10000 -o p64_q10000_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 16 --batch 1 -o p16_q1_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 16 --batch 10 -o p16_q10_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 16 --batch 100 -o p16_q100_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 16 --batch 1000 -o p16_q1000_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 16 --batch 10000 -o p16_q10000_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 8 --batch 1 -o p8_q1_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 8 --batch 10 -o p8_q10_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 8 --batch 100 -o p8_q100_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 8 --batch 1000 -o p8_q1000_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 8 --batch 10000 -o p8_q10000_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 1 --batch 1 -o p1_q1_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 1 --batch 10 -o p1_q10_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 1 --batch 100 -o p1_q100_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 1 --batch 1000 -o p1_q1000_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset web-indochina-2004 --numthread 1 --batch 10000 -o p1_q10000_cpu_statperc_web-indochina-2004.txt
+      Finished. Output appended to ./output/web-indochina-2004_cpu_statperc.log
+  Dataset: web-webbase-2001
+  Logging to: ./output/web-webbase-2001_cpu_statperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 128 --batch 1 -o p128_q1_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 128 --batch 10 -o p128_q10_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 128 --batch 100 -o p128_q100_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 128 --batch 1000 -o p128_q1000_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 128 --batch 10000 -o p128_q10000_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 64 --batch 1 -o p64_q1_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 64 --batch 10 -o p64_q10_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 64 --batch 100 -o p64_q100_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 64 --batch 1000 -o p64_q1000_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 64 --batch 10000 -o p64_q10000_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 16 --batch 1 -o p16_q1_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 16 --batch 10 -o p16_q10_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 16 --batch 100 -o p16_q100_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 16 --batch 1000 -o p16_q1000_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 16 --batch 10000 -o p16_q10000_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 8 --batch 1 -o p8_q1_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 8 --batch 10 -o p8_q10_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 8 --batch 100 -o p8_q100_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 8 --batch 1000 -o p8_q1000_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 8 --batch 10000 -o p8_q10000_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 1 --batch 1 -o p1_q1_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 1 --batch 10 -o p1_q10_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 1 --batch 100 -o p1_q100_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 1 --batch 1000 -o p1_q1000_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm statperc --dataset web-webbase-2001 --numthread 1 --batch 10000 -o p1_q10000_cpu_statperc_web-webbase-2001.txt
+      Finished. Output appended to ./output/web-webbase-2001_cpu_statperc.log
+Running algorithm: dynperc
+  Dataset: brightkite
+  Logging to: ./output/brightkite_cpu_dynperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 1 -o p128_q1_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 10 -o p128_q10_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 100 -o p128_q100_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 1000 -o p128_q1000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 128 --batch 10000 -o p128_q10000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 64 --batch 1 -o p64_q1_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 64 --batch 10 -o p64_q10_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 64 --batch 100 -o p64_q100_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 64 --batch 1000 -o p64_q1000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 64 --batch 10000 -o p64_q10000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 16 --batch 1 -o p16_q1_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 16 --batch 10 -o p16_q10_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 16 --batch 100 -o p16_q100_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 16 --batch 1000 -o p16_q1000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 16 --batch 10000 -o p16_q10000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 8 --batch 1 -o p8_q1_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 8 --batch 10 -o p8_q10_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 8 --batch 100 -o p8_q100_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 8 --batch 1000 -o p8_q1000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 8 --batch 10000 -o p8_q10000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 1 --batch 1 -o p1_q1_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 1 --batch 10 -o p1_q10_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 1 --batch 100 -o p1_q100_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 1 --batch 1000 -o p1_q1000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset brightkite --numthread 1 --batch 10000 -o p1_q10000_cpu_dynperc_brightkite.txt
+      Finished. Output appended to ./output/brightkite_cpu_dynperc.log
+  Dataset: email-enron
+  Logging to: ./output/email-enron_cpu_dynperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 128 --batch 1 -o p128_q1_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 128 --batch 10 -o p128_q10_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 128 --batch 100 -o p128_q100_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 128 --batch 1000 -o p128_q1000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 128 --batch 10000 -o p128_q10000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 64 --batch 1 -o p64_q1_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 64 --batch 10 -o p64_q10_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 64 --batch 100 -o p64_q100_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 64 --batch 1000 -o p64_q1000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 64 --batch 10000 -o p64_q10000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 16 --batch 1 -o p16_q1_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 16 --batch 10 -o p16_q10_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 16 --batch 100 -o p16_q100_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 16 --batch 1000 -o p16_q1000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 16 --batch 10000 -o p16_q10000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 8 --batch 1 -o p8_q1_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 8 --batch 10 -o p8_q10_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 8 --batch 100 -o p8_q100_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 8 --batch 1000 -o p8_q1000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 8 --batch 10000 -o p8_q10000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 1 --batch 1 -o p1_q1_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 1 --batch 10 -o p1_q10_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 1 --batch 100 -o p1_q100_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 1 --batch 1000 -o p1_q1000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset email-enron --numthread 1 --batch 10000 -o p1_q10000_cpu_dynperc_email-enron.txt
+      Finished. Output appended to ./output/email-enron_cpu_dynperc.log
+  Dataset: p2p-Gnutella25
+  Logging to: ./output/p2p-Gnutella25_cpu_dynperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 128 --batch 1 -o p128_q1_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 128 --batch 10 -o p128_q10_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 128 --batch 100 -o p128_q100_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 128 --batch 1000 -o p128_q1000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 128 --batch 10000 -o p128_q10000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 64 --batch 1 -o p64_q1_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 64 --batch 10 -o p64_q10_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 64 --batch 100 -o p64_q100_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 64 --batch 1000 -o p64_q1000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 64 --batch 10000 -o p64_q10000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 16 --batch 1 -o p16_q1_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 16 --batch 10 -o p16_q10_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 16 --batch 100 -o p16_q100_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 16 --batch 1000 -o p16_q1000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 16 --batch 10000 -o p16_q10000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 8 --batch 1 -o p8_q1_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 8 --batch 10 -o p8_q10_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 8 --batch 100 -o p8_q100_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 8 --batch 1000 -o p8_q1000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 8 --batch 10000 -o p8_q10000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 1 --batch 1 -o p1_q1_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 1 --batch 10 -o p1_q10_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 1 --batch 100 -o p1_q100_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 1 --batch 1000 -o p1_q1000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella25 --numthread 1 --batch 10000 -o p1_q10000_cpu_dynperc_p2p-Gnutella25.txt
+      Finished. Output appended to ./output/p2p-Gnutella25_cpu_dynperc.log
+  Dataset: p2p-Gnutella30
+  Logging to: ./output/p2p-Gnutella30_cpu_dynperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 128 --batch 1 -o p128_q1_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 128 --batch 10 -o p128_q10_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 128 --batch 100 -o p128_q100_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 128 --batch 1000 -o p128_q1000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 128 --batch 10000 -o p128_q10000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 64 --batch 1 -o p64_q1_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 64 --batch 10 -o p64_q10_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 64 --batch 100 -o p64_q100_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 64 --batch 1000 -o p64_q1000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 64 --batch 10000 -o p64_q10000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 16 --batch 1 -o p16_q1_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 16 --batch 10 -o p16_q10_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 16 --batch 100 -o p16_q100_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 16 --batch 1000 -o p16_q1000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 16 --batch 10000 -o p16_q10000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 8 --batch 1 -o p8_q1_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 8 --batch 10 -o p8_q10_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 8 --batch 100 -o p8_q100_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 8 --batch 1000 -o p8_q1000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 8 --batch 10000 -o p8_q10000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 1 --batch 1 -o p1_q1_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 1 --batch 10 -o p1_q10_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 1 --batch 100 -o p1_q100_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 1 --batch 1000 -o p1_q1000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset p2p-Gnutella30 --numthread 1 --batch 10000 -o p1_q10000_cpu_dynperc_p2p-Gnutella30.txt
+      Finished. Output appended to ./output/p2p-Gnutella30_cpu_dynperc.log
+  Dataset: PGPgiantcompo
+  Logging to: ./output/PGPgiantcompo_cpu_dynperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 128 --batch 1 -o p128_q1_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 128 --batch 10 -o p128_q10_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 128 --batch 100 -o p128_q100_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 128 --batch 1000 -o p128_q1000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 128 --batch 10000 -o p128_q10000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 64 --batch 1 -o p64_q1_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 64 --batch 10 -o p64_q10_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 64 --batch 100 -o p64_q100_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 64 --batch 1000 -o p64_q1000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 64 --batch 10000 -o p64_q10000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 16 --batch 1 -o p16_q1_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 16 --batch 10 -o p16_q10_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 16 --batch 100 -o p16_q100_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 16 --batch 1000 -o p16_q1000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 16 --batch 10000 -o p16_q10000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 8 --batch 1 -o p8_q1_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 8 --batch 10 -o p8_q10_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 8 --batch 100 -o p8_q100_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 8 --batch 1000 -o p8_q1000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 8 --batch 10000 -o p8_q10000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 1 --batch 1 -o p1_q1_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 1 --batch 10 -o p1_q10_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 1 --batch 100 -o p1_q100_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 1 --batch 1000 -o p1_q1000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset PGPgiantcompo --numthread 1 --batch 10000 -o p1_q10000_cpu_dynperc_PGPgiantcompo.txt
+      Finished. Output appended to ./output/PGPgiantcompo_cpu_dynperc.log
+  Dataset: slashdot
+  Logging to: ./output/slashdot_cpu_dynperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 128 --batch 1 -o p128_q1_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 128 --batch 10 -o p128_q10_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 128 --batch 100 -o p128_q100_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 128 --batch 1000 -o p128_q1000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 128 --batch 10000 -o p128_q10000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+    Threads: 64
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 64 --batch 1 -o p64_q1_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 64 --batch 10 -o p64_q10_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 64 --batch 100 -o p64_q100_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 64 --batch 1000 -o p64_q1000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 64 --batch 10000 -o p64_q10000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+    Threads: 16
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 16 --batch 1 -o p16_q1_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 16 --batch 10 -o p16_q10_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 16 --batch 100 -o p16_q100_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 16 --batch 1000 -o p16_q1000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 16 --batch 10000 -o p16_q10000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+    Threads: 8
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 8 --batch 1 -o p8_q1_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 8 --batch 10 -o p8_q10_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 8 --batch 100 -o p8_q100_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 8 --batch 1000 -o p8_q1000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 8 --batch 10000 -o p8_q10000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+    Threads: 1
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 1 --batch 1 -o p1_q1_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 1 --batch 10 -o p1_q10_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 100
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 1 --batch 100 -o p1_q100_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 1000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 1 --batch 1000 -o p1_q1000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+      Batch Size: 10000
+      Executing: python3 run.py --algorithm dynperc --dataset slashdot --numthread 1 --batch 10000 -o p1_q10000_cpu_dynperc_slashdot.txt
+      Finished. Output appended to ./output/slashdot_cpu_dynperc.log
+  Dataset: web-indochina-2004
+  Logging to: ./output/web-indochina-2004_cpu_dynperc.log
+    Threads: 128
+      Batch Size: 1
+      Executing: python3 run.py --algorithm dynperc --dataset web-indochina-2004 --numthread 128 --batch 1 -o p128_q1_cpu_dynperc_web-indochina-2004.txt

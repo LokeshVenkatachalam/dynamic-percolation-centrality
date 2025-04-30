@@ -637,11 +637,15 @@ int main(int argc, char **argv)
 				// 2) time just the update_brandes call
 				auto t_b_start = Clock::now();
 				update_brandes(
-					query_nodes[i], node, x, updated_x,
-					tmp_g, reach,
-					&local_ptr[0], rep,
-					/* q, st, dist, sig, ... pr */
-				);
+								query_nodes[i], node, x, updated_x,
+								tmp_g, reach,
+								&local_ptr[0],    // use thread‐local accumulator
+								rep,
+								q, st,
+								dist, sig,
+								new_delta, old_delta,
+								pr
+							);
 				auto t_b_end = Clock::now();
 				thread_brandes += (t_b_end - t_b_start);
 			}

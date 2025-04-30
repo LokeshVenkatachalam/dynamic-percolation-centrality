@@ -583,8 +583,8 @@ int main(int argc, char **argv)
 			vector<double> new_delta(N + 1);
 			vector<double> old_delta(N + 1);
 			vector<vector<int>> pr(N + 1);
-
-			#pragma omp for schedule(dynamic,4)
+			
+			#pragma omp for schedule(dynamic, 4)
 			for (int i = 0; i < batch_size; ++i)
 			{
 				// reset per‐iteration state
@@ -593,8 +593,8 @@ int main(int argc, char **argv)
 				fill(new_delta.begin(), new_delta.end(), 0.0);
 				fill(old_delta.begin(), old_delta.end(), 0.0);
 				for (auto &plist : pr) plist.clear();
-				q.clear();
-				st.clear();
+				while (!q.empty()) q.pop();
+        		while (!st.empty()) st.pop();
 
 				// run the Brandes update, writing into local_ptr
 				update_brandes(

@@ -555,20 +555,68 @@ int main(int argc, char **argv)
 			query_nodes[batch_size++] = v;
 
 		ptr = &pCentrality[0];
-#pragma omp parallel for reduction(+ : ptr[ : V + 1])
-		for (int th = 0; th < numthreads; ++th)
+// #pragma omp parallel for reduction(+ : ptr[ : V + 1])
+// 		for (int th = 0; th < numthreads; ++th)
+// 		{
+// 			int N = (int)x.size() - 1;
+// 			queue<int> q;
+// 			stack<int> st;
+// 			vector<int> dist(N + 1, -1);
+// 			vector<double> sig(N + 1, 0.0);
+// 			vector<double> new_delta(N + 1, 0.0);
+// 			vector<double> old_delta(N + 1, 0.0);
+// 			vector<vector<int>> pr(N + 1);
+// 			for (int i = th; i < batch_size; i += numthreads)
+// 				update_brandes(query_nodes[i - 1], node, x, updated_x, tmp_g, reach, ptr, rep, q, st, dist, sig, new_delta, old_delta, pr);
+// 		}
+		#pragma omp parallel
 		{
+			// Thread‐local accumulator array
+			vector<double> local_ptr(V + 1, 0.0);
+
+			// Thread‐local workspace (allocated once per thread)
 			int N = (int)x.size() - 1;
 			queue<int> q;
 			stack<int> st;
-			vector<int> dist(N + 1, -1);
-			vector<double> sig(N + 1, 0.0);
-			vector<double> new_delta(N + 1, 0.0);
-			vector<double> old_delta(N + 1, 0.0);
+			vector<int> dist(N + 1);
+			vector<double> sig(N + 1);
+			vector<double> new_delta(N + 1);
+			vector<double> old_delta(N + 1);
 			vector<vector<int>> pr(N + 1);
-			for (int i = th; i < batch_size; i += numthreads)
-				update_brandes(query_nodes[i - 1], node, x, updated_x, tmp_g, reach, ptr, rep, q, st, dist, sig, new_delta, old_delta, pr);
+
+			#pragma omp for schedule(static)
+			for (int i = 0; i < batch_size; ++i)
+			{
+				// reset per‐iteration state
+				fill(dist.begin(),    dist.end(),    -1);
+				fill(sig.begin(),     sig.end(),     0.0);
+				fill(new_delta.begin(), new_delta.end(), 0.0);
+				fill(old_delta.begin(), old_delta.end(), 0.0);
+				for (auto &plist : pr) plist.clear();
+				while (!q.empty()) q.pop();
+				while (!st.empty()) st.pop();
+
+				// run the Brandes update, writing into local_ptr
+				update_brandes(
+					query_nodes[i], node, x, updated_x,
+					tmp_g, reach,
+					&local_ptr[0],    // use thread‐local accumulator
+					rep,
+					q, st,
+					dist, sig,
+					new_delta, old_delta,
+					pr
+				);
+			}
+
+			// fold thread locals back into the global ptr[]
+			#pragma omp critical
+			{
+				for (int v = 1; v <= V; ++v)
+					ptr[v] += local_ptr[v];
+			}
 		}
+
 
 		auto t4 = std::chrono::high_resolution_clock::now();
 		duration_dynamic += std::chrono::duration_cast<std::chrono::microseconds>(t4 - t3).count();

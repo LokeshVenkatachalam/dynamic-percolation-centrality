@@ -7,7 +7,7 @@ using namespace std;
 int numthreads = 96;
 
 using Clock = std::chrono::high_resolution_clock;
-using Duration = std::chrono::duration<double, std::microseconds>;  // milliseconds
+using Duration = std::chrono::duration<double, std::micro>;  // milliseconds
 
 void brandes(int src, vector<double> x, vector<vector<int>> &adj, double *ptr)
 {

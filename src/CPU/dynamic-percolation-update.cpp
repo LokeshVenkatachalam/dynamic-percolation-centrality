@@ -630,7 +630,24 @@ int main(int argc, char **argv)
 			// per-thread accumulators for brandes time
 			Duration thread_brandes(0);
 
-			// reset per‐iteration state
+			int N = (int)x.size() - 1;
+			queue<int> q;
+			stack<int> st;
+			vector<int> dist(N + 1);
+			vector<double> sig(N + 1);
+			vector<double> new_delta(N + 1);
+			vector<double> old_delta(N + 1);
+			vector<vector<int>> pr(N + 1);
+			
+	
+			// 1) time the for-loop itself
+			auto t_loop_start = Clock::now();
+			#pragma omp for schedule(static)
+			for (int i = 0; i < batch_size; ++i) {
+				// 2) time just the update_brandes call
+
+				// reset per‐iteration state
+				auto t_enter = Clock::now();
 				fill(dist.begin(),    dist.end(),    -1);
 				fill(sig.begin(),     sig.end(),     0.0);
 				fill(new_delta.begin(), new_delta.end(), 0.0);
@@ -638,12 +655,7 @@ int main(int argc, char **argv)
 				for (auto &plist : pr) plist.clear();
 				while (!q.empty()) q.pop();
         		while (!st.empty()) st.pop();
-	
-			// 1) time the for-loop itself
-			auto t_loop_start = Clock::now();
-			#pragma omp for schedule(static)
-			for (int i = 0; i < batch_size; ++i) {
-				// 2) time just the update_brandes call
+
 				auto t_b_start = Clock::now();
 				update_brandes(
 								query_nodes[i], node, x, updated_x,

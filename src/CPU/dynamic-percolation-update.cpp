@@ -750,7 +750,7 @@ int main(int argc, char **argv)
 		{
 
 			auto t_loop_start = Clock::now();
-			
+
 			int tid = omp_get_thread_num();
 
 			// per-thread scratch space (allocated once per thread)
@@ -823,6 +823,8 @@ int main(int argc, char **argv)
 			reduction_ms += thread_red.count();
 		}
 		
+		cerr << loop_ms << "," << brandes_ms << "," << reduction_ms << ",";
+
 		auto t4 = std::chrono::high_resolution_clock::now();
 		duration_dynamic += std::chrono::duration_cast<std::chrono::microseconds>( t4 - t3 ).count();
 		

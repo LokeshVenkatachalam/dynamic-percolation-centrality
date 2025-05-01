@@ -357,127 +357,6 @@ pair<int, vector<double>> compute_constants()
 	return make_pair(sum_x, contrib);
 }
 
-
-template<typename T>
-void write_vector(ofstream &of, const vector<T> &v) {
-    size_t n = v.size();
-    of.write(reinterpret_cast<const char*>(&n), sizeof(n));
-    of.write(reinterpret_cast<const char*>(v.data()), n * sizeof(T));
-}
-
-template<typename T>
-void read_vector(ifstream &in, vector<T> &v) {
-    size_t n;
-    in.read(reinterpret_cast<char*>(&n), sizeof(n));
-    v.resize(n);
-    in.read(reinterpret_cast<char*>(v.data()), n * sizeof(T));
-}
-
-void write_vecvec(ofstream &of, const vector<vector<int>> &vv) {
-    size_t n = vv.size();
-    of.write(reinterpret_cast<const char*>(&n), sizeof(n));
-    for (auto &inner : vv) write_vector(of, inner);
-}
-
-void read_vecvec(ifstream &in, vector<vector<int>> &vv) {
-    size_t n;
-    in.read(reinterpret_cast<char*>(&n), sizeof(n));
-    vv.resize(n);
-    for (auto &inner : vv) read_vector(in, inner);
-}
-
-template<typename T1, typename T2>
-void write_vecpair(ofstream &of, const vector<pair<T1,T2>> &vp) {
-    size_t n = vp.size();
-    of.write(reinterpret_cast<const char*>(&n), sizeof(n));
-    for (auto &p : vp) {
-        of.write(reinterpret_cast<const char*>(&p.first), sizeof(T1));
-        of.write(reinterpret_cast<const char*>(&p.second), sizeof(T2));
-    }
-}
-
-template<typename T1, typename T2>
-void read_vecpair(ifstream &in, vector<pair<T1,T2>> &vp) {
-    size_t n;
-    in.read(reinterpret_cast<char*>(&n), sizeof(n));
-    vp.resize(n);
-    for (size_t i = 0; i < n; ++i) {
-        in.read(reinterpret_cast<char*>(&vp[i].first), sizeof(T1));
-        in.read(reinterpret_cast<char*>(&vp[i].second), sizeof(T2));
-    }
-}
-
-void write_boolvec(ofstream &of, const vector<bool> &vb) {
-    size_t n = vb.size();
-    of.write(reinterpret_cast<const char*>(&n), sizeof(n));
-    for (bool b : vb) {
-        char c = b;
-        of.write(&c, 1);
-    }
-}
-
-void read_boolvec(ifstream &in, vector<bool> &vb) {
-    size_t n;
-    in.read(reinterpret_cast<char*>(&n), sizeof(n));
-    vb.resize(n);
-    for (size_t i = 0; i < n; ++i) {
-        char c;
-        in.read(&c, 1);
-        vb[i] = (c != 0);
-    }
-}
-
-// Cache I/O
-bool load_cache(const string &cache_file) {
-    if (!fs::exists(cache_file)) return false;
-    ifstream in(cache_file, ios::binary);
-    if (!in) return false;
-    read_vector(in, x);
-    read_vector(in, updated_x);
-    read_vector(in, pc);
-    read_vecvec(in, g);
-    read_vecvec(in, tmp_g);
-    read_vecvec(in, reach);
-    read_vecvec(in, corr);
-    read_vecvec(in, reachv);
-    read_vecvec(in, copies);
-    read_vecpair(in, st);
-    read_boolvec(in, in_otherbccs);
-    read_vector(in, vis);
-    read_vector(in, vis1);
-    read_vector(in, low);
-    read_vector(in, entry);
-    read_vector(in, cur_comp);
-    read_vecpair<double,int>(in, perc);
-    read_vector(in, rep);
-    read_vector(in, query_node);
-    return true;
-}
-
-void save_cache(const string &cache_file) {
-    ofstream out(cache_file, ios::binary);
-    write_vector(out, x);
-    write_vector(out, updated_x);
-    write_vector(out, pc);
-    write_vecvec(out, g);
-    write_vecvec(out, tmp_g);
-    write_vecvec(out, reach);
-    write_vecvec(out, corr);
-    write_vecvec(out, reachv);
-    write_vecvec(out, copies);
-    write_vecpair(out, st);
-    write_boolvec(out, in_otherbccs);
-    write_vector(out, vis);
-    write_vector(out, vis1);
-    write_vector(out, low);
-    write_vector(out, entry);
-    write_vector(out, cur_comp);
-    write_vecpair<double,int>(out, perc);
-    write_vector(out, rep);
-    write_vector(out, query_node);
-}
-
-
 int main(int argc, char **argv)
 {
 	ios::sync_with_stdio(false);
@@ -535,89 +414,71 @@ int main(int argc, char **argv)
 	fin >> n >> m;
 	cerr << n << "," << m << ",";
 
-	string cache_file = input + ",cache";
-    
 
 	auto t0 = std::chrono::high_resolution_clock::now();
+
 	vertices = n;
-
-	auto res;
-	double sum_x;
-	vector<double> contrib;
-
-	bool cached = load_cache(cache_file);
-    if (!cached) {
-		cerr<< "Computing,";
-		for (int i = 0; i <= n; ++i)
+	for (int i = 0; i <= n; ++i)
 		rep.push_back(i);
-		g.resize(n + 1);
-		copies.resize(n + 1);
-		for (int i = 1; i <= n; ++i)
-			copies[i].push_back(i);
-		tmp_g.resize(2 * m + 1);
-		x.resize(n + 1);
-		reach.resize(2 * m + 1);
-		reachv.resize(n + 1);
-		corr.resize(n + 1);
-		vis.resize(n + 1);
-		low.resize(n + 1);
-		entry.resize(n + 1);
-		in_otherbccs.resize(n + 1, 0);
-		perc.resize(n + 1);
-		pc.resize(n + 1, 0);
+	g.resize(n + 1);
+	copies.resize(n + 1);
+	for (int i = 1; i <= n; ++i)
+		copies[i].push_back(i);
+	tmp_g.resize(2 * m + 1);
+	x.resize(n + 1);
+	reach.resize(2 * m + 1);
+	reachv.resize(n + 1);
+	corr.resize(n + 1);
+	vis.resize(n + 1);
+	low.resize(n + 1);
+	entry.resize(n + 1);
+	in_otherbccs.resize(n + 1, 0);
+	perc.resize(n + 1);
+	pc.resize(n + 1, 0);
 
-		timer = 0;
-		x[0] = 0;
-		for (int i = 1; i <= n; i++)
+	timer = 0;
+	x[0] = 0;
+	for (int i = 1; i <= n; i++)
+	{
+		x[i] = (1.0 / (double)(n)) * (rand() % n);
+	}
+	for (int i = 0; i < m; i++)
+	{
+		int u, v;
+		fin >> u >> v;
+		if (u != v)
 		{
-			x[i] = (1.0 / (double)(n)) * (rand() % n);
+			g[u].push_back(v);
+			g[v].push_back(u);
 		}
-		for (int i = 0; i < m; i++)
-		{
-			int u, v;
-			fin >> u >> v;
-			if (u != v)
-			{
-				g[u].push_back(v);
-				g[v].push_back(u);
-			}
-		}
+	}
 
-		res = compute_constants();
-		sum_x = res.first;
-		contrib = res.second;
-		x.resize(2 * m + 1);
+	auto res = compute_constants();
+	double sum_x = res.first;
+	vector<double> contrib = res.second;
+	x.resize(2 * m + 1);
 
-		for (int i = 1; i <= n; i++)
+	for (int i = 1; i <= n; i++)
+	{
+		if (!vis[i])
 		{
-			if (!vis[i])
+			cur_comp.clear();
+			prelim_dfs(i);
+			for (auto v : cur_comp)
 			{
-				cur_comp.clear();
-				prelim_dfs(i);
-				for (auto v : cur_comp)
+				if ((int)g[v].size() != 1)
 				{
-					if ((int)g[v].size() != 1)
-					{
-						dfs(v, 0);
-						break;
-					}
+					dfs(v, 0);
+					break;
 				}
 			}
 		}
-
-		tmp_g.resize(vertices + 1);
-		reach.resize(vertices + 1);
-		reachv.resize(vertices + 1);
-		x.resize(vertices + 1);
-
-		save_cache(cache_file);
 	}
-	else{
-		cerr << "Loading,";
-		res = compute_constants();
-		sum_x = res.first;
-		contrib = res.second;
-	}
+
+	tmp_g.resize(vertices + 1);
+	reach.resize(vertices + 1);
+	reachv.resize(vertices + 1);
+	x.resize(vertices + 1);
 
 	int V, E = 0;
 	V = vertices;
@@ -632,29 +493,20 @@ int main(int argc, char **argv)
 	auto t01 = std::chrono::high_resolution_clock::now();
 	// preprocess time
 	cerr << std::chrono::duration_cast<std::chrono::microseconds>(t01 - t0).count() << ",";
+	// double *ptr = &pc[0];
+	// #pragma omp parallel for reduction (+:ptr[:n+1])
+	// for(int i=1;i<=n;++i)
+	// 	brandes(i,x,g,ptr);
+	// for(int i=1;i<=n;++i)
+	// 	pc[i] /= (sum_x - contrib[i]);
 
 	auto t1 = std::chrono::high_resolution_clock::now();
 
 	vector<double> pCentrality(V + 1, 0.0), ac(V + 1, 0.0);
 	double *ptr = &pCentrality[0];
-// #pragma omp parallel for reduction(+ : ptr[ : V + 1])
-// 	for (int i = 1; i <= V; ++i)
-// 		bcc_brandes(i, x, tmp_g, reach, ptr, rep);
-#pragma omp parallel
-{
-	// Vector to allocate local accumulator to each thread
-	vector<double> local_pc(V + 1, 0.0);
-	
-	#pragma omp for
+#pragma omp parallel for reduction(+ : ptr[ : V + 1])
 	for (int i = 1; i <= V; ++i)
-		bcc_brandes(i, x, tmp_g, reach, &local_pc[0], 1.0,profile1);
-
-	#pragma omp critical
-	{
-		for (int i = 1; i <= V; ++i)
-		pCentrality[i] += local_pc[i];
-	}
-}
+		bcc_brandes(i, x, tmp_g, reach, ptr, rep);
 	for (int i = 1; i <= V; ++i)
 		ac[rep[i]] += pCentrality[i];
 	for (int i = 1; i <= n; ++i)
@@ -662,32 +514,35 @@ int main(int argc, char **argv)
 
 	auto t2 = std::chrono::high_resolution_clock::now();
 
+	// double max_diff = 0;
+	// for(int i=1;i<=n;++i)
+	// 	max_diff = max(max_diff,abs(ac[i]-pc[i]));
+
 	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
 	// cerr << "Initial Static Computation time : " << duration << " mu.s." << endl;
 	cerr << duration << ",";
-
+	// cerr << "Max difference in PC point-wise : " << max_diff << "\n";
 
 	duration = 0;
 	auto duration_dynamic = duration;
 	auto duration2 = duration;
 
-	
 	int query_nodes[V];
 
 	ifstream qin(queries);
 	int batch_size;
-	while(qin >> batch_size)
+	while (qin >> batch_size)
 	{
 		updated_x = x;
 		int node;
 		double val;
 		int query_size = 0;
-		for(int i=1;i<=batch_size;++i)
+		for (int i = 1; i <= batch_size; ++i)
 		{
 			qin >> node >> val;
-			if(x[node] != val)
+			if (x[node] != val)
 			{
-				for(auto repr:copies[node])
+				for (auto repr : copies[node])
 				{
 					updated_x[repr] = val;
 				}
@@ -699,46 +554,192 @@ int main(int argc, char **argv)
 		auto t3 = std::chrono::high_resolution_clock::now();
 
 		batch_size = 0;
-		for(auto v:corr[node])
+		for (auto v : corr[node])
 			query_nodes[batch_size++] = v;
-		
-		
+
 		ptr = &pCentrality[0];
-		#pragma omp parallel for reduction (+:ptr[:V+1])
-		for(int th=0;th<numthreads;++th)
+// #pragma omp parallel for reduction(+ : ptr[ : V + 1])
+// 		for (int th = 0; th < numthreads; ++th)
+// 		{
+// 			int N = (int)x.size() - 1;
+// 			queue<int> q;
+// 			stack<int> st;
+// 			vector<int> dist(N + 1, -1);
+// 			vector<double> sig(N + 1, 0.0);
+// 			vector<double> new_delta(N + 1, 0.0);
+// 			vector<double> old_delta(N + 1, 0.0);
+// 			vector<vector<int>> pr(N + 1);
+// 			for (int i = th; i < batch_size; i += numthreads)
+// 				update_brandes(query_nodes[i - 1], node, x, updated_x, tmp_g, reach, ptr, rep, q, st, dist, sig, new_delta, old_delta, pr);
+// 		}
+		// #pragma omp parallel
+		// {
+		// 	// Thread‐local accumulator array
+		// 	vector<double> local_ptr(V + 1, 0.0);
+
+		// 	// Thread‐local workspace (allocated once per thread)
+		// 	int N = (int)x.size() - 1;
+		// 	queue<int> q;
+		// 	stack<int> st;
+		// 	vector<int> dist(N + 1);
+		// 	vector<double> sig(N + 1);
+		// 	vector<double> new_delta(N + 1);
+		// 	vector<double> old_delta(N + 1);
+		// 	vector<vector<int>> pr(N + 1);
+			
+		// 	#pragma omp for schedule(dynamic, 16)
+		// 	for (int i = 0; i < batch_size; ++i)
+		// 	{
+		// 		// reset per‐iteration state
+		// 		fill(dist.begin(),    dist.end(),    -1);
+		// 		fill(sig.begin(),     sig.end(),     0.0);
+		// 		fill(new_delta.begin(), new_delta.end(), 0.0);
+		// 		fill(old_delta.begin(), old_delta.end(), 0.0);
+		// 		for (auto &plist : pr) plist.clear();
+		// 		while (!q.empty()) q.pop();
+        // 		while (!st.empty()) st.pop();
+
+		// 		// run the Brandes update, writing into local_ptr
+		// 		update_brandes(
+		// 			query_nodes[i], node, x, updated_x,
+		// 			tmp_g, reach,
+		// 			&local_ptr[0],    // use thread‐local accumulator
+		// 			rep,
+		// 			q, st,
+		// 			dist, sig,
+		// 			new_delta, old_delta,
+		// 			pr
+		// 		);
+		// 	}
+
+		// 	// fold thread locals back into the global ptr[]
+		// 	#pragma omp critical
+		// 	{
+		// 		for (int v = 1; v <= V; ++v)
+		// 			ptr[v] += local_ptr[v];
+		// 	}
+		// }
+
+		double loop_ms = 0.0;
+		double brandes_ms = 0.0;
+		double reduction_ms = 0.0;
+	
+		#pragma omp parallel
 		{
-			int N = (int)x.size()-1;
+			vector<double> local_ptr(V+1, 0.0);
+			// per-thread accumulators for brandes time
+			Duration thread_brandes(0);
+
+			int N = (int)x.size() - 1;
 			queue<int> q;
 			stack<int> st;
-			vector<int> dist(N+1,-1);
-			vector<double> sig(N+1,0.0);
-			vector<double> new_delta(N+1,0.0);
-			vector<double> old_delta(N+1,0.0);
-			vector<vector<int> > pr(N+1);
-			for(int i=th;i<=batch_size;i+=numthreads)
-				update_brandes(query_nodes[i-1],node,x,updated_x,tmp_g,reach,ptr,rep,q,st,dist,sig,new_delta,old_delta,pr);
+			vector<int> dist(N + 1);
+			vector<double> sig(N + 1);
+			vector<double> new_delta(N + 1);
+			vector<double> old_delta(N + 1);
+			vector<vector<int>> pr(N + 1);
+			
+	
+			// 1) time the for-loop itself
+			auto t_loop_start = Clock::now();
+			#pragma omp for schedule(static)
+			for (int i = 0; i < batch_size; ++i) {
+				// 2) time just the update_brandes call
+
+				// reset per‐iteration state
+				auto t_enter = Clock::now();
+				fill(dist.begin(),    dist.end(),    -1);
+				fill(sig.begin(),     sig.end(),     0.0);
+				fill(new_delta.begin(), new_delta.end(), 0.0);
+				fill(old_delta.begin(), old_delta.end(), 0.0);
+				for (auto &plist : pr) plist.clear();
+				while (!q.empty()) q.pop();
+        		while (!st.empty()) st.pop();
+
+				auto t_b_start = Clock::now();
+				update_brandes(
+								query_nodes[i], node, x, updated_x,
+								tmp_g, reach,
+								&local_ptr[0],    // use thread‐local accumulator
+								rep,
+								q, st,
+								dist, sig,
+								new_delta, old_delta,
+								pr
+							);
+				auto t_b_end = Clock::now();
+				thread_brandes += (t_b_end - t_b_start);
+			}
+			auto t_loop_end = Clock::now();
+	
+			// each thread adds its own elapsed loop time:
+			Duration thread_loop = (t_loop_end - t_loop_start);
+	
+			// 3) time the reduction
+			auto t_red_start = Clock::now();
+			#pragma omp critical
+			{
+				for (int v = 1; v <= V; ++v)
+					ptr[v] += local_ptr[v];
+			}
+			auto t_red_end = Clock::now();
+			Duration thread_red = (t_red_end - t_red_start);
+	
+			// reduce your timings across threads into the master totals
+			#pragma omp atomic
+			loop_ms      += thread_loop.count();
+			#pragma omp atomic
+			brandes_ms   += thread_brandes.count();
+			#pragma omp atomic
+			reduction_ms += thread_red.count();
 		}
-		
+	
+		// Because each of the above was summed over T threads,
+		// you might want to divide by omp_get_max_threads() to get per-thread averages,
+		// or just report the totals if you’re comparing relative cost.
+		cerr << loop_ms      << ",";
+		cerr << brandes_ms   << ",";
+		cerr << reduction_ms << ",";
+
+
 		auto t4 = std::chrono::high_resolution_clock::now();
-		duration_dynamic += std::chrono::duration_cast<std::chrono::microseconds>( t4 - t3 ).count();
-		
-		fill(ac.begin(),ac.end(),0);
-		for(int i=1;i<=V;++i)
+		duration_dynamic += std::chrono::duration_cast<std::chrono::microseconds>(t4 - t3).count();
+
+		fill(ac.begin(), ac.end(), 0);
+		for (int i = 1; i <= V; ++i)
 			ac[rep[i]] += pCentrality[i];
-		for(int i=1;i<=n;++i)
+		for (int i = 1; i <= n; ++i)
 		{
 			ac[i] /= (sum_x - contrib[i]);
 			// fout << ac[i] << " ";
 		}
 		// fout << "\n";
-
 		auto t5 = std::chrono::high_resolution_clock::now();
 		duration2 = std::chrono::duration_cast<std::chrono::microseconds>(t5 - t4).count();
 
 		x = updated_x;
 	}
-
+	// cerr << "Total time for updates : " << duration_dynamic << " mu.s." <<endl;
+	// cerr << duration_dynamic << endl;
 	cerr << duration_dynamic << "," << duration2 << "\n";
+	// 	fill(pc.begin(), pc.end(), 0);
+	// 	ptr = &pc[0];
+	// #pragma omp parallel for reduction(+ : ptr[ : n + 1])
+	// 	for (int i = 1; i <= n; ++i)
+	// 		brandes(i, x, g, ptr);
+	// 	for (int i = 1; i <= n; ++i)
+	// 		pc[i] /= (sum_x - contrib[i]);
 
+	// 	fill(ac.begin(), ac.end(), 0);
+	// 	for (int i = 1; i <= V; ++i)
+	// 		ac[rep[i]] += pCentrality[i];
+	// 	for (int i = 1; i <= n; ++i)
+	// 		ac[i] /= (sum_x - contrib[i]);
+
+	// 	max_diff = 0;
+	// 	for (int i = 1; i <= n; ++i)
+	// 		max_diff = max(max_diff, abs(ac[i] - pc[i]));
+	// 	// cerr << "Max difference in PC point-wise : " << max_diff << "\n";
+	// 	cerr << "," << max_diff << "\n";
 	return 0;
 }

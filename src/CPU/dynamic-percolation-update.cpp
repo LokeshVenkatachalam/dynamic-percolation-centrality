@@ -814,7 +814,6 @@ int main(int argc, char **argv)
 			auto t_red_end = Clock::now();
 			Duration thread_red = (t_red_end - t_red_start);
 
-			reduce your timings across threads into the master totals
 			#pragma omp atomic
 			loop_ms      += thread_loop.count();
 			#pragma omp atomic

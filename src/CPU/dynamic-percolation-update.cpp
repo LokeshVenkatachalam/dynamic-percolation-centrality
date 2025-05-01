@@ -800,19 +800,19 @@ int main(int argc, char **argv)
 			auto t_b_end = Clock::now();
 			Duration thread_brandes = (t_b_end - t_b_start);
 
-			auto t_red_start = Clock::now();
+			// auto t_red_start = Clock::now();
 
-			#pragma omp for 
-			for (int v = 0; v <= N; ++v) {
-				double sum = 0.0;
-				for (int t = 0; t < num_threads; ++t) {
-					sum += local_ptr[t][v];
-				}
-				ptr[v] = sum;
-			}
+			// #pragma omp for 
+			// for (int v = 0; v <= N; ++v) {
+			// 	double sum = 0.0;
+			// 	for (int t = 0; t < num_threads; ++t) {
+			// 		sum += local_ptr[t][v];
+			// 	}
+			// 	ptr[v] = sum;
+			// }
 
-			auto t_red_end = Clock::now();
-			Duration thread_red = (t_red_end - t_red_start);
+			// auto t_red_end = Clock::now();
+			// Duration thread_red = (t_red_end - t_red_start);
 
 			// reduce your timings across threads into the master totals
 			// #pragma omp atomic

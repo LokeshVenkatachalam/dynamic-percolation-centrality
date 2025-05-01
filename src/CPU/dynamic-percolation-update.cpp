@@ -433,6 +433,8 @@ bool load_cache(const string &cache_file) {
     if (!fs::exists(cache_file)) return false;
     ifstream in(cache_file, ios::binary);
     if (!in) return false;
+	// read vertices
+	in.read(reinterpret_cast<char*>(&vertices), sizeof(vertices));
     read_vector(in, x);
     read_vector(in, updated_x);
     read_vector(in, pc);
@@ -457,6 +459,8 @@ bool load_cache(const string &cache_file) {
 
 void save_cache(const string &cache_file) {
     ofstream out(cache_file, ios::binary);
+	// write vertices
+	out.write(reinterpret_cast<const char*>(&vertices), sizeof(vertices));
     write_vector(out, x);
     write_vector(out, updated_x);
     write_vector(out, pc);
@@ -631,15 +635,16 @@ int main(int argc, char **argv)
 		// }
 	}
 
-	// int V, E = 0;
-	// V = vertices;
-	// int cnt_reach_vec = 0;
-	// for (int i = 1; i <= V; ++i)
-	// {
-	// 	cnt_reach_vec += (int)(reach[i].size());
-	// 	E += (int)(tmp_g[i].size());
-	// }
-	// E = E / 2;
+	int V, E = 0;
+	V = vertices;
+	int cnt_reach_vec = 0;
+	for (int i = 1; i <= V; ++i)
+	{
+		cnt_reach_vec += (int)(reach[i].size());
+		E += (int)(tmp_g[i].size());
+	}
+	E = E / 2;
+	cout << V << "," << E << "," << cnt_reach_vec << ",";
 
 	// auto t01 = std::chrono::high_resolution_clock::now();
 	// // preprocess time

@@ -29,8 +29,10 @@ g++ -O3 -fopenmp -lstdc++ "$SRC_DIR/dynamic-percolation-update.cpp" -o "$EXEC_DI
 g++ -O3 -fopenmp -lstdc++ "$SRC_DIR/static-percolation-update.cpp" -o "$EXEC_DIR/spu"
 echo "Compilation finished."
 
-export OMP_PLACES=threads
-export OMP_PROC_BIND=spread
+# export OMP_PLACES=threads
+# export OMP_PROC_BIND=spread
+unset OMP_PLACES
+unset OMP_PROC_BIND
 # Loop through algorithms
 for ALGO in "${ALGORITHMS[@]}"; do
     echo "Running algorithm: $ALGO"

@@ -31,8 +31,8 @@ echo "Compilation finished."
 
 # export OMP_PLACES=threads
 # export OMP_PROC_BIND=spread
-unset OMP_PLACES
-unset OMP_PROC_BIND
+# unset OMP_PLACES
+# unset OMP_PROC_BIND
 # Loop through algorithms
 for ALGO in "${ALGORITHMS[@]}"; do
     echo "Running algorithm: $ALGO"

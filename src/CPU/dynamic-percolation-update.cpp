@@ -827,8 +827,8 @@ int main(int argc, char **argv)
 		// cerr << brandes_ms << "," ;
 		// cerr << reduction_ms << ",";
 
-		// auto t4 = std::chrono::high_resolution_clock::now();
-		// duration_dynamic += std::chrono::duration_cast<std::chrono::microseconds>( t4 - t3 ).count();
+		auto t4 = std::chrono::high_resolution_clock::now();
+		duration_dynamic += std::chrono::duration_cast<std::chrono::microseconds>( t4 - t3 ).count();
 		
 		fill(ac.begin(),ac.end(),0);
 		for(int i=1;i<=V;++i)

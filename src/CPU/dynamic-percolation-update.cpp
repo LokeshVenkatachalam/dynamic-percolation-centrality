@@ -646,116 +646,116 @@ int main(int argc, char **argv)
 	E = E / 2;
 	cout << V << "," << E << "," << cnt_reach_vec << ",";
 
-	// auto t01 = std::chrono::high_resolution_clock::now();
-	// // preprocess time
-	// cerr << std::chrono::duration_cast<std::chrono::microseconds>(t01 - t0).count() << ",";
+	auto t01 = std::chrono::high_resolution_clock::now();
+	// preprocess time
+	cerr << std::chrono::duration_cast<std::chrono::microseconds>(t01 - t0).count() << ",";
 
-	// auto t1 = std::chrono::high_resolution_clock::now();
+	auto t1 = std::chrono::high_resolution_clock::now();
 
-	// vector<double> pCentrality(V + 1, 0.0), ac(V + 1, 0.0);
-	// double *ptr = &pCentrality[0];
-// #pragma omp parallel for reduction(+ : ptr[ : V + 1])
-// 	for (int i = 1; i <= V; ++i)
-// 		bcc_brandes(i, x, tmp_g, reach, ptr, rep);
-// #pragma omp parallel
-// {
-// 	// Vector to allocate local accumulator to each thread
-// 	vector<double> local_pc(V + 1, 0.0);
+	vector<double> pCentrality(V + 1, 0.0), ac(V + 1, 0.0);
+	double *ptr = &pCentrality[0];
+#pragma omp parallel for reduction(+ : ptr[ : V + 1])
+	for (int i = 1; i <= V; ++i)
+		bcc_brandes(i, x, tmp_g, reach, ptr, rep);
+#pragma omp parallel
+{
+	// Vector to allocate local accumulator to each thread
+	vector<double> local_pc(V + 1, 0.0);
 	
-// 	#pragma omp for
-// 	for (int i = 1; i <= V; ++i)
-// 		bcc_brandes(i,x,tmp_g,reach,&local_pc[0],rep);
+	#pragma omp for
+	for (int i = 1; i <= V; ++i)
+		bcc_brandes(i,x,tmp_g,reach,&local_pc[0],rep);
 
-// 	#pragma omp critical
-// 	{
-// 		for (int i = 1; i <= V; ++i)
-// 		pCentrality[i] += local_pc[i];
-// 	}
-// }
-// 	for (int i = 1; i <= V; ++i)
-// 		ac[rep[i]] += pCentrality[i];
-// 	for (int i = 1; i <= n; ++i)
-// 		ac[i] /= (sum_x - contrib[i]);
+	#pragma omp critical
+	{
+		for (int i = 1; i <= V; ++i)
+		pCentrality[i] += local_pc[i];
+	}
+}
+	for (int i = 1; i <= V; ++i)
+		ac[rep[i]] += pCentrality[i];
+	for (int i = 1; i <= n; ++i)
+		ac[i] /= (sum_x - contrib[i]);
 
-// 	auto t2 = std::chrono::high_resolution_clock::now();
+	auto t2 = std::chrono::high_resolution_clock::now();
 
-// 	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
-// 	// cerr << "Initial Static Computation time : " << duration << " mu.s." << endl;
-// 	cerr << duration << ",";
+	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
+	// cerr << "Initial Static Computation time : " << duration << " mu.s." << endl;
+	cerr << duration << ",";
 
 
-// 	duration = 0;
-// 	auto duration_dynamic = duration;
-// 	auto duration2 = duration;
+	duration = 0;
+	auto duration_dynamic = duration;
+	auto duration2 = duration;
 
 	
-// 	int query_nodes[V];
+	int query_nodes[V];
 
-// 	ifstream qin(queries);
-// 	int batch_size;
-// 	while(qin >> batch_size)
-// 	{
-// 		updated_x = x;
-// 		int node;
-// 		double val;
-// 		int query_size = 0;
-// 		for(int i=1;i<=batch_size;++i)
-// 		{
-// 			qin >> node >> val;
-// 			if(x[node] != val)
-// 			{
-// 				for(auto repr:copies[node])
-// 				{
-// 					updated_x[repr] = val;
-// 				}
-// 				query_nodes[query_size++] = node;
-// 			}
-// 		}
-// 		batch_size = query_size;
+	ifstream qin(queries);
+	int batch_size;
+	while(qin >> batch_size)
+	{
+		updated_x = x;
+		int node;
+		double val;
+		int query_size = 0;
+		for(int i=1;i<=batch_size;++i)
+		{
+			qin >> node >> val;
+			if(x[node] != val)
+			{
+				for(auto repr:copies[node])
+				{
+					updated_x[repr] = val;
+				}
+				query_nodes[query_size++] = node;
+			}
+		}
+		batch_size = query_size;
 
-// 		auto t3 = std::chrono::high_resolution_clock::now();
+		auto t3 = std::chrono::high_resolution_clock::now();
 
-// 		batch_size = 0;
-// 		for(auto v:corr[node])
-// 			query_nodes[batch_size++] = v;
+		batch_size = 0;
+		for(auto v:corr[node])
+			query_nodes[batch_size++] = v;
 		
 		
-// 		ptr = &pCentrality[0];
-// 		#pragma omp parallel for reduction (+:ptr[:V+1])
-// 		for(int th=0;th<numthreads;++th)
-// 		{
-// 			int N = (int)x.size()-1;
-// 			queue<int> q;
-// 			stack<int> st;
-// 			vector<int> dist(N+1,-1);
-// 			vector<double> sig(N+1,0.0);
-// 			vector<double> new_delta(N+1,0.0);
-// 			vector<double> old_delta(N+1,0.0);
-// 			vector<vector<int> > pr(N+1);
-// 			for(int i=th;i<=batch_size;i+=numthreads)
-// 				update_brandes(query_nodes[i-1],node,x,updated_x,tmp_g,reach,ptr,rep,q,st,dist,sig,new_delta,old_delta,pr);
-// 		}
+		ptr = &pCentrality[0];
+		#pragma omp parallel for reduction (+:ptr[:V+1])
+		for(int th=0;th<numthreads;++th)
+		{
+			int N = (int)x.size()-1;
+			queue<int> q;
+			stack<int> st;
+			vector<int> dist(N+1,-1);
+			vector<double> sig(N+1,0.0);
+			vector<double> new_delta(N+1,0.0);
+			vector<double> old_delta(N+1,0.0);
+			vector<vector<int> > pr(N+1);
+			for(int i=th;i<=batch_size;i+=numthreads)
+				update_brandes(query_nodes[i-1],node,x,updated_x,tmp_g,reach,ptr,rep,q,st,dist,sig,new_delta,old_delta,pr);
+		}
 		
-// 		auto t4 = std::chrono::high_resolution_clock::now();
-// 		duration_dynamic += std::chrono::duration_cast<std::chrono::microseconds>( t4 - t3 ).count();
+		auto t4 = std::chrono::high_resolution_clock::now();
+		duration_dynamic += std::chrono::duration_cast<std::chrono::microseconds>( t4 - t3 ).count();
 		
-// 		fill(ac.begin(),ac.end(),0);
-// 		for(int i=1;i<=V;++i)
-// 			ac[rep[i]] += pCentrality[i];
-// 		for(int i=1;i<=n;++i)
-// 		{
-// 			ac[i] /= (sum_x - contrib[i]);
-// 			// fout << ac[i] << " ";
-// 		}
-// 		// fout << "\n";
+		fill(ac.begin(),ac.end(),0);
+		for(int i=1;i<=V;++i)
+			ac[rep[i]] += pCentrality[i];
+		for(int i=1;i<=n;++i)
+		{
+			ac[i] /= (sum_x - contrib[i]);
+			// fout << ac[i] << " ";
+		}
+		// fout << "\n";
 
-// 		auto t5 = std::chrono::high_resolution_clock::now();
-// 		duration2 = std::chrono::duration_cast<std::chrono::microseconds>(t5 - t4).count();
+		auto t5 = std::chrono::high_resolution_clock::now();
+		duration2 = std::chrono::duration_cast<std::chrono::microseconds>(t5 - t4).count();
 
-// 		x = updated_x;
-// 	}
+		x = updated_x;
+	}
 
-// 	cerr << duration_dynamic << "," << duration2 << "\n";
+	cerr << duration_dynamic << "," << duration2 << "\n";
 
 	return 0;
 }

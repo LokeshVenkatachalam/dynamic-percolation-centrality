@@ -721,19 +721,47 @@ int main(int argc, char **argv)
 		
 		
 		ptr = &pCentrality[0];
-		#pragma omp parallel for reduction (+:ptr[:V+1])
-		for(int th=0;th<numthreads;++th)
-		{
-			int N = (int)x.size()-1;
-			queue<int> q;
-			stack<int> st;
-			vector<int> dist(N+1,-1);
-			vector<double> sig(N+1,0.0);
-			vector<double> new_delta(N+1,0.0);
-			vector<double> old_delta(N+1,0.0);
-			vector<vector<int> > pr(N+1);
-			for(int i=th;i<=batch_size;i+=numthreads)
-				update_brandes(query_nodes[i-1],node,x,updated_x,tmp_g,reach,ptr,rep,q,st,dist,sig,new_delta,old_delta,pr);
+		// #pragma omp parallel for reduction (+:ptr[:V+1])
+		// for(int th=0;th<numthreads;++th)
+		// {
+		// 	int N = (int)x.size()-1;
+		// 	queue<int> q;
+		// 	stack<int> st;
+		// 	vector<int> dist(N+1,-1);
+		// 	vector<double> sig(N+1,0.0);
+		// 	vector<double> new_delta(N+1,0.0);
+		// 	vector<double> old_delta(N+1,0.0);
+		// 	vector<vector<int> > pr(N+1);
+		// 	for(int i=th;i<=batch_size;i+=numthreads)
+		// 		update_brandes(query_nodes[i-1],node,x,updated_x,tmp_g,reach,ptr,rep,q,st,dist,sig,new_delta,old_delta,pr);
+		// }
+		int N = (int)x.size()-1;
+		std::queue<int>               q;
+		std::stack<int>               st;
+		std::vector<int>              dist(N+1, -1);
+		std::vector<double>           sig(N+1, 0.0);
+		std::vector<double>           new_delta(N+1, 0.0);
+		std::vector<double>           old_delta(N+1, 0.0);
+		std::vector<std::vector<int>> pr(N+1);
+		for (int i = 0; i < batch_size; ++i) {
+			// call the standard Brandes update, accumulating into ptr
+			update_brandes(
+				query_nodes[i],
+				node,
+				x,
+				updated_x,
+				tmp_g,
+				reach,
+				ptr,      // directly updated
+				rep,
+				q,
+				st,
+				dist,
+				sig,
+				new_delta,
+				old_delta,
+				pr
+			);
 		}
 		
 		auto t4 = std::chrono::high_resolution_clock::now();

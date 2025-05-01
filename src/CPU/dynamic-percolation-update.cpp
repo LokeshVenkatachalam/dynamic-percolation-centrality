@@ -654,9 +654,9 @@ int main(int argc, char **argv)
 
 	vector<double> pCentrality(V + 1, 0.0), ac(V + 1, 0.0);
 	double *ptr = &pCentrality[0];
-#pragma omp parallel for reduction(+ : ptr[ : V + 1])
-	for (int i = 1; i <= V; ++i)
-		bcc_brandes(i, x, tmp_g, reach, ptr, rep);
+// #pragma omp parallel for reduction(+ : ptr[ : V + 1])
+// 	for (int i = 1; i <= V; ++i)
+// 		bcc_brandes(i, x, tmp_g, reach, ptr, rep);
 #pragma omp parallel
 {
 	// Vector to allocate local accumulator to each thread

@@ -742,9 +742,9 @@ int main(int argc, char **argv)
 		// Shared 2D array: each thread writes to its own row
 		std::vector<std::vector<double>> local_ptr(num_threads, std::vector<double>(N+1, 0.0));
 
-		double loop_ms = 0.0;
-		double brandes_ms = 0.0;
-		double reduction_ms = 0.0;
+		int loop_ms = 0;
+		int brandes_ms = 0;
+		int reduction_ms = 0;
 
 		#pragma omp parallel
 		{

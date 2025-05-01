@@ -644,7 +644,7 @@ int main(int argc, char **argv)
 		E += (int)(tmp_g[i].size());
 	}
 	E = E / 2;
-	cout << V << "," << E << "," << cnt_reach_vec << ",";
+	// cout << V << "," << E << "," << cnt_reach_vec << ",";
 
 	auto t01 = std::chrono::high_resolution_clock::now();
 	// preprocess time

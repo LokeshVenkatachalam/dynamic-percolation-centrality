@@ -823,7 +823,9 @@ int main(int argc, char **argv)
 			reduction_ms += thread_red.count();
 		}
 		
-		cerr << loop_ms << "," << brandes_ms << "," << reduction_ms << ",";
+		cerr << loop_ms << ",";
+		cerr << brandes_ms << "," 
+		cerr << reduction_ms << ",";
 
 		auto t4 = std::chrono::high_resolution_clock::now();
 		duration_dynamic += std::chrono::duration_cast<std::chrono::microseconds>( t4 - t3 ).count();

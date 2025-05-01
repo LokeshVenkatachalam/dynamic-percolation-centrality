@@ -648,7 +648,7 @@ int main(int argc, char **argv)
 	
 	#pragma omp for
 	for (int i = 1; i <= V; ++i)
-		bcc_brandes(i,x,tmp_g,reach,&local_pc[i],rep);
+		bcc_brandes(i,x,tmp_g,reach,&local_pc[0],rep);
 
 	#pragma omp critical
 	{

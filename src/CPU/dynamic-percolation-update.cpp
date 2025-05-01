@@ -815,12 +815,12 @@ int main(int argc, char **argv)
 			Duration thread_red = (t_red_end - t_red_start);
 
 			// reduce your timings across threads into the master totals
-			#pragma omp atomic
-			loop_ms      += thread_loop.count();
-			#pragma omp atomic
-			brandes_ms   += thread_brandes.count();
-			#pragma omp atomic
-			reduction_ms += thread_red.count();
+			// #pragma omp atomic
+			// loop_ms      += thread_loop.count();
+			// #pragma omp atomic
+			// brandes_ms   += thread_brandes.count();
+			// #pragma omp atomic
+			// reduction_ms += thread_red.count();
 		}
 		
 		cerr << loop_ms << ",";

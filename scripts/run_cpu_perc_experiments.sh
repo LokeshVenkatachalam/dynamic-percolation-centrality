@@ -9,7 +9,7 @@ DATASETS=("brightkite" "email-enron" "p2p-Gnutella25" "p2p-Gnutella30" "PGPgiant
 # Reverse Thread count
 # THREADS=(128 64 48 32 16 8 4 2 1) #256)
 # BATCH_SIZES=(1 10 40 100 1000 5000 10000)
-THREADS=(32 16 8 1)
+THREADS=(128 64 16 8 1)
 BATCH_SIZES=(1 10 100 1000 10000)
 
 ALGORITHMS=("dynperc" "statperc") # "dynperc")
@@ -29,8 +29,8 @@ g++ -O3 -fopenmp -lstdc++ "$SRC_DIR/dynamic-percolation-update.cpp" -o "$EXEC_DI
 g++ -O3 -fopenmp -lstdc++ "$SRC_DIR/static-percolation-update.cpp" -o "$EXEC_DIR/spu"
 echo "Compilation finished."
 
-# export OMP_PLACES=cores
-export OMP_PROC_BIND=close
+export OMP_PLACES=threads
+export OMP_PROC_BIND=spread
 # Loop through algorithms
 for ALGO in "${ALGORITHMS[@]}"; do
     echo "Running algorithm: $ALGO"

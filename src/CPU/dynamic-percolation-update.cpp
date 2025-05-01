@@ -800,32 +800,32 @@ int main(int argc, char **argv)
 			auto t_b_end = Clock::now();
 			Duration thread_brandes = (t_b_end - t_b_start);
 
-			// auto t_red_start = Clock::now();
+			auto t_red_start = Clock::now();
 
-			// #pragma omp for 
-			// for (int v = 0; v <= N; ++v) {
-			// 	double sum = 0.0;
-			// 	for (int t = 0; t < num_threads; ++t) {
-			// 		sum += local_ptr[t][v];
-			// 	}
-			// 	ptr[v] = sum;
-			// }
+			#pragma omp for 
+			for (int v = 0; v <= N; ++v) {
+				double sum = 0.0;
+				for (int t = 0; t < num_threads; ++t) {
+					sum += local_ptr[t][v];
+				}
+				ptr[v] = sum;
+			}
 
-			// auto t_red_end = Clock::now();
-			// Duration thread_red = (t_red_end - t_red_start);
+			auto t_red_end = Clock::now();
+			Duration thread_red = (t_red_end - t_red_start);
 
-			// reduce your timings across threads into the master totals
-			// #pragma omp atomic
-			// loop_ms      += thread_loop.count();
-			// #pragma omp atomic
-			// brandes_ms   += thread_brandes.count();
-			// #pragma omp atomic
-			// reduction_ms += thread_red.count();
+			reduce your timings across threads into the master totals
+			#pragma omp atomic
+			loop_ms      += thread_loop.count();
+			#pragma omp atomic
+			brandes_ms   += thread_brandes.count();
+			#pragma omp atomic
+			reduction_ms += thread_red.count();
 		}
 		
-		cerr << loop_ms << ",";
-		cerr << brandes_ms << "," ;
-		cerr << reduction_ms << ",";
+		cerr << std::fixed << loop_ms << ",";
+		cerr << std::fixed << brandes_ms << "," ;
+		cerr << std::fixed << reduction_ms << ",";
 
 		auto t4 = std::chrono::high_resolution_clock::now();
 		duration_dynamic += std::chrono::duration_cast<std::chrono::microseconds>( t4 - t3 ).count();

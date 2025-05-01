@@ -691,97 +691,11 @@ int main(int argc, char **argv)
 	
 	int query_nodes[V];
 
-	ifstream qin(queries);
-	
-	int num_threads = omp_get_max_threads();
-	int N = (int)x.size()-1;
-	// Shared 2D array: each thread writes to its own row
-	std::vector<std::vector<double>> local_ptr(num_threads, std::vector<double>(N+1, 0.0));
-
-	double loop_ms = 0.0;
+	ifstream qin(queries);double loop_ms = 0.0;
 	double brandes_ms = 0.0;
 	double reduction_ms = 0.0;
-
-	#pragma omp parallel
-	{
-
-		auto t_loop_start = Clock::now();
-
-		int tid = omp_get_thread_num();
-
-		// per-thread scratch space (allocated once per thread)
-		
-		std::queue<int>               q;
-		std::stack<int>               st;
-		std::vector<int>              dist(N+1, -1);
-		std::vector<double>           sig(N+1, 0.0);
-		std::vector<double>           new_delta(N+1, 0.0);
-		std::vector<double>           old_delta(N+1, 0.0);
-		std::vector<std::vector<int>> pr(N+1);
-
-		auto t_loop_end = Clock::now();
-
-		// each thread adds its own elapsed loop time:
-		Duration thread_loop = (t_loop_end - t_loop_start);
-
-		// 1) Dynamic “finding” phase: each thread accumulates into its local_ptr row
-
-		auto t_b_start = Clock::now();
-
-		#pragma omp for schedule(dynamic,num_threads) nowait
-		for (int i = 0; i < batch_size; ++i) {
-			update_brandes(
-				query_nodes[i],
-				node,
-				x,
-				updated_x,
-				tmp_g,
-				reach,
-				local_ptr[tid].data(),  // use double* pointer
-				rep,
-				q,
-				st,
-				dist,
-				sig,
-				new_delta,
-				old_delta,
-				pr
-			);
-		}
-		
-
-		// 2) Reduction phase: combine local_ptr rows into the shared ptr array
-		#pragma omp barrier  // ensure finding phase is complete
-
-		auto t_b_end = Clock::now();
-		Duration thread_brandes = (t_b_end - t_b_start);
-
-		auto t_red_start = Clock::now();
-
-		#pragma omp for schedule(dynamic,num_threads)
-		for (int v = 0; v <= N; ++v) {
-			double sum = 0.0;
-			for (int t = 0; t < num_threads; ++t) {
-				sum += local_ptr[t][v];
-			}
-			ptr[v] = sum;
-		}
-
-		auto t_red_end = Clock::now();
-		Duration thread_red = (t_red_end - t_red_start);
-
-		// reduce your timings across threads into the master totals
-		#pragma omp atomic
-		loop_ms      += thread_loop.count();
-		#pragma omp atomic
-		brandes_ms   += thread_brandes.count();
-		#pragma omp atomic
-		reduction_ms += thread_red.count();
-	}
-	
-	cerr << loop_ms << ",";
-	cerr << brandes_ms << "," ;
-	cerr << reduction_ms << ",";
+	int batch_size;
+	while(qin >> batch_size)
 	{
 		updated_x = x;
 		int node;

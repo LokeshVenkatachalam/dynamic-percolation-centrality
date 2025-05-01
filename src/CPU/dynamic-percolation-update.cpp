@@ -824,7 +824,7 @@ int main(int argc, char **argv)
 		}
 		
 		cerr << loop_ms << ",";
-		cerr << brandes_ms << "," 
+		cerr << brandes_ms << "," ;
 		cerr << reduction_ms << ",";
 
 		auto t4 = std::chrono::high_resolution_clock::now();

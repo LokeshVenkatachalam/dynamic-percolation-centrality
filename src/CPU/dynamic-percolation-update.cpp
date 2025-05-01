@@ -819,11 +819,11 @@ int main(int argc, char **argv)
 					rep,
 					q[tid],
 					st[tid],
-					dist[tid].data(),
-					sig[tid].data(),
-					new_delta[tid].data(),
-					old_delta[tid].data(),
-					pr[tid].data()
+					dist[tid],
+					sig[tid],
+					new_delta[tid],
+					old_delta[tid],
+					pr[tid]
 				);
 			}
 			

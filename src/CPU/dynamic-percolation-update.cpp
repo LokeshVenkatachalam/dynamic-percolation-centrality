@@ -631,24 +631,24 @@ int main(int argc, char **argv)
 		// }
 	}
 
-	int V, E = 0;
-	V = vertices;
-	int cnt_reach_vec = 0;
-	for (int i = 1; i <= V; ++i)
-	{
-		cnt_reach_vec += (int)(reach[i].size());
-		E += (int)(tmp_g[i].size());
-	}
-	E = E / 2;
+	// int V, E = 0;
+	// V = vertices;
+	// int cnt_reach_vec = 0;
+	// for (int i = 1; i <= V; ++i)
+	// {
+	// 	cnt_reach_vec += (int)(reach[i].size());
+	// 	E += (int)(tmp_g[i].size());
+	// }
+	// E = E / 2;
 
-	auto t01 = std::chrono::high_resolution_clock::now();
-	// preprocess time
-	cerr << std::chrono::duration_cast<std::chrono::microseconds>(t01 - t0).count() << ",";
+	// auto t01 = std::chrono::high_resolution_clock::now();
+	// // preprocess time
+	// cerr << std::chrono::duration_cast<std::chrono::microseconds>(t01 - t0).count() << ",";
 
-	auto t1 = std::chrono::high_resolution_clock::now();
+	// auto t1 = std::chrono::high_resolution_clock::now();
 
-	vector<double> pCentrality(V + 1, 0.0), ac(V + 1, 0.0);
-	double *ptr = &pCentrality[0];
+	// vector<double> pCentrality(V + 1, 0.0), ac(V + 1, 0.0);
+	// double *ptr = &pCentrality[0];
 // #pragma omp parallel for reduction(+ : ptr[ : V + 1])
 // 	for (int i = 1; i <= V; ++i)
 // 		bcc_brandes(i, x, tmp_g, reach, ptr, rep);

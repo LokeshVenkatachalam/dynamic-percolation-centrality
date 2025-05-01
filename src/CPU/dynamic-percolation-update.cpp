@@ -657,12 +657,15 @@ int main(int argc, char **argv)
 // #pragma omp parallel for reduction(+ : ptr[ : V + 1])
 // 	for (int i = 1; i <= V; ++i)
 // 		bcc_brandes(i, x, tmp_g, reach, ptr, rep);
+
+	omp_set_num_threads(128);
+
 #pragma omp parallel
 {
 	// Vector to allocate local accumulator to each thread
 	vector<double> local_pc(V + 1, 0.0);
 	
-	#pragma omp for
+	#pragma omp for schedule(dynamic)
 	for (int i = 1; i <= V; ++i)
 		bcc_brandes(i,x,tmp_g,reach,&local_pc[0],rep);
 
@@ -737,6 +740,7 @@ int main(int argc, char **argv)
 		// 	for(int i=th;i<=batch_size;i+=numthreads)
 		// 		update_brandes(query_nodes[i-1],node,x,updated_x,tmp_g,reach,ptr,rep,q,st,dist,sig,new_delta,old_delta,pr);
 		// }
+		omp_set_num_threads(numthreads);
 		int num_threads = omp_get_max_threads();
 		int N = (int)x.size()-1;
 		// Shared 2D array: each thread writes to its own row

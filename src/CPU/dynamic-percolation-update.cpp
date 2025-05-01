@@ -542,7 +542,7 @@ int main(int argc, char **argv)
 	auto t0 = std::chrono::high_resolution_clock::now();
 	vertices = n;
 
-	auto res;
+	pair<int, vector<double>>  res;
 	double sum_x;
 	vector<double> contrib;
 

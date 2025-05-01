@@ -618,6 +618,17 @@ int main(int argc, char **argv)
 		res = compute_constants();
 		sum_x = res.first;
 		contrib = res.second;
+
+		for (int i = 0; i < m; i++)
+		{
+			int u, v;
+			fin >> u >> v;
+			if (u != v)
+			{
+				g[u].push_back(v);
+				g[v].push_back(u);
+			}
+		}
 	}
 
 	int V, E = 0;

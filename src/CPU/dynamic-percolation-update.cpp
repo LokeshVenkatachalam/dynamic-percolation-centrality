@@ -772,7 +772,7 @@ int main(int argc, char **argv)
 
 			auto t_b_start = Clock::now();
 
-			#pragma omp for schedule(dynamic,num_threads) nowait
+			#pragma omp for
 			for (int i = 0; i < batch_size; ++i) {
 				update_brandes(
 					query_nodes[i],
@@ -794,15 +794,15 @@ int main(int argc, char **argv)
 			}
 			
 
-			// 2) Reduction phase: combine local_ptr rows into the shared ptr array
-			#pragma omp barrier  // ensure finding phase is complete
+			// // 2) Reduction phase: combine local_ptr rows into the shared ptr array
+			// #pragma omp barrier  // ensure finding phase is complete
 
 			auto t_b_end = Clock::now();
 			Duration thread_brandes = (t_b_end - t_b_start);
 
 			auto t_red_start = Clock::now();
 
-			#pragma omp for schedule(dynamic,num_threads)
+			#pragma omp for 
 			for (int v = 0; v <= N; ++v) {
 				double sum = 0.0;
 				for (int t = 0; t < num_threads; ++t) {

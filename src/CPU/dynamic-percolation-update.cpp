@@ -691,8 +691,9 @@ int main(int argc, char **argv)
 	
 	int query_nodes[V];
 
-	ifstream qin(queries);double loop_ms = 0.0;
-	double brandes_ms = 0.0;int num_threads = omp_get_max_threads();
+	ifstream qin(queries);
+	
+	int num_threads = omp_get_max_threads();
 	int N = (int)x.size()-1;
 	// Shared 2D array: each thread writes to its own row
 	std::vector<std::vector<double>> local_ptr(num_threads, std::vector<double>(N+1, 0.0));

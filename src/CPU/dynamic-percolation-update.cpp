@@ -757,13 +757,14 @@ int main(int argc, char **argv)
 			// 1) Dynamic “finding” phase: each thread accumulates into its local_ptr row
 			#pragma omp for schedule(dynamic,1) nowait
 			for (int i = 0; i < batch_size; ++i) {
-				update_brandes(query_nodes[i],
+				update_brandes(
+					query_nodes[i],
 					node,
 					x,
 					updated_x,
 					tmp_g,
 					reach,
-					local_ptr[tid],  // accumulate here
+					local_ptr[tid].data(),  // use double* pointer
 					rep,
 					q,
 					st,

@@ -776,7 +776,7 @@ int main(int argc, char **argv)
 
 			auto t_b_start = Clock::now();
 
-			#pragma omp for
+			#pragma omp for schedule(dynamic)
 			for (int i = 0; i < batch_size; ++i) {
 				update_brandes(
 					query_nodes[i],
@@ -806,7 +806,7 @@ int main(int argc, char **argv)
 
 			auto t_red_start = Clock::now();
 
-			#pragma omp for 
+			#pragma omp for schedule(static)
 			for (int v = 0; v <= N; ++v) {
 				double sum = 0.0;
 				for (int t = 0; t < num_threads; ++t) {

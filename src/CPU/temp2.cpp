@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include <omp.h>
+// #include <omp.h>
 #include <chrono>
 using namespace std;
 

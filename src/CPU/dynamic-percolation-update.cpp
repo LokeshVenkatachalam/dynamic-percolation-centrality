@@ -750,6 +750,8 @@ int main(int argc, char **argv)
 		int brandes_ms = 0;
 		int reduction_ms = 0;
 
+		std::vector<int> timeforEachThread(num_threads, 0);
+
 		#pragma omp parallel
 		{
 
@@ -767,14 +769,14 @@ int main(int argc, char **argv)
 			std::vector<double>           old_delta(N+1, 0.0);
 			std::vector<std::vector<int>> pr(N+1);
 
-			auto t_loop_end = Clock::now();
+			// auto t_loop_end = Clock::now();
 	
 			// each thread adds its own elapsed loop time:
-			Duration thread_loop = (t_loop_end - t_loop_start);
+			// Duration thread_loop = (t_loop_end - t_loop_start);
 
 			// 1) Dynamic “finding” phase: each thread accumulates into its local_ptr row
 
-			auto t_b_start = Clock::now();
+			// auto t_b_start = Clock::now();
 
 			#pragma omp for schedule(dynamic)
 			for (int i = 0; i < batch_size; ++i) {
@@ -801,12 +803,12 @@ int main(int argc, char **argv)
 			// // 2) Reduction phase: combine local_ptr rows into the shared ptr array
 			// #pragma omp barrier  // ensure finding phase is complete
 
-			auto t_b_end = Clock::now();
-			Duration thread_brandes = (t_b_end - t_b_start);
+			// auto t_b_end = Clock::now();
+			// Duration thread_brandes = (t_b_end - t_b_start);
 
-			auto t_red_start = Clock::now();
+			// auto t_red_start = Clock::now();
 
-			#pragma omp for schedule(static)
+			#pragma omp for schedule(dynamic)
 			for (int v = 0; v <= N; ++v) {
 				double sum = 0.0;
 				for (int t = 0; t < num_threads; ++t) {
@@ -816,19 +818,26 @@ int main(int argc, char **argv)
 			}
 
 			auto t_red_end = Clock::now();
-			Duration thread_red = (t_red_end - t_red_start);
+			Duration thread_red = (t_red_end - t_loop_start);
 
-			#pragma omp atomic
-			loop_ms      += thread_loop.count();
-			#pragma omp atomic
-			brandes_ms   += thread_brandes.count();
-			#pragma omp atomic
-			reduction_ms += thread_red.count();
+			timeforEachThread[tid] = thread_red.count();
+			// #pragma omp atomic
+			// loop_ms      += thread_loop.count();
+			// #pragma omp atomic
+			// brandes_ms   += thread_brandes.count();
+			// #pragma omp atomic
+			// reduction_ms += thread_red.count();
 		}
 		
-		cerr << std::fixed << loop_ms << ",";
-		cerr << std::fixed << brandes_ms << "," ;
-		cerr << std::fixed << reduction_ms << ",";
+		// cerr << std::fixed << loop_ms << ",";
+		// cerr << std::fixed << brandes_ms << "," ;
+		// cerr << std::fixed << reduction_ms << ",";
+
+		int min_time = *std::min_element(timeforEachThread.begin(), timeforEachThread.end());
+		int max_time = *std::max_element(timeforEachThread.begin(), timeforEachThread.end());
+
+		cerr << std::fixed << min_time << "," ;
+		cerr << std::fixed << max_time << "," ;
 
 		auto t4 = std::chrono::high_resolution_clock::now();
 		duration_dynamic += std::chrono::duration_cast<std::chrono::microseconds>( t4 - t3 ).count();

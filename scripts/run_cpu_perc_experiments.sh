@@ -30,6 +30,7 @@ g++ -O3 -fopenmp -lstdc++ "$SRC_DIR/static-percolation-update.cpp" -o "$EXEC_DIR
 echo "Compilation finished."
 
 export OMP_PROC_BIND=close
+export OMP_PLACES=threads
 # Loop through algorithms
 for ALGO in "${ALGORITHMS[@]}"; do
     echo "Running algorithm: $ALGO"

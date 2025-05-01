@@ -755,7 +755,7 @@ int main(int argc, char **argv)
 			std::vector<std::vector<int>> pr(N+1);
 
 			// 1) Dynamic “finding” phase: each thread accumulates into its local_ptr row
-			#pragma omp for schedule(dynamic,1) nowait
+			#pragma omp for schedule(dynamic,num_threads) nowait
 			for (int i = 0; i < batch_size; ++i) {
 				update_brandes(
 					query_nodes[i],
@@ -778,7 +778,7 @@ int main(int argc, char **argv)
 
 			// 2) Reduction phase: combine local_ptr rows into the shared ptr array
 			#pragma omp barrier  // ensure finding phase is complete
-			#pragma omp for schedule(static)
+			#pragma omp for schedule(dynamic,num_threads)
 			for (int v = 0; v <= N; ++v) {
 				double sum = 0.0;
 				for (int t = 0; t < num_threads; ++t) {

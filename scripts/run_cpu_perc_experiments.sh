@@ -9,7 +9,7 @@ DATASETS=("brightkite" "email-enron" "p2p-Gnutella25" "p2p-Gnutella30" "PGPgiant
 # Reverse Thread count
 # THREADS=(128 64 48 32 16 8 4 2 1) #256)
 # BATCH_SIZES=(1 10 40 100 1000 5000 10000)
-THREADS=(64 16 8 1)
+THREADS=(32 16 8 1)
 BATCH_SIZES=(1 10 100 1000 10000)
 
 ALGORITHMS=("dynperc" "statperc") # "dynperc")

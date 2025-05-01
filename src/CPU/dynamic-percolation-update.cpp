@@ -745,6 +745,21 @@ int main(int argc, char **argv)
 		int N = (int)x.size()-1;
 		// Shared 2D array: each thread writes to its own row
 		std::vector<std::vector<double>> local_ptr(num_threads, std::vector<double>(N+1, 0.0));
+		// std::queue<int>               q;
+		// std::stack<int>               st;
+		// std::vector<int>              dist(N+1, -1);
+		// std::vector<double>           sig(N+1, 0.0);
+		// std::vector<double>           new_delta(N+1, 0.0);
+		// std::vector<double>           old_delta(N+1, 0.0);
+		// std::vector<std::vector<int>> pr(N+1);
+		// std::vector<std::queue<int>> q(num_threads, std::queue<int>());
+		// std::vector<std::stack<int>> st(num_threads, std::stack<int>());
+		// std::vector<std::vector<int>> dist(num_threads, std::vector<int>(N+1, -1));
+		// std::vector<std::vector<double>> sig(num_threads, std::vector<double>(N+1, 0.0));
+		// std::vector<std::vector<double>> new_delta(num_threads, std::vector<double>(N+1, 0.0));
+		// std::vector<std::vector<double>> old_delta(num_threads, std::vector<double>(N+1, 0.0));
+		// std::vector<std::vector<std::vector<int>>> pr(num_threads, std::vector<std::vector<int>>(N+1));
+		            
 
 		int loop_ms = 0;
 		int brandes_ms = 0;
@@ -752,6 +767,19 @@ int main(int argc, char **argv)
 
 		std::vector<int> timeforEachThread(num_threads, 0);
 
+		std::vector<std::queue<int>> q(num_threads, std::queue<int>());
+		std::vector<std::stack<int>> st(num_threads, std::stack<int>());
+		std::vector<std::vector<int>> dist(num_threads, std::vector<int>(N+1, -1));
+		std::vector<std::vector<double>> sig(num_threads, std::vector<double>(N+1, 0.0));
+		std::vector<std::vector<double>> new_delta(num_threads, std::vector<double>(N+1, 0.0));
+		std::vector<std::vector<double>> old_delta(num_threads, std::vector<double>(N+1, 0.0));
+		std::vector<std::vector<std::vector<int>>> pr(num_threads, std::vector<std::vector<int>>(N+1));
+
+		auto t3_inter = Clock::now();
+		auto duration_inter = std::chrono::duration_cast<std::chrono::microseconds>(t3_inter - t3).count();
+		// cerr << "Initial Static Computation time : " << duration_inter << " mu.s." << endl;
+		cerr << duration_inter << ",";
+		
 		#pragma omp parallel
 		{
 
@@ -761,13 +789,13 @@ int main(int argc, char **argv)
 
 			// per-thread scratch space (allocated once per thread)
 			
-			std::queue<int>               q;
-			std::stack<int>               st;
-			std::vector<int>              dist(N+1, -1);
-			std::vector<double>           sig(N+1, 0.0);
-			std::vector<double>           new_delta(N+1, 0.0);
-			std::vector<double>           old_delta(N+1, 0.0);
-			std::vector<std::vector<int>> pr(N+1);
+			// std::queue<int>               q;
+			// std::stack<int>               st;
+			// std::vector<int>              dist(N+1, -1);
+			// std::vector<double>           sig(N+1, 0.0);
+			// std::vector<double>           new_delta(N+1, 0.0);
+			// std::vector<double>           old_delta(N+1, 0.0);
+			// std::vector<std::vector<int>> pr(N+1);
 
 			// auto t_loop_end = Clock::now();
 	
@@ -789,13 +817,13 @@ int main(int argc, char **argv)
 					reach,
 					local_ptr[tid].data(),  // use double* pointer
 					rep,
-					q,
-					st,
-					dist,
-					sig,
-					new_delta,
-					old_delta,
-					pr
+					q[tid],
+					st[tid],
+					dist[tid].data(),
+					sig[tid].data(),
+					new_delta[tid].data(),
+					old_delta[tid].data(),
+					pr[tid].data()
 				);
 			}
 			

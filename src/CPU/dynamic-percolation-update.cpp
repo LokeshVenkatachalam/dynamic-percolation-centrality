@@ -8,6 +8,7 @@ int numthreads = 96;
 
 using Clock = std::chrono::high_resolution_clock;
 using Duration = std::chrono::duration<double, std::micro>;  // milliseconds
+namespace fs = std::filesystem;
 
 void brandes(int src, vector<double> x, vector<vector<int>> &adj, double *ptr)
 {
@@ -535,7 +536,7 @@ int main(int argc, char **argv)
 	fin >> n >> m;
 	cerr << n << "," << m << ",";
 
-	string cache_file = input + ",cache";
+	string cache_file = input + ".cache";
     
 
 	auto t0 = std::chrono::high_resolution_clock::now();
@@ -647,7 +648,7 @@ int main(int argc, char **argv)
 	
 	#pragma omp for
 	for (int i = 1; i <= V; ++i)
-		bcc_brandes(i, x, tmp_g, reach, &local_pc[0], 1.0,profile1);
+		bcc_brandes(i,x,tmp_g,reach,&local_pc[i],rep);
 
 	#pragma omp critical
 	{

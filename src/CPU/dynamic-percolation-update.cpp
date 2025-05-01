@@ -736,7 +736,7 @@ int main(int argc, char **argv)
 		// 		update_brandes(query_nodes[i-1],node,x,updated_x,tmp_g,reach,ptr,rep,q,st,dist,sig,new_delta,old_delta,pr);
 		// }
 		int num_threads = omp_get_max_threads();
-
+		int N = (int)x.size()-1;
 		// Shared 2D array: each thread writes to its own row
 		std::vector<std::vector<double>> local_ptr(num_threads, std::vector<double>(N+1, 0.0));
 
@@ -745,7 +745,7 @@ int main(int argc, char **argv)
 			int tid = omp_get_thread_num();
 
 			// per-thread scratch space (allocated once per thread)
-			int N = (int)x.size()-1;
+			
 			std::queue<int>               q;
 			std::stack<int>               st;
 			std::vector<int>              dist(N+1, -1);

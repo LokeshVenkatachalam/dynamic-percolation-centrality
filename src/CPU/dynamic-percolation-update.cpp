@@ -767,13 +767,43 @@ int main(int argc, char **argv)
 
 		std::vector<int> timeforEachThread(num_threads, 0);
 
-		std::vector<std::queue<int>> q(num_threads, std::queue<int>());
-		std::vector<std::stack<int>> st(num_threads, std::stack<int>());
-		std::vector<std::vector<int>> dist(num_threads, std::vector<int>(N+1, -1));
-		std::vector<std::vector<double>> sig(num_threads, std::vector<double>(N+1, 0.0));
-		std::vector<std::vector<double>> new_delta(num_threads, std::vector<double>(N+1, 0.0));
-		std::vector<std::vector<double>> old_delta(num_threads, std::vector<double>(N+1, 0.0));
-		std::vector<std::vector<std::vector<int>>> pr(num_threads, std::vector<std::vector<int>>(N+1));
+		// std::vector<std::queue<int>> q(num_threads, std::queue<int>());
+		// std::vector<std::stack<int>> st(num_threads, std::stack<int>());
+		// std::vector<std::vector<int>> dist(num_threads, std::vector<int>(N+1, -1));
+		// std::vector<std::vector<double>> sig(num_threads, std::vector<double>(N+1, 0.0));
+		// std::vector<std::vector<double>> new_delta(num_threads, std::vector<double>(N+1, 0.0));
+		// std::vector<std::vector<double>> old_delta(num_threads, std::vector<double>(N+1, 0.0));
+		// std::vector<std::vector<std::vector<int>>> pr(num_threads, std::vector<std::vector<int>>(N+1));
+
+		auto t3_1 = Clock::now();
+
+		std::vector<std::queue<int>> q(num_threads);
+		std::vector<std::stack<int>> st(num_threads);
+		std::vector<std::vector<int>> dist(num_threads);
+		std::vector<std::vector<double>> sig(num_threads);
+		std::vector<std::vector<double>> new_delta(num_threads);
+		std::vector<std::vector<double>> old_delta(num_threads);
+		std::vector<std::vector<std::vector<int>>> pr(num_threads);
+
+		auto t3_2 = Clock::now();
+
+		#pragma omp for
+		for (int t = 0; t < num_threads; ++t) {
+			dist[t].resize(N + 1, -1);
+			sig[t].resize(N + 1, 0.0);
+			new_delta[t].resize(N + 1, 0.0);
+			old_delta[t].resize(N + 1, 0.0);
+			pr[t].resize(N + 1);
+		}
+
+		auto t3_3 = Clock::now();
+		auto duration_in_1 = std::chrono::duration_cast<std::chrono::microseconds>(t3_2 - t3_1).count();
+		auto duration_in_2 = std::chrono::duration_cast<std::chrono::microseconds>(t3_3 - t3_2).count();
+		// cerr << "Initial Static Computation time : " << duration_in_1 << " mu.s." << endl;
+		cerr << duration_in_1 << ",";
+		// cerr << "Initial Static Computation time : " << duration_in_2 << " mu.s." << endl;
+		cerr << duration_in_2 << ",";
+	
 
 		auto t3_inter = Clock::now();
 		auto duration_inter = std::chrono::duration_cast<std::chrono::microseconds>(t3_inter - t3).count();
